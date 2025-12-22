@@ -13,6 +13,33 @@ A blazing-fast, Rust-powered CLI tool for finding and copying emoji. Enhanced wi
 - **Fast**: Sub-5ms search latency, <50ms startup time
 - **Cross-platform**: Linux, macOS (Intel & Apple Silicon), Windows
 
+## Quickstart
+
+```bash
+# Install from source (requires Rust)
+cargo install --git https://github.com/yourusername/emosh.git
+
+# Search for emoji (shows top results)
+emosh rocket
+# 1. 🚀  🚀
+# 2. 🎆  🎆
+
+# Copy first result to clipboard
+emosh fire --copy
+# 🔥
+
+# Interactive mode - launches TUI for real-time search
+emosh
+```
+
+**Try these searches:**
+- `emosh lol` - laughing emojis
+- `emosh +1` - thumbs up
+- `emosh heart` - love emojis
+- `emosh tada` - celebration
+
+See [Usage](#usage) below for full details.
+
 ## Installation
 
 ### From Release (Recommended)
