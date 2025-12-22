@@ -1,0 +1,139 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  create_release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+  build_and_upload:
+    name: Build and Upload
+    needs: create_release
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            artifact_name: emosh
+            asset_name: emosh-linux-x86_64
+
+          - os: macos-latest
+            target: x86_64-apple-darwin
+            artifact_name: emosh
+            asset_name: emosh-macos-x86_64
+
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            artifact_name: emosh
+            asset_name: emosh-macos-aarch64
+
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            artifact_name: emosh.exe
+            asset_name: emosh-windows-x86_64.exe
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      with:
+        toolchain: stable
+        targets: ${{ matrix.target }}
+
+    - name: Build release binary
+      run: cargo build --release --target ${{ matrix.target }}
+
+    - name: Strip binary (Linux/macOS)
+      if: matrix.os != 'windows-latest'
+      run: strip target/${{ matrix.target }}/release/${{ matrix.artifact_name }}
+
+    - name: Create tarball (Linux/macOS)
+      if: matrix.os != 'windows-latest'
+      run: |
+        cd target/${{ matrix.target }}/release
+        tar -czf ${{ matrix.asset_name }}.tar.gz ${{ matrix.artifact_name }}
+        mv ${{ matrix.asset_name }}.tar.gz ../../../
+
+    - name: Create zip (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        cd target/${{ matrix.target }}/release
+        7z a ${{ matrix.asset_name }}.zip ${{ matrix.artifact_name }}
+        mv ${{ matrix.asset_name }}.zip ../../../
+      shell: bash
+
+    - name: Generate checksums (Linux/macOS)
+      if: matrix.os != 'windows-latest'
+      run: shasum -a 256 ${{ matrix.asset_name }}.tar.gz > ${{ matrix.asset_name }}.tar.gz.sha256
+
+    - name: Generate checksums (Windows)
+      if: matrix.os == 'windows-latest'
+      run: certutil -hashfile ${{ matrix.asset_name }}.zip SHA256 > ${{ matrix.asset_name }}.zip.sha256
+      shell: bash
+
+    - name: Upload Release Asset (Linux/macOS)
+      if: matrix.os != 'windows-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create_release.outputs.upload_url }}
+        asset_path: ./${{ matrix.asset_name }}.tar.gz
+        asset_name: ${{ matrix.asset_name }}.tar.gz
+        asset_content_type: application/gzip
+
+    - name: Upload Checksum (Linux/macOS)
+      if: matrix.os != 'windows-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create_release.outputs.upload_url }}
+        asset_path: ./${{ matrix.asset_name }}.tar.gz.sha256
+        asset_name: ${{ matrix.asset_name }}.tar.gz.sha256
+        asset_content_type: text/plain
+
+    - name: Upload Release Asset (Windows)
+      if: matrix.os == 'windows-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create_release.outputs.upload_url }}
+        asset_path: ./${{ matrix.asset_name }}.zip
+        asset_name: ${{ matrix.asset_name }}.zip
+        asset_content_type: application/zip
+
+    - name: Upload Checksum (Windows)
+      if: matrix.os == 'windows-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create_release.outputs.upload_url }}
+        asset_path: ./${{ matrix.asset_name }}.zip.sha256
+        asset_name: ${{ matrix.asset_name }}.zip.sha256
+        asset_content_type: text/plain

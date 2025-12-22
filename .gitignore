@@ -1,0 +1,31 @@
+# Rust
+/target/
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test output
+*.profraw
+
+# Backup files
+*.bak
+*.orig
+
+# Node.js (from data extraction)
+node_modules/
+emoj/
+
+# Temporary files
+extract_emojis.js
