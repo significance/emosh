@@ -1,5 +1,5 @@
-# Emoji database for emosh
-# Generated from emojilib ^3.0.12
+# Enhanced emoji database for emosh
+# Generated from emojilib with enhanced keywords
 # Total emojis: 1898
 
 [[emoji]]
@@ -149,7 +149,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "⌨️"
 name = "⌨️"
-keywords = ["keyboard","technology","computer","type","input","text"]
+keywords = ["keyboard","technology","computer","type","input","text","typing","keys"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -166,7 +166,7 @@ supports_skin_tone = false
 char = "⏩"
 name = "⏩"
 keywords = ["fast_forward_button","blue-square","play","speed","continue"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -174,7 +174,7 @@ supports_skin_tone = false
 char = "⏪"
 name = "⏪"
 keywords = ["fast_reverse_button","play","blue-square"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -214,7 +214,7 @@ supports_skin_tone = false
 char = "⏯️"
 name = "⏯️"
 keywords = ["play_or_pause_button","blue-square","play","pause"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -294,7 +294,7 @@ supports_skin_tone = false
 char = "▶️"
 name = "▶️"
 keywords = ["play_button","blue-square","right","direction","play"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -341,7 +341,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "☀️"
 name = "☀️"
-keywords = ["sun","weather","nature","brightness","summer","beach","spring"]
+keywords = ["sun","weather","nature","brightness","summer","beach","spring","sunny","bright","day"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -405,7 +405,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "☕"
 name = "☕"
-keywords = ["hot_beverage","beverage","caffeine","latte","espresso","coffee","mug"]
+keywords = ["hot_beverage","beverage","caffeine","latte","espresso","coffee","mug","cafe","java","hot"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -512,7 +512,7 @@ name = "♀️"
 keywords = ["female_sign","woman","women","lady","girl"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "♂️"
@@ -520,7 +520,7 @@ name = "♂️"
 keywords = ["male_sign","man","boy","men"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "♈"
@@ -765,7 +765,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "⚠️"
 name = "⚠️"
-keywords = ["warning","exclamation","wip","alert","error","problem","issue"]
+keywords = ["warning","exclamation","wip","alert","error","problem","issue","caution","danger"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -773,7 +773,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "⚡"
 name = "⚡"
-keywords = ["high_voltage","thunder","weather","lightning bolt","fast","zap"]
+keywords = ["high_voltage","thunder","weather","lightning bolt","fast","zap","lightning","bolt","speed","power","energy"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -821,16 +821,16 @@ supports_skin_tone = false
 [[emoji]]
 char = "⚽"
 name = "⚽"
-keywords = ["soccer_ball","sports","football"]
-tags = ["other"]
+keywords = ["soccer_ball","sports","football","soccer","ball","sport"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
 [[emoji]]
 char = "⚾"
 name = "⚾"
-keywords = ["baseball","sports","balls"]
-tags = ["other"]
+keywords = ["baseball","sports","balls","ball","sport"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -1000,13 +1000,13 @@ name = "⛹️‍♀️"
 keywords = ["woman_bouncing_ball","sports","human","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "⛹️‍♂️"
 name = "⛹️‍♂️"
 keywords = ["man_bouncing_ball","sport"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -1904,7 +1904,7 @@ name = "🇮🇲"
 keywords = ["flag_isle_of_man","isle","man","flag","nation","country","banner","isle_of_man"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🇮🇳"
@@ -3101,7 +3101,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "✅"
 name = "✅"
-keywords = ["check_mark_button","green-square","ok","agree","vote","election","answer","tick"]
+keywords = ["check_mark_button","green-square","ok","agree","vote","election","answer","tick","check","yes","correct","done","complete","approved","checkmark"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -3109,7 +3109,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "✈️"
 name = "✈️"
-keywords = ["airplane","vehicle","transportation","flight","fly"]
+keywords = ["airplane","vehicle","transportation","flight","fly","plane","travel"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -3205,7 +3205,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "✨"
 name = "✨"
-keywords = ["sparkles","stars","shine","shiny","cool","awesome","good","magic"]
+keywords = ["sparkles","stars","shine","shiny","cool","awesome","good","magic","glitter","new","clean"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -3245,7 +3245,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "❌"
 name = "❌"
-keywords = ["cross_mark","no","delete","remove","cancel","red"]
+keywords = ["cross_mark","no","delete","remove","cancel","red","x","cross","wrong","incorrect"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -3301,7 +3301,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "❤️"
 name = "❤️"
-keywords = ["red_heart","love","like","valentines"]
+keywords = ["red_heart","love","like","valentines","heart","valentine","red"]
 tags = ["emotion"]
 unicode = ""
 supports_skin_tone = false
@@ -3429,7 +3429,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "⭐"
 name = "⭐"
-keywords = ["star","night","yellow"]
+keywords = ["star","night","yellow","favorite","fav","favourite"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -3446,7 +3446,7 @@ supports_skin_tone = false
 char = "🀄"
 name = "🀄"
 keywords = ["mahjong_red_dragon","game","play","chinese","kanji"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -3454,7 +3454,7 @@ supports_skin_tone = false
 char = "🃏"
 name = "🃏"
 keywords = ["joker","poker","cards","game","play","magic"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -3525,7 +3525,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🌈"
 name = "🌈"
-keywords = ["rainbow","nature","happy","unicorn_face","photo","sky","spring"]
+keywords = ["rainbow","nature","happy","unicorn_face","photo","sky","spring","pride","colors","colours"]
 tags = ["emotion"]
 unicode = ""
 supports_skin_tone = false
@@ -3565,7 +3565,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🌍"
 name = "🌍"
-keywords = ["globe_showing_europe_africa","globe","world","earth","international"]
+keywords = ["globe_showing_europe_africa","globe","world","earth","international","planet"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -3573,7 +3573,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🌎"
 name = "🌎"
-keywords = ["globe_showing_americas","globe","world","USA","earth","international"]
+keywords = ["globe_showing_americas","globe","world","USA","earth","international","planet","america"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -3581,7 +3581,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🌏"
 name = "🌏"
-keywords = ["globe_showing_asia_australia","globe","world","east","earth","international"]
+keywords = ["globe_showing_asia_australia","globe","world","east","earth","international","planet","asia"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -3661,7 +3661,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🌙"
 name = "🌙"
-keywords = ["crescent_moon","night","sleep","sky","evening","magic"]
+keywords = ["crescent_moon","night","sleep","sky","evening","magic","moon","crescent"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -3709,7 +3709,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🌟"
 name = "🌟"
-keywords = ["glowing_star","night","sparkle","awesome","good","magic"]
+keywords = ["glowing_star","night","sparkle","awesome","good","magic","star","glowing","shine"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -4133,15 +4133,15 @@ supports_skin_tone = false
 [[emoji]]
 char = "🍔"
 name = "🍔"
-keywords = ["hamburger","meat","fast food","beef","cheeseburger","mcdonalds","burger king"]
-tags = ["other"]
+keywords = ["hamburger","meat","fast food","beef","cheeseburger","mcdonalds","burger king","burger","food","fast"]
+tags = ["food"]
 unicode = ""
 supports_skin_tone = false
 
 [[emoji]]
 char = "🍕"
 name = "🍕"
-keywords = ["pizza","food","party","italy"]
+keywords = ["pizza","food","party","italy","slice","italian"]
 tags = ["food"]
 unicode = ""
 supports_skin_tone = false
@@ -4221,8 +4221,8 @@ supports_skin_tone = false
 [[emoji]]
 char = "🍟"
 name = "🍟"
-keywords = ["french_fries","chips","snack","fast food","potato"]
-tags = ["other"]
+keywords = ["french_fries","chips","snack","fast food","potato","fries","french","food"]
+tags = ["food"]
 unicode = ""
 supports_skin_tone = false
 
@@ -4254,7 +4254,7 @@ supports_skin_tone = false
 char = "🍣"
 name = "🍣"
 keywords = ["sushi","food","fish","japanese","rice"]
-tags = ["food"]
+tags = ["animal","food"]
 unicode = ""
 supports_skin_tone = false
 
@@ -4413,7 +4413,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🍷"
 name = "🍷"
-keywords = ["wine_glass","drink","beverage","drunk","alcohol","booze"]
+keywords = ["wine_glass","drink","beverage","drunk","alcohol","booze","wine","glass"]
 tags = ["food"]
 unicode = ""
 supports_skin_tone = false
@@ -4437,7 +4437,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🍺"
 name = "🍺"
-keywords = ["beer_mug","relax","beverage","drink","drunk","party","pub","summer","alcohol","booze"]
+keywords = ["beer_mug","relax","beverage","drink","drunk","party","pub","summer","alcohol","booze","beer","cheers"]
 tags = ["food"]
 unicode = ""
 supports_skin_tone = false
@@ -4501,7 +4501,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🎂"
 name = "🎂"
-keywords = ["birthday_cake","food","dessert","cake"]
+keywords = ["birthday_cake","food","dessert","cake","birthday","party"]
 tags = ["food"]
 unicode = ""
 supports_skin_tone = false
@@ -4528,7 +4528,7 @@ name = "🎅"
 keywords = ["santa_claus","festival","man","male","xmas","father christmas"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🎆"
@@ -4557,7 +4557,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🎉"
 name = "🎉"
-keywords = ["party_popper","party","congratulations","birthday","magic","circus","celebration","tada"]
+keywords = ["party_popper","party","congratulations","birthday","magic","circus","celebration","tada","celebrate","confetti","hooray"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -4606,7 +4606,7 @@ supports_skin_tone = false
 char = "🎏"
 name = "🎏"
 keywords = ["carp_streamer","fish","japanese","koinobori","carp","banner"]
-tags = ["other"]
+tags = ["animal"]
 unicode = ""
 supports_skin_tone = false
 
@@ -4813,16 +4813,16 @@ supports_skin_tone = false
 [[emoji]]
 char = "🎮"
 name = "🎮"
-keywords = ["video_game","play","console","PS4","controller"]
-tags = ["other"]
+keywords = ["video_game","play","console","PS4","controller","game","gaming","video","games","xbox","playstation"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
 [[emoji]]
 char = "🎯"
 name = "🎯"
-keywords = ["direct_hit","game","play","bar","target","bullseye"]
-tags = ["other"]
+keywords = ["direct_hit","game","play","bar","target","bullseye","goal","aim","direct","hit"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -4838,7 +4838,7 @@ supports_skin_tone = false
 char = "🎱"
 name = "🎱"
 keywords = ["pool_8_ball","pool","hobby","game","luck","magic"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -4846,7 +4846,7 @@ supports_skin_tone = false
 char = "🎲"
 name = "🎲"
 keywords = ["game_die","dice","random","tabletop","play","luck"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -4854,7 +4854,7 @@ supports_skin_tone = false
 char = "🎳"
 name = "🎳"
 keywords = ["bowling","sports","fun","play"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -4862,14 +4862,14 @@ supports_skin_tone = false
 char = "🎴"
 name = "🎴"
 keywords = ["flower_playing_cards","game","sunset","red"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
 [[emoji]]
 char = "🎵"
 name = "🎵"
-keywords = ["musical_note","score","tone","sound"]
+keywords = ["musical_note","score","tone","sound","music","note","song","melody"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -4877,7 +4877,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🎶"
 name = "🎶"
-keywords = ["musical_notes","music","score"]
+keywords = ["musical_notes","music","score","notes","song","melody"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -4934,15 +4934,15 @@ supports_skin_tone = false
 char = "🎽"
 name = "🎽"
 keywords = ["running_shirt","play","pageant"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
 [[emoji]]
 char = "🎾"
 name = "🎾"
-keywords = ["tennis","sports","balls","green"]
-tags = ["other"]
+keywords = ["tennis","sports","balls","green","ball","sport"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -4957,8 +4957,8 @@ supports_skin_tone = false
 [[emoji]]
 char = "🏀"
 name = "🏀"
-keywords = ["basketball","sports","balls","NBA"]
-tags = ["other"]
+keywords = ["basketball","sports","balls","NBA","ball","sport","hoops"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -4992,7 +4992,7 @@ name = "🏃‍♀️"
 keywords = ["woman_running","woman","walking","exercise","race","running","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🏃‍♀️‍➡️"
@@ -5008,7 +5008,7 @@ name = "🏃‍♂️"
 keywords = ["man_running","man","walking","exercise","race","running"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🏃‍♂️‍➡️"
@@ -5030,7 +5030,7 @@ supports_skin_tone = false
 char = "🏄"
 name = "🏄"
 keywords = ["person_surfing","sport","sea"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -5040,7 +5040,7 @@ name = "🏄‍♀️"
 keywords = ["woman_surfing","sports","ocean","sea","summer","beach","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🏄‍♂️"
@@ -5077,8 +5077,8 @@ supports_skin_tone = false
 [[emoji]]
 char = "🏈"
 name = "🏈"
-keywords = ["american_football","sports","balls","NFL"]
-tags = ["other"]
+keywords = ["american_football","sports","balls","NFL","football","american","ball","sport"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -5094,7 +5094,7 @@ supports_skin_tone = false
 char = "🏊"
 name = "🏊"
 keywords = ["person_swimming","sport","pool"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -5104,7 +5104,7 @@ name = "🏊‍♀️"
 keywords = ["woman_swimming","sports","exercise","human","athlete","water","summer","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🏊‍♂️"
@@ -5128,13 +5128,13 @@ name = "🏋️‍♀️"
 keywords = ["woman_lifting_weights","sports","training","exercise","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🏋️‍♂️"
 name = "🏋️‍♂️"
 keywords = ["man_lifting_weights","sport"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -5152,13 +5152,13 @@ name = "🏌️‍♀️"
 keywords = ["woman_golfing","sports","business","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🏌️‍♂️"
 name = "🏌️‍♂️"
 keywords = ["man_golfing","sport"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -5333,7 +5333,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🏢"
 name = "🏢"
-keywords = ["office_building","building","bureau","work"]
+keywords = ["office_building","building","bureau","work","office","business"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -5357,7 +5357,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🏥"
 name = "🏥"
-keywords = ["hospital","building","health","surgery","doctor"]
+keywords = ["hospital","building","health","surgery","doctor","medical"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -6109,7 +6109,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "👀"
 name = "👀"
-keywords = ["eyes","look","watch","stalk","peek","see"]
+keywords = ["eyes","look","watch","stalk","peek","see","looking","watching"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -6205,7 +6205,7 @@ supports_skin_tone = true
 [[emoji]]
 char = "👋"
 name = "👋"
-keywords = ["waving_hand","wave","hands","gesture","goodbye","solong","farewell","hello","hi","palm"]
+keywords = ["waving_hand","wave","hands","gesture","goodbye","solong","farewell","hello","hi","palm","bye","greeting","hey"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = true
@@ -6221,7 +6221,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "👍"
 name = "👍"
-keywords = ["thumbs_up","thumbsup","yes","awesome","good","agree","accept","cool","hand","like","+1"]
+keywords = ["thumbs_up","thumbsup","yes","awesome","good","agree","accept","cool","hand","like","+1","thumbs","up","approve","ok","okay","plus one"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = true
@@ -6229,7 +6229,7 @@ supports_skin_tone = true
 [[emoji]]
 char = "👎"
 name = "👎"
-keywords = ["thumbs_down","thumbsdown","no","dislike","hand","-1"]
+keywords = ["thumbs_down","thumbsdown","no","dislike","hand","-1","thumbs","down","bad","disapprove","disagree","minus one"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = true
@@ -6320,7 +6320,7 @@ name = "👙"
 keywords = ["bikini","swimming","female","woman","girl","fashion","beach","summer"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👚"
@@ -6424,7 +6424,7 @@ name = "👦"
 keywords = ["boy","man","male","guy","teenager"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👧"
@@ -6432,7 +6432,7 @@ name = "👧"
 keywords = ["girl","female","woman","teenager"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨"
@@ -6440,7 +6440,7 @@ name = "👨"
 keywords = ["man","mustache","father","dad","guy","classy","sir","moustache"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍⚕️"
@@ -6448,7 +6448,7 @@ name = "👨‍⚕️"
 keywords = ["man_health_worker","doctor","nurse","therapist","healthcare","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍⚖️"
@@ -6456,7 +6456,7 @@ name = "👨‍⚖️"
 keywords = ["man_judge","justice","court","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍✈️"
@@ -6464,7 +6464,7 @@ name = "👨‍✈️"
 keywords = ["man_pilot","aviator","plane","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍❤️‍👨"
@@ -6488,7 +6488,7 @@ name = "👨‍🌾"
 keywords = ["man_farmer","rancher","gardener","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🍳"
@@ -6496,7 +6496,7 @@ name = "👨‍🍳"
 keywords = ["man_cook","chef","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🍼"
@@ -6512,7 +6512,7 @@ name = "👨‍🎓"
 keywords = ["man_student","graduate","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🎤"
@@ -6520,7 +6520,7 @@ name = "👨‍🎤"
 keywords = ["man_singer","rockstar","entertainer","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🎨"
@@ -6528,7 +6528,7 @@ name = "👨‍🎨"
 keywords = ["man_artist","painter","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🏫"
@@ -6536,7 +6536,7 @@ name = "👨‍🏫"
 keywords = ["man_teacher","instructor","professor","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🏭"
@@ -6544,7 +6544,7 @@ name = "👨‍🏭"
 keywords = ["man_factory_worker","assembly","industrial","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍👦"
@@ -6672,7 +6672,7 @@ name = "👨‍💻"
 keywords = ["man_technologist","coder","developer","engineer","programmer","software","man","human","laptop","computer"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍💼"
@@ -6680,7 +6680,7 @@ name = "👨‍💼"
 keywords = ["man_office_worker","business","manager","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🔧"
@@ -6688,7 +6688,7 @@ name = "👨‍🔧"
 keywords = ["man_mechanic","plumber","man","human","wrench"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🔬"
@@ -6696,7 +6696,7 @@ name = "👨‍🔬"
 keywords = ["man_scientist","biologist","chemist","engineer","physicist","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🦯"
@@ -6784,7 +6784,7 @@ name = "👨‍🚀"
 keywords = ["man_astronaut","space","rocket","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👨‍🚒"
@@ -6792,7 +6792,7 @@ name = "👨‍🚒"
 keywords = ["man_firefighter","fireman","man","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩"
@@ -6800,7 +6800,7 @@ name = "👩"
 keywords = ["woman","female","girls","lady"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍⚕️"
@@ -6808,7 +6808,7 @@ name = "👩‍⚕️"
 keywords = ["woman_health_worker","doctor","nurse","therapist","healthcare","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍⚖️"
@@ -6816,7 +6816,7 @@ name = "👩‍⚖️"
 keywords = ["woman_judge","justice","court","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍✈️"
@@ -6824,7 +6824,7 @@ name = "👩‍✈️"
 keywords = ["woman_pilot","aviator","plane","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍❤️‍👨"
@@ -6864,7 +6864,7 @@ name = "👩‍🌾"
 keywords = ["woman_farmer","rancher","gardener","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🍳"
@@ -6872,7 +6872,7 @@ name = "👩‍🍳"
 keywords = ["woman_cook","chef","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🍼"
@@ -6888,7 +6888,7 @@ name = "👩‍🎓"
 keywords = ["woman_student","graduate","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🎤"
@@ -6896,7 +6896,7 @@ name = "👩‍🎤"
 keywords = ["woman_singer","rockstar","entertainer","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🎨"
@@ -6904,7 +6904,7 @@ name = "👩‍🎨"
 keywords = ["woman_artist","painter","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🏫"
@@ -6912,7 +6912,7 @@ name = "👩‍🏫"
 keywords = ["woman_teacher","instructor","professor","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🏭"
@@ -6920,7 +6920,7 @@ name = "👩‍🏭"
 keywords = ["woman_factory_worker","assembly","industrial","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍👦"
@@ -7008,7 +7008,7 @@ name = "👩‍💻"
 keywords = ["woman_technologist","coder","developer","engineer","programmer","software","woman","human","laptop","computer"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍💼"
@@ -7016,7 +7016,7 @@ name = "👩‍💼"
 keywords = ["woman_office_worker","business","manager","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🔧"
@@ -7024,7 +7024,7 @@ name = "👩‍🔧"
 keywords = ["woman_mechanic","plumber","woman","human","wrench"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🔬"
@@ -7032,7 +7032,7 @@ name = "👩‍🔬"
 keywords = ["woman_scientist","biologist","chemist","engineer","physicist","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🦯"
@@ -7120,7 +7120,7 @@ name = "👩‍🚀"
 keywords = ["woman_astronaut","space","rocket","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👩‍🚒"
@@ -7128,7 +7128,7 @@ name = "👩‍🚒"
 keywords = ["woman_firefighter","fireman","woman","human"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👪"
@@ -7176,7 +7176,7 @@ name = "👮‍♀️"
 keywords = ["woman_police_officer","woman","police","law","legal","enforcement","arrest","911","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👮‍♂️"
@@ -7184,7 +7184,7 @@ name = "👮‍♂️"
 keywords = ["man_police_officer","man","police","law","legal","enforcement","arrest","911"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👯"
@@ -7216,7 +7216,7 @@ name = "👰"
 keywords = ["bride_with_veil","couple","marriage","wedding","woman","bride"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👰‍♀️"
@@ -7280,7 +7280,7 @@ name = "👳‍♀️"
 keywords = ["woman_wearing_turban","female","indian","hinduism","arabs","woman"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👳‍♂️"
@@ -7328,7 +7328,7 @@ name = "👷‍♀️"
 keywords = ["woman_construction_worker","female","human","wip","build","construction","worker","labor","woman"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👷‍♂️"
@@ -7344,7 +7344,7 @@ name = "👸"
 keywords = ["princess","girl","woman","female","blond","crown","royal","queen"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "👹"
@@ -7390,7 +7390,7 @@ supports_skin_tone = false
 char = "👾"
 name = "👾"
 keywords = ["alien_monster","game","arcade","play"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -7405,7 +7405,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "💀"
 name = "💀"
-keywords = ["skull","dead","skeleton","creepy","death","dead"]
+keywords = ["skull","dead","skeleton","creepy","death","die","dying","lmao"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -7424,7 +7424,7 @@ name = "💁‍♀️"
 keywords = ["woman_tipping_hand","female","girl","woman","human","information"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "💁‍♂️"
@@ -7432,7 +7432,7 @@ name = "💁‍♂️"
 keywords = ["man_tipping_hand","male","boy","man","human","information"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "💂"
@@ -7448,7 +7448,7 @@ name = "💂‍♀️"
 keywords = ["woman_guard","uk","gb","british","female","royal","woman"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "💂‍♂️"
@@ -7464,7 +7464,7 @@ name = "💃"
 keywords = ["woman_dancing","female","girl","woman","fun"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "💄"
@@ -7472,7 +7472,7 @@ name = "💄"
 keywords = ["lipstick","female","girl","fashion","woman"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "💅"
@@ -7496,7 +7496,7 @@ name = "💆‍♀️"
 keywords = ["woman_getting_massage","female","girl","woman","head"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "💆‍♂️"
@@ -7504,7 +7504,7 @@ name = "💆‍♂️"
 keywords = ["man_getting_massage","male","boy","man","head"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "💇"
@@ -7520,7 +7520,7 @@ name = "💇‍♀️"
 keywords = ["woman_getting_haircut","female","girl","woman"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "💇‍♂️"
@@ -7528,7 +7528,7 @@ name = "💇‍♂️"
 keywords = ["man_getting_haircut","male","boy","man"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "💈"
@@ -7629,7 +7629,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "💔"
 name = "💔"
-keywords = ["broken_heart","sad","sorry","break","heart","heartbreak"]
+keywords = ["broken_heart","sad","sorry","break","heart","heartbreak","broken","breakup"]
 tags = ["emotion"]
 unicode = ""
 supports_skin_tone = false
@@ -7733,7 +7733,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "💡"
 name = "💡"
-keywords = ["light_bulb","light","electricity","idea"]
+keywords = ["light_bulb","light","electricity","idea","bulb","think","thinking","bright"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -7797,7 +7797,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "💩"
 name = "💩"
-keywords = ["pile_of_poo","hankey","shitface","fail","turd","shit"]
+keywords = ["pile_of_poo","hankey","shitface","fail","turd","shit","poop","crap","pile"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -7805,7 +7805,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "💪"
 name = "💪"
-keywords = ["flexed_biceps","arm","flex","hand","summer","strong","biceps"]
+keywords = ["flexed_biceps","arm","flex","hand","summer","strong","biceps","muscle","strength","bicep","power"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = true
@@ -7845,7 +7845,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "💯"
 name = "💯"
-keywords = ["hundred_points","score","perfect","numbers","century","exam","quiz","test","pass","hundred","100"]
+keywords = ["hundred_points","score","perfect","numbers","century","exam","quiz","test","pass","hundred","100","full","complete","points"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -7941,7 +7941,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "💻"
 name = "💻"
-keywords = ["laptop","technology","screen","display","monitor"]
+keywords = ["laptop","technology","screen","display","monitor","computer","pc","macbook","code","programming"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8077,7 +8077,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "📌"
 name = "📌"
-keywords = ["pushpin","stationery","mark","here"]
+keywords = ["pushpin","stationery","mark","here","pin","pinned","important"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8213,7 +8213,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "📝"
 name = "📝"
-keywords = ["memo","write","documents","stationery","pencil","paper","writing","legal","exam","quiz","test","study","compose"]
+keywords = ["memo","write","documents","stationery","pencil","paper","writing","legal","exam","quiz","test","study","compose","note","document"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8373,7 +8373,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "📱"
 name = "📱"
-keywords = ["mobile_phone","technology","apple","gadgets","dial"]
+keywords = ["mobile_phone","technology","apple","gadgets","dial","phone","mobile","cell","smartphone","iphone"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8421,7 +8421,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "📷"
 name = "📷"
-keywords = ["camera","gadgets","photography"]
+keywords = ["camera","gadgets","photography","photo","picture","snapshot"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8429,7 +8429,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "📸"
 name = "📸"
-keywords = ["camera_with_flash","photography","gadgets"]
+keywords = ["camera_with_flash","photography","gadgets","camera","flash","photo","picture","selfie"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8645,7 +8645,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🔔"
 name = "🔔"
-keywords = ["bell","sound","notification","christmas","xmas","chime"]
+keywords = ["bell","sound","notification","christmas","xmas","chime","notify","alert","ring"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8653,7 +8653,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🔕"
 name = "🔕"
-keywords = ["bell_with_slash","sound","volume","mute","quiet","silent"]
+keywords = ["bell_with_slash","sound","volume","mute","quiet","silent","no","bell","silence"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8669,7 +8669,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🔗"
 name = "🔗"
-keywords = ["link","rings","url"]
+keywords = ["link","rings","url","chain","hyperlink"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8781,7 +8781,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🔥"
 name = "🔥"
-keywords = ["fire","hot","cook","flame"]
+keywords = ["fire","hot","cook","flame","lit","burn","trending","blaze"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -8901,7 +8901,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🔴"
 name = "🔴"
-keywords = ["red_circle","shape","error","danger"]
+keywords = ["red_circle","shape","error","danger","red","circle","dot","live","record","recording"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -9264,7 +9264,7 @@ name = "🕵️‍♀️"
 keywords = ["woman_detective","human","spy","detective","female","woman"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🕵️‍♂️"
@@ -9302,7 +9302,7 @@ supports_skin_tone = false
 char = "🕹️"
 name = "🕹️"
 keywords = ["joystick","game","play"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -9405,7 +9405,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🖱️"
 name = "🖱️"
-keywords = ["computer_mouse","click"]
+keywords = ["computer_mouse","click","mouse","pointer"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -9653,7 +9653,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🤔"
 name = "🤔"
-keywords = ["thinking_face","face","hmmm","think","consider"]
+keywords = ["thinking_face","face","hmmm","think","consider","thinking","hmm","wonder","ponder"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -9669,7 +9669,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🤖"
 name = "🤖"
-keywords = ["robot","computer","machine","bot"]
+keywords = ["robot","computer","machine","bot","ai","artificial","intelligence"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -9773,7 +9773,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🤣"
 name = "🤣"
-keywords = ["rolling_on_the_floor_laughing","face","rolling","floor","laughing","lol","haha","rofl"]
+keywords = ["rolling_on_the_floor_laughing","face","rolling","floor","laughing","lol","haha","rofl","laugh","lmao"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -9797,7 +9797,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🤦"
 name = "🤦"
-keywords = ["person_facepalming","disappointed"]
+keywords = ["person_facepalming","disappointed","facepalm","palm","embarrassed","doh","fail"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -9808,7 +9808,7 @@ name = "🤦‍♀️"
 keywords = ["woman_facepalming","woman","female","girl","disbelief"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🤦‍♂️"
@@ -9816,7 +9816,7 @@ name = "🤦‍♂️"
 keywords = ["man_facepalming","man","male","boy","disbelief"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🤧"
@@ -9928,7 +9928,7 @@ name = "🤴"
 keywords = ["prince","boy","man","male","crown","royal","king"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🤵"
@@ -9960,12 +9960,12 @@ name = "🤶"
 keywords = ["mrs_claus","woman","female","xmas","mother christmas"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🤷"
 name = "🤷"
-keywords = ["person_shrugging","regardless"]
+keywords = ["person_shrugging","regardless","shrug","idk","dunno","whatever","meh"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -9976,7 +9976,7 @@ name = "🤷‍♀️"
 keywords = ["woman_shrugging","woman","female","girl","confused","indifferent","doubt"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🤷‍♂️"
@@ -9984,13 +9984,13 @@ name = "🤷‍♂️"
 keywords = ["man_shrugging","man","male","boy","confused","indifferent","doubt"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🤸"
 name = "🤸"
 keywords = ["person_cartwheeling","sport","gymnastic"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -10046,7 +10046,7 @@ supports_skin_tone = false
 char = "🤼"
 name = "🤼"
 keywords = ["people_wrestling","sport"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -10070,7 +10070,7 @@ supports_skin_tone = false
 char = "🤽"
 name = "🤽"
 keywords = ["person_playing_water_polo","sport"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -10094,7 +10094,7 @@ supports_skin_tone = false
 char = "🤾"
 name = "🤾"
 keywords = ["person_playing_handball","sport"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -10118,7 +10118,7 @@ supports_skin_tone = false
 char = "🤿"
 name = "🤿"
 keywords = ["diving_mask","sport","ocean"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -10574,7 +10574,7 @@ supports_skin_tone = false
 char = "🥹"
 name = "🥹"
 keywords = ["face holding back tears","touched","gratitude","cry"]
-tags = ["other"]
+tags = ["emotion"]
 unicode = ""
 supports_skin_tone = false
 
@@ -10661,7 +10661,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🦄"
 name = "🦄"
-keywords = ["unicorn","animal","nature","mystical"]
+keywords = ["unicorn","animal","nature","mystical","mythical","magical","fantasy","rainbow","rare"]
 tags = ["animal"]
 unicode = ""
 supports_skin_tone = false
@@ -11056,7 +11056,7 @@ name = "🦸‍♀️"
 keywords = ["woman_superhero","woman","female","good","heroine","superpowers"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🦸‍♂️"
@@ -11064,7 +11064,7 @@ name = "🦸‍♂️"
 keywords = ["man_superhero","man","male","good","hero","superpowers"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🦹"
@@ -11080,7 +11080,7 @@ name = "🦹‍♀️"
 keywords = ["woman_supervillain","woman","female","evil","bad","criminal","heroine","superpowers"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🦹‍♂️"
@@ -11088,7 +11088,7 @@ name = "🦹‍♂️"
 keywords = ["man_supervillain","man","male","evil","bad","criminal","hero","superpowers"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🦺"
@@ -11680,7 +11680,7 @@ name = "🧖‍♀️"
 keywords = ["woman_in_steamy_room","female","woman","spa","steamroom","sauna"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧖‍♂️"
@@ -11688,13 +11688,13 @@ name = "🧖‍♂️"
 keywords = ["man_in_steamy_room","male","man","spa","steamroom","sauna"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧗"
 name = "🧗"
 keywords = ["person_climbing","sport"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -11704,7 +11704,7 @@ name = "🧗‍♀️"
 keywords = ["woman_climbing","sports","hobby","woman","female","rock"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧗‍♂️"
@@ -11712,7 +11712,7 @@ name = "🧗‍♂️"
 keywords = ["man_climbing","sports","hobby","man","male","rock"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧘"
@@ -11728,7 +11728,7 @@ name = "🧘‍♀️"
 keywords = ["woman_in_lotus_position","woman","female","meditation","yoga","serenity","zen","mindfulness"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧘‍♂️"
@@ -11736,7 +11736,7 @@ name = "🧘‍♂️"
 keywords = ["man_in_lotus_position","man","male","meditation","yoga","serenity","zen","mindfulness"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧙"
@@ -11752,7 +11752,7 @@ name = "🧙‍♀️"
 keywords = ["woman_mage","woman","female","mage","witch"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧙‍♂️"
@@ -11760,7 +11760,7 @@ name = "🧙‍♂️"
 keywords = ["man_mage","man","male","mage","sorcerer"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧚"
@@ -11776,7 +11776,7 @@ name = "🧚‍♀️"
 keywords = ["woman_fairy","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧚‍♂️"
@@ -11784,7 +11784,7 @@ name = "🧚‍♂️"
 keywords = ["man_fairy","man","male"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧛"
@@ -11800,7 +11800,7 @@ name = "🧛‍♀️"
 keywords = ["woman_vampire","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧛‍♂️"
@@ -11808,7 +11808,7 @@ name = "🧛‍♂️"
 keywords = ["man_vampire","man","male","dracula"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧜"
@@ -11824,7 +11824,7 @@ name = "🧜‍♀️"
 keywords = ["mermaid","woman","female","merwoman","ariel"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧜‍♂️"
@@ -11832,7 +11832,7 @@ name = "🧜‍♂️"
 keywords = ["merman","man","male","triton"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧝"
@@ -11848,7 +11848,7 @@ name = "🧝‍♀️"
 keywords = ["woman_elf","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧝‍♂️"
@@ -11856,7 +11856,7 @@ name = "🧝‍♂️"
 keywords = ["man_elf","man","male"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧞"
@@ -11872,7 +11872,7 @@ name = "🧞‍♀️"
 keywords = ["woman_genie","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧞‍♂️"
@@ -11880,7 +11880,7 @@ name = "🧞‍♂️"
 keywords = ["man_genie","man","male"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧟"
@@ -11896,7 +11896,7 @@ name = "🧟‍♀️"
 keywords = ["woman_zombie","woman","female","undead","walking dead"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧟‍♂️"
@@ -11904,12 +11904,12 @@ name = "🧟‍♂️"
 keywords = ["man_zombie","man","male","dracula","undead","walking dead"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🧠"
 name = "🧠"
-keywords = ["brain","smart","intelligent"]
+keywords = ["brain","smart","intelligent","think","intelligence","clever"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -13037,7 +13037,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "😂"
 name = "😂"
-keywords = ["face_with_tears_of_joy","face","cry","tears","weep","happy","happytears","haha"]
+keywords = ["face_with_tears_of_joy","face","cry","tears","weep","happy","happytears","haha","lol","laugh","crying","joy","funny","lmao","rofl"]
 tags = ["emotion"]
 unicode = ""
 supports_skin_tone = false
@@ -13061,7 +13061,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "😅"
 name = "😅"
-keywords = ["grinning_face_with_sweat","face","hot","happy","laugh","sweat","smile","relief"]
+keywords = ["grinning_face_with_sweat","face","hot","happy","laugh","sweat","smile","relief","nervous","phew"]
 tags = ["emotion"]
 unicode = ""
 supports_skin_tone = false
@@ -13125,7 +13125,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "😍"
 name = "😍"
-keywords = ["smiling_face_with_heart_eyes","face","love","like","affection","valentines","infatuation","crush","heart"]
+keywords = ["smiling_face_with_heart_eyes","face","love","like","affection","valentines","infatuation","crush","heart","eyes","adore","loving"]
 tags = ["emotion"]
 unicode = ""
 supports_skin_tone = false
@@ -13381,7 +13381,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "😭"
 name = "😭"
-keywords = ["loudly_crying_face","sobbing","face","cry","tears","sad","upset","depressed"]
+keywords = ["loudly_crying_face","sobbing","face","cry","tears","sad","upset","depressed","crying","sob","bawling","weep"]
 tags = ["emotion"]
 unicode = ""
 supports_skin_tone = false
@@ -13597,7 +13597,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🙃"
 name = "🙃"
-keywords = ["upside_down_face","face","flipped","silly","smile"]
+keywords = ["upside_down_face","face","flipped","silly","smile","upside","down","sarcasm","irony"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -13624,7 +13624,7 @@ name = "🙅‍♀️"
 keywords = ["woman_gesturing_no","female","girl","woman","nope"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙅‍♂️"
@@ -13632,7 +13632,7 @@ name = "🙅‍♂️"
 keywords = ["man_gesturing_no","male","boy","man","nope"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙆"
@@ -13648,7 +13648,7 @@ name = "🙆‍♀️"
 keywords = ["woman_gesturing_ok","women","girl","female","pink","human","woman"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙆‍♂️"
@@ -13656,7 +13656,7 @@ name = "🙆‍♂️"
 keywords = ["man_gesturing_ok","men","boy","male","blue","human","man"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙇"
@@ -13672,7 +13672,7 @@ name = "🙇‍♀️"
 keywords = ["woman_bowing","woman","female","girl"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙇‍♂️"
@@ -13680,7 +13680,7 @@ name = "🙇‍♂️"
 keywords = ["man_bowing","man","male","boy"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙈"
@@ -13720,7 +13720,7 @@ name = "🙋‍♀️"
 keywords = ["woman_raising_hand","female","girl","woman"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙋‍♂️"
@@ -13728,7 +13728,7 @@ name = "🙋‍♂️"
 keywords = ["man_raising_hand","male","boy","man"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙌"
@@ -13752,7 +13752,7 @@ name = "🙍‍♀️"
 keywords = ["woman_frowning","female","girl","woman","sad","depressed","discouraged","unhappy"]
 tags = ["emotion"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙍‍♂️"
@@ -13760,7 +13760,7 @@ name = "🙍‍♂️"
 keywords = ["man_frowning","male","boy","man","sad","depressed","discouraged","unhappy"]
 tags = ["emotion"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙎"
@@ -13776,7 +13776,7 @@ name = "🙎‍♀️"
 keywords = ["woman_pouting","female","girl","woman"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙎‍♂️"
@@ -13784,12 +13784,12 @@ name = "🙎‍♂️"
 keywords = ["man_pouting","male","boy","man"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🙏"
 name = "🙏"
-keywords = ["folded_hands","please","hope","wish","namaste","highfive","pray","thank you","thanks","appreciate"]
+keywords = ["folded_hands","please","hope","wish","namaste","highfive","pray","thank you","thanks","appreciate","prayer","thank","you","high","five"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -13797,7 +13797,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🚀"
 name = "🚀"
-keywords = ["rocket","launch","ship","staffmode","NASA","outer space","outer_space","fly"]
+keywords = ["rocket","launch","ship","staffmode","NASA","outer space","outer_space","fly","space","fast","speed","boost"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -13805,7 +13805,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🚁"
 name = "🚁"
-keywords = ["helicopter","transportation","vehicle","fly"]
+keywords = ["helicopter","transportation","vehicle","fly","chopper","heli"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -13981,7 +13981,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🚗"
 name = "🚗"
-keywords = ["automobile","red","transportation","vehicle"]
+keywords = ["automobile","red","transportation","vehicle","car","auto","drive"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -14078,7 +14078,7 @@ supports_skin_tone = false
 char = "🚣"
 name = "🚣"
 keywords = ["person_rowing_boat","sport","move"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -14088,7 +14088,7 @@ name = "🚣‍♀️"
 keywords = ["woman_rowing_boat","sports","hobby","water","ship","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🚣‍♂️"
@@ -14230,7 +14230,7 @@ supports_skin_tone = false
 char = "🚴"
 name = "🚴"
 keywords = ["person_biking","bicycle","bike","cyclist","sport","move"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -14240,7 +14240,7 @@ name = "🚴‍♀️"
 keywords = ["woman_biking","bicycle","bike","cyclist","sports","exercise","hipster","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🚴‍♂️"
@@ -14254,7 +14254,7 @@ supports_skin_tone = false
 char = "🚵"
 name = "🚵"
 keywords = ["person_mountain_biking","bicycle","bike","cyclist","sport","move"]
-tags = ["other"]
+tags = ["activity"]
 unicode = ""
 supports_skin_tone = false
 
@@ -14264,7 +14264,7 @@ name = "🚵‍♀️"
 keywords = ["woman_mountain_biking","bicycle","bike","cyclist","transportation","sports","human","race","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🚵‍♂️"
@@ -14288,7 +14288,7 @@ name = "🚶‍♀️"
 keywords = ["woman_walking","human","feet","steps","woman","female"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🚶‍♀️‍➡️"
@@ -14352,7 +14352,7 @@ name = "🚺"
 keywords = ["women_s_room","purple-square","woman","female","toilet","loo","restroom","gender"]
 tags = ["other"]
 unicode = ""
-supports_skin_tone = false
+supports_skin_tone = true
 
 [[emoji]]
 char = "🚻"
@@ -14733,7 +14733,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🟡"
 name = "🟡"
-keywords = ["yellow_circle","round"]
+keywords = ["yellow_circle","round","yellow","circle","dot","away","idle"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
@@ -14741,7 +14741,7 @@ supports_skin_tone = false
 [[emoji]]
 char = "🟢"
 name = "🟢"
-keywords = ["green_circle","round"]
+keywords = ["green_circle","round","green","circle","dot","online","available","go"]
 tags = ["other"]
 unicode = ""
 supports_skin_tone = false
