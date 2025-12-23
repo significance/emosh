@@ -19,13 +19,12 @@ A blazing-fast, Rust-powered CLI tool for finding and copying emoji. Enhanced wi
 # Install from source (requires Rust)
 cargo install --git https://github.com/yourusername/emosh.git
 
-# Search for emoji (shows top results)
+# Search and copy first result (default behavior)
 emosh rocket
-# 1. 🚀  🚀
-# 2. 🎆  🎆
+# 🚀 (copied to clipboard)
 
-# Copy first result to clipboard
-emosh fire --copy
+# Search without copying to clipboard
+emosh fire --no-copy
 # 🔥
 
 # Interactive mode - launches TUI for real-time search
@@ -42,7 +41,29 @@ See [Usage](#usage) below for full details.
 
 ## Installation
 
-### From Release (Recommended)
+### Quick Install (Recommended)
+
+**One-line installer** (Linux/macOS):
+```bash
+curl -fsSL https://raw.githubusercontent.com/yourusername/emosh/master/install.sh | bash
+```
+
+This automatically detects your platform and installs the latest release to `~/.local/bin`.
+
+### Package Managers
+
+**Cargo** (Rust package manager):
+```bash
+cargo install emosh
+```
+
+**Homebrew** (macOS/Linux):
+```bash
+# Coming soon
+brew install emosh
+```
+
+### Manual Installation
 
 Download the latest binary for your platform from the [releases page](https://github.com/yourusername/emosh/releases):
 
@@ -76,8 +97,6 @@ git clone https://github.com/yourusername/emosh.git
 cd emosh
 cargo install --path .
 ```
-
-Make sure `emojis.toml` is in the same directory as the binary or your current working directory.
 
 ## Usage
 

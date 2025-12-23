@@ -12,7 +12,7 @@ pub struct SearchResult {
 /// Search for emojis matching the given query
 ///
 /// Uses a hybrid algorithm combining exact keyword matching and fuzzy search:
-/// 1. Exact keyword match (highest priority, score: 100)
+/// 1. Exact keyword match (highest priority, score: 10000)
 /// 2. Fuzzy match on name (medium priority)
 /// 3. Fuzzy match on keywords (lower priority, 70% of fuzzy score)
 ///
@@ -46,25 +46,34 @@ pub fn search(query: &str, emojis: &[Emoji], limit: usize) -> Vec<SearchResult> 
         .iter()
         .filter_map(|emoji| {
             let mut score: i64 = 0;
+            let mut has_exact_match = false;
 
-            // 1. Exact keyword match (highest priority)
-            if emoji.keywords.iter().any(|k| k.to_lowercase() == query_lower) {
-                score = 100;
+            // 1. Exact keyword match (highest priority - score 10000)
+            if emoji
+                .keywords
+                .iter()
+                .any(|k| k.to_lowercase() == query_lower)
+            {
+                score = 10000;
+                has_exact_match = true;
             }
 
-            // 2. Fuzzy match on name
-            let name_lower = emoji.name.to_lowercase();
-            if let Some(fuzzy_score) = matcher.fuzzy_match(&name_lower, &query_lower) {
-                score = score.max(fuzzy_score);
-            }
+            // Only do fuzzy matching if we don't have an exact match
+            if !has_exact_match {
+                // 2. Fuzzy match on name
+                let name_lower = emoji.name.to_lowercase();
+                if let Some(fuzzy_score) = matcher.fuzzy_match(&name_lower, &query_lower) {
+                    score = score.max(fuzzy_score);
+                }
 
-            // 3. Fuzzy match on keywords
-            for keyword in &emoji.keywords {
-                let keyword_lower = keyword.to_lowercase();
-                if let Some(fuzzy_score) = matcher.fuzzy_match(&keyword_lower, &query_lower) {
-                    // Keywords get 70% of the fuzzy score (lower priority than name)
-                    let keyword_score = (fuzzy_score * 7) / 10;
-                    score = score.max(keyword_score);
+                // 3. Fuzzy match on keywords
+                for keyword in &emoji.keywords {
+                    let keyword_lower = keyword.to_lowercase();
+                    if let Some(fuzzy_score) = matcher.fuzzy_match(&keyword_lower, &query_lower) {
+                        // Keywords get 70% of the fuzzy score (lower priority than name)
+                        let keyword_score = (fuzzy_score * 7) / 10;
+                        score = score.max(keyword_score);
+                    }
                 }
             }
 
@@ -115,14 +124,16 @@ mod tests {
         let results = search("unicorn", &emojis, 10);
         assert_eq!(results.len(), 1);
         assert_eq!(results[0].emoji.char, "🦄");
-        assert!(results[0].score >= 100); // Exact match should score at least 100
+        assert_eq!(results[0].score, 10000); // Exact match should score 10000
     }
 
     #[test]
     fn test_search_fuzzy_match_on_name() {
-        let emojis = vec![
-            create_test_emoji("🦄", "unicorn", vec!["animal", "fantasy"]),
-        ];
+        let emojis = vec![create_test_emoji(
+            "🦄",
+            "unicorn",
+            vec!["animal", "fantasy"],
+        )];
 
         let results = search("unic", &emojis, 10);
         assert!(!results.is_empty());
@@ -132,9 +143,11 @@ mod tests {
 
     #[test]
     fn test_search_fuzzy_match_on_keywords() {
-        let emojis = vec![
-            create_test_emoji("🦄", "unicorn", vec!["fantasy", "magical"]),
-        ];
+        let emojis = vec![create_test_emoji(
+            "🦄",
+            "unicorn",
+            vec!["fantasy", "magical"],
+        )];
 
         let results = search("magic", &emojis, 10);
         assert!(!results.is_empty());
@@ -143,9 +156,7 @@ mod tests {
 
     #[test]
     fn test_search_empty_query() {
-        let emojis = vec![
-            create_test_emoji("🦄", "unicorn", vec!["animal"]),
-        ];
+        let emojis = vec![create_test_emoji("🦄", "unicorn", vec!["animal"])];
 
         let results = search("", &emojis, 10);
         assert!(results.is_empty());
@@ -153,9 +164,7 @@ mod tests {
 
     #[test]
     fn test_search_no_matches() {
-        let emojis = vec![
-            create_test_emoji("🦄", "unicorn", vec!["animal"]),
-        ];
+        let emojis = vec![create_test_emoji("🦄", "unicorn", vec!["animal"])];
 
         let results = search("xyz123", &emojis, 10);
         assert!(results.is_empty());
@@ -176,9 +185,11 @@ mod tests {
 
     #[test]
     fn test_search_case_insensitive() {
-        let emojis = vec![
-            create_test_emoji("🦄", "Unicorn", vec!["ANIMAL", "Fantasy"]),
-        ];
+        let emojis = vec![create_test_emoji(
+            "🦄",
+            "Unicorn",
+            vec!["ANIMAL", "Fantasy"],
+        )];
 
         let results1 = search("unicorn", &emojis, 10);
         let results2 = search("UNICORN", &emojis, 10);
@@ -204,9 +215,7 @@ mod tests {
 
     #[test]
     fn test_whitespace_trimming() {
-        let emojis = vec![
-            create_test_emoji("🦄", "unicorn", vec!["animal"]),
-        ];
+        let emojis = vec![create_test_emoji("🦄", "unicorn", vec!["animal"])];
 
         let results = search("  unicorn  ", &emojis, 10);
         assert!(!results.is_empty());
