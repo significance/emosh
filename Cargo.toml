@@ -5,6 +5,7 @@ edition = "2021"
 authors = ["Emosh Contributors"]
 description = "Find relevant emoji from text on the command-line"
 repository = "https://github.com/yourusername/emosh"
+homepage = "https://github.com/yourusername/emosh"
 license = "MIT"
 keywords = ["emoji", "cli", "search", "fuzzy"]
 categories = ["command-line-utilities"]
@@ -57,3 +58,33 @@ lto = true               # Link-time optimization
 codegen-units = 1        # Single codegen unit for better optimization
 strip = true             # Strip symbols
 panic = "abort"          # Smaller panic handler
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
+
+# Debian/Ubuntu package metadata (for cargo-deb)
+[package.metadata.deb]
+maintainer = "Emosh Contributors <noreply@example.com>"
+copyright = "2025, Emosh Contributors <noreply@example.com>"
+license-file = ["LICENSE", "4"]
+extended-description = """\
+A blazing-fast emoji finder for the command line. \
+Features hybrid search combining exact keyword matching with fuzzy search, \
+interactive TUI mode, and skin tone support."""
+depends = "$auto"
+section = "utils"
+priority = "optional"
+assets = [
+    ["target/release/emosh", "usr/bin/", "755"],
+    ["README.md", "usr/share/doc/emosh/", "644"],
+]
+
+# RPM package metadata (for cargo-generate-rpm)
+[package.metadata.generate-rpm]
+license = "MIT"
+assets = [
+    { source = "target/release/emosh", dest = "/usr/bin/emosh", mode = "755" },
+    { source = "README.md", dest = "/usr/share/doc/emosh/README.md", mode = "644" },
+]

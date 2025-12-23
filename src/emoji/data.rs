@@ -1,7 +1,9 @@
 use anyhow::{Context, Result};
 use once_cell::sync::Lazy;
 use serde::{Deserialize, Serialize};
-use std::fs;
+
+/// Embed the emoji database TOML at compile time
+const EMOJI_DATA: &str = include_str!("../../emojis.toml");
 
 /// Represents a single emoji with its metadata
 #[derive(Debug, Clone, Deserialize, Serialize, PartialEq)]
@@ -30,20 +32,10 @@ struct EmojiDatabase {
 pub static EMOJIS: Lazy<Vec<Emoji>> =
     Lazy::new(|| load_emojis().expect("Failed to load emoji database"));
 
-/// Load emojis from the emojis.toml file
+/// Load emojis from embedded TOML data
 fn load_emojis() -> Result<Vec<Emoji>> {
-    // Try to load from the same directory as the binary
-    let toml_path = std::env::current_exe()
-        .ok()
-        .and_then(|p| p.parent().map(|p| p.join("emojis.toml")))
-        .unwrap_or_else(|| "emojis.toml".into());
-
-    let content = fs::read_to_string(&toml_path)
-        .or_else(|_| fs::read_to_string("emojis.toml"))
-        .context("Failed to read emojis.toml. Make sure the file exists in the current directory or next to the binary.")?;
-
     let database: EmojiDatabase =
-        toml::from_str(&content).context("Failed to parse emoji database")?;
+        toml::from_str(EMOJI_DATA).context("Failed to parse embedded emoji database")?;
 
     Ok(database.emoji)
 }
