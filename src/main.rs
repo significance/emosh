@@ -31,7 +31,9 @@ fn main() -> Result<()> {
 
     if let Some(query) = cli.query {
         // CLI mode: direct search
-        run_cli_mode(&query, cli.limit, cli.copy, skin_tone)?;
+        // By default, copy to clipboard (unless --no-copy is specified)
+        let should_copy = !cli.no_copy;
+        run_cli_mode(&query, cli.limit, should_copy, skin_tone)?;
     } else {
         // TUI mode: interactive search
         run_tui_mode(config)?;
@@ -40,7 +42,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-/// Run in CLI mode: search and print results
+/// Run in CLI mode: search and return the first result
 fn run_cli_mode(query: &str, limit: usize, copy_first: bool, skin_tone: u8) -> Result<()> {
     let results = search(query, &EMOJIS, limit);
 
@@ -49,18 +51,16 @@ fn run_cli_mode(query: &str, limit: usize, copy_first: bool, skin_tone: u8) -> R
         return Ok(());
     }
 
-    // Copy first result if requested
+    // Get first result with skin tone applied
+    let emoji_with_tone = apply_skin_tone(&results[0].emoji, skin_tone);
+
+    // Copy to clipboard if requested (default behavior)
     if copy_first {
-        let emoji_with_tone = apply_skin_tone(&results[0].emoji, skin_tone);
         copy_to_clipboard(&emoji_with_tone)?;
-        println!("{emoji_with_tone}");
-    } else {
-        // Print all results
-        for (i, result) in results.iter().enumerate() {
-            let emoji_with_tone = apply_skin_tone(&result.emoji, skin_tone);
-            println!("{}. {}  {}", i + 1, emoji_with_tone, result.emoji.name);
-        }
     }
+
+    // Always print the first result
+    println!("{emoji_with_tone}");
 
     Ok(())
 }
