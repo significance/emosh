@@ -134,10 +134,9 @@ mod tests {
         let config = Config::default();
         let mut app = App::new(&config);
 
-        app.update_query("test".to_string(), |_| vec![
-            create_test_result("🦄", 100),
-            create_test_result("🐴", 50),
-        ]);
+        app.update_query("test".to_string(), |_| {
+            vec![create_test_result("🦄", 100), create_test_result("🐴", 50)]
+        });
 
         assert_eq!(app.query, "test");
         assert_eq!(app.results.len(), 2);

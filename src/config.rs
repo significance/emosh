@@ -5,13 +5,11 @@ use std::fs;
 use std::path::PathBuf;
 
 /// User configuration
-#[derive(Debug, Serialize, Deserialize, Clone)]
-#[derive(Default)]
+#[derive(Debug, Serialize, Deserialize, Clone, Default)]
 pub struct Config {
     /// Default skin tone (0-5)
     pub skin_tone: u8,
 }
-
 
 /// Get the path to the config file
 fn config_path() -> Result<PathBuf> {
@@ -34,8 +32,7 @@ pub fn load_config() -> Result<Config> {
         let content = fs::read_to_string(&path)
             .with_context(|| format!("Failed to read config from {}", path.display()))?;
 
-        let config: Config = toml::from_str(&content)
-            .context("Failed to parse config file")?;
+        let config: Config = toml::from_str(&content).context("Failed to parse config file")?;
 
         Ok(config)
     } else {
@@ -47,8 +44,7 @@ pub fn load_config() -> Result<Config> {
 pub fn save_config(config: &Config) -> Result<()> {
     let path = config_path()?;
 
-    let content = toml::to_string_pretty(config)
-        .context("Failed to serialize config")?;
+    let content = toml::to_string_pretty(config).context("Failed to serialize config")?;
 
     fs::write(&path, content)
         .with_context(|| format!("Failed to write config to {}", path.display()))?;

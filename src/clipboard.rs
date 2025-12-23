@@ -16,8 +16,7 @@ use arboard::Clipboard;
 /// copy_to_clipboard("🦄").expect("Failed to copy");
 /// ```
 pub fn copy_to_clipboard(text: &str) -> Result<()> {
-    let mut clipboard = Clipboard::new()
-        .context("Failed to access clipboard")?;
+    let mut clipboard = Clipboard::new().context("Failed to access clipboard")?;
 
     clipboard
         .set_text(text)

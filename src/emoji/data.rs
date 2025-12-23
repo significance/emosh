@@ -27,9 +27,8 @@ struct EmojiDatabase {
 }
 
 /// Global emoji database, loaded lazily on first access
-pub static EMOJIS: Lazy<Vec<Emoji>> = Lazy::new(|| {
-    load_emojis().expect("Failed to load emoji database")
-});
+pub static EMOJIS: Lazy<Vec<Emoji>> =
+    Lazy::new(|| load_emojis().expect("Failed to load emoji database"));
 
 /// Load emojis from the emojis.toml file
 fn load_emojis() -> Result<Vec<Emoji>> {
@@ -43,8 +42,8 @@ fn load_emojis() -> Result<Vec<Emoji>> {
         .or_else(|_| fs::read_to_string("emojis.toml"))
         .context("Failed to read emojis.toml. Make sure the file exists in the current directory or next to the binary.")?;
 
-    let database: EmojiDatabase = toml::from_str(&content)
-        .context("Failed to parse emoji database")?;
+    let database: EmojiDatabase =
+        toml::from_str(&content).context("Failed to parse emoji database")?;
 
     Ok(database.emoji)
 }
@@ -124,7 +123,9 @@ mod tests {
     #[test]
     fn test_emoji_fields() {
         // Just verify we can find a known emoji
-        let unicorn = EMOJIS.iter().find(|e| e.keywords.contains(&"unicorn".to_string()));
+        let unicorn = EMOJIS
+            .iter()
+            .find(|e| e.keywords.contains(&"unicorn".to_string()));
         assert!(unicorn.is_some(), "Should find unicorn emoji");
 
         if let Some(emoji) = unicorn {
