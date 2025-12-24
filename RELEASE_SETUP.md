@@ -17,13 +17,24 @@ cargo-dist is configured to build and distribute `emosh` across multiple platfor
 1. Go to [npmjs.com](https://www.npmjs.com)
 2. Sign up for a free account
 3. Verify your email
+4. **Enable 2FA** (required for token creation)
+   - Settings → Two-Factor Authentication → Enable
 
 ### Step 2: Generate npm Access Token
+⚠️ **Important**: npm now requires **Granular Access Tokens** (classic tokens are deprecated)
+
 1. Log in to [npmjs.com](https://www.npmjs.com)
 2. Click your profile picture → **Access Tokens**
-3. Click **Generate New Token** → **Classic Token**
-4. Select **Automation** type (for CI/CD)
-5. Copy the token (starts with `npm_...`)
+3. Click **Generate New Token** → **Granular Access Token**
+4. Configure the token:
+   - **Token name**: `cargo-dist-ci` (or any descriptive name)
+   - **Expiration**: 90 days (maximum allowed)
+   - **Packages and scopes**: Select packages → Choose your package scope
+   - **Permissions**: Read and write
+5. Click **Generate Token**
+6. Copy the token immediately (starts with `npm_...`)
+
+⏰ **Note**: Tokens expire after 90 days. You'll need to regenerate and update the GitHub secret every 3 months.
 
 ### Step 3: Add Token to GitHub
 1. Go to your GitHub repo settings
@@ -197,8 +208,17 @@ After release completes, verify:
 
 **npm publish fails:**
 - Check `NPM_TOKEN` secret is set correctly
-- Verify token has "Automation" permissions
+- Verify you're using a **Granular Access Token** (not classic)
+- Ensure token has "Read and write" permissions for your package
+- Check if token has expired (90-day limit) - regenerate if needed
+- Verify 2FA is enabled on your npm account
 - Ensure package name isn't already taken
+
+**npm token expired:**
+- Tokens expire every 90 days (npm security requirement)
+- Generate a new granular token following Step 2 above
+- Update the `NPM_TOKEN` secret in GitHub repo settings
+- No code changes needed, just update the secret
 
 **Homebrew publish fails:**
 - Check `tap` is configured in `Cargo.toml`
