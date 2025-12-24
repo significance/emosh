@@ -11,13 +11,28 @@ A blazing-fast, Rust-powered CLI tool for finding and copying emoji. Enhanced wi
 - **CLI Mode**: Quick direct search and copy
 - **Skin Tone Support**: Adjustable skin tones (0-5) with persistence
 - **Fast**: Sub-5ms search latency, <50ms startup time
+- **Standalone Binary**: No runtime dependencies, emoji data embedded in binary
 - **Cross-platform**: Linux, macOS (Intel & Apple Silicon), Windows
+- **Multiple Install Methods**: Shell/PowerShell installers, npm, Homebrew, Cargo, or direct download
+
+## Supported Platforms
+
+| Platform | Architecture | Installer | Status |
+|----------|-------------|-----------|--------|
+| Linux | x86_64 | Shell, npm, Cargo | ✅ |
+| Linux | ARM64 | Shell, npm, Cargo | ✅ |
+| macOS | Intel (x86_64) | Shell, Homebrew, npm, Cargo | ✅ |
+| macOS | Apple Silicon (ARM64) | Shell, Homebrew, npm, Cargo | ✅ |
+| Windows | x86_64 | PowerShell, npm, Cargo | ✅ |
 
 ## Quickstart
 
 ```bash
-# Install from source (requires Rust)
-cargo install --git https://github.com/yourusername/emosh.git
+# Install with one command (Linux/macOS)
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/yourusername/emosh/releases/latest/download/emosh-installer.sh | sh
+
+# Or via npm (all platforms)
+npm install -g emosh
 
 # Search and copy first result (default behavior)
 emosh rocket
@@ -43,59 +58,86 @@ See [Usage](#usage) below for full details.
 
 ### Quick Install (Recommended)
 
-**One-line installer** (Linux/macOS):
+**Shell Installer** (Linux/macOS):
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yourusername/emosh/master/install.sh | bash
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/yourusername/emosh/releases/latest/download/emosh-installer.sh | sh
 ```
 
-This automatically detects your platform and installs the latest release to `~/.local/bin`.
+**PowerShell Installer** (Windows):
+```powershell
+irm https://github.com/yourusername/emosh/releases/latest/download/emosh-installer.ps1 | iex
+```
+
+These installers automatically detect your platform and architecture, download the appropriate binary, and install to your system.
 
 ### Package Managers
+
+**npm** (all platforms):
+```bash
+npm install -g emosh
+```
+
+**Homebrew** (macOS/Linux):
+```bash
+brew install yourusername/emosh/emosh
+```
 
 **Cargo** (Rust package manager):
 ```bash
 cargo install emosh
 ```
 
-**Homebrew** (macOS/Linux):
+> **Note**: Replace `yourusername` with the actual GitHub username in all URLs above.
+
+### Manual Binary Installation
+
+Download pre-built binaries from the [releases page](https://github.com/yourusername/emosh/releases).
+
+**Linux (x86_64):**
 ```bash
-# Coming soon
-brew install emosh
-```
-
-### Manual Installation
-
-Download the latest binary for your platform from the [releases page](https://github.com/yourusername/emosh/releases):
-
-**Linux:**
-```bash
-wget https://github.com/yourusername/emosh/releases/latest/download/emosh-linux-x86_64.tar.gz
-tar -xzf emosh-linux-x86_64.tar.gz
+curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-x86_64-unknown-linux-gnu.tar.gz | tar -xz
 sudo mv emosh /usr/local/bin/
 ```
 
-**macOS:**
+**Linux (ARM64):**
 ```bash
-# Intel
-curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-macos-x86_64.tar.gz | tar -xz
-sudo mv emosh /usr/local/bin/
-
-# Apple Silicon
-curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-macos-aarch64.tar.gz | tar -xz
+curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-aarch64-unknown-linux-gnu.tar.gz | tar -xz
 sudo mv emosh /usr/local/bin/
 ```
 
-**Windows:**
-Download `emosh-windows-x86_64.zip` from releases and extract to a directory in your PATH.
+**macOS (Intel):**
+```bash
+curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-x86_64-apple-darwin.tar.gz | tar -xz
+sudo mv emosh /usr/local/bin/
+```
 
-### From Source
+**macOS (Apple Silicon):**
+```bash
+curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-aarch64-apple-darwin.tar.gz | tar -xz
+sudo mv emosh /usr/local/bin/
+```
+
+**Windows (x86_64):**
+```powershell
+# Download from releases page
+https://github.com/yourusername/emosh/releases/latest/download/emosh-x86_64-pc-windows-msvc.zip
+# Extract and add to PATH
+```
+
+### Build from Source
 
 Requires [Rust](https://rustup.rs/) 1.70+:
 
 ```bash
 git clone https://github.com/yourusername/emosh.git
 cd emosh
-cargo install --path .
+cargo build --release
+# Binary will be at target/release/emosh
+```
+
+Or install directly via cargo:
+```bash
+cargo install --git https://github.com/yourusername/emosh.git
 ```
 
 ## Usage
@@ -176,14 +218,14 @@ Performance targets (achieved on M1 MacBook Pro):
 - Binary size: <5MB ✓
 - Memory usage: <10MB ✓
 
-## Building from Source
+## Development
 
 ### Prerequisites
 
 - Rust 1.70 or later
 - Cargo (comes with Rust)
 
-### Build
+### Building
 
 ```bash
 git clone https://github.com/yourusername/emosh.git
@@ -193,19 +235,30 @@ cargo build --release
 
 The binary will be at `target/release/emosh`.
 
-### Run Tests
+### Testing
 
 ```bash
+# Run all tests
 cargo test
-```
 
-### Run Benchmarks
+# Run tests with output
+cargo test -- --nocapture
 
-```bash
+# Run benchmarks
 cargo bench
 ```
 
-## Development
+### Code Quality
+
+```bash
+# Format code
+cargo fmt
+
+# Run linter
+cargo clippy -- -D warnings
+```
+
+### Guidelines
 
 See [CLAUDE.md](CLAUDE.md) for code style guidelines and [ARCHITECTURE.md](ARCHITECTURE.md) for design decisions.
 
@@ -219,7 +272,7 @@ emosh/
 │   ├── config.rs        # User config management
 │   ├── clipboard.rs     # Clipboard operations
 │   ├── emoji/           # Emoji data and search
-│   │   ├── data.rs      # Data loading
+│   │   ├── data.rs      # Data loading (embeds emojis.toml at compile time)
 │   │   ├── search.rs    # Search algorithm
 │   │   └── mod.rs
 │   └── ui/              # TUI components
@@ -227,8 +280,9 @@ emosh/
 │       ├── input.rs     # Keyboard handling
 │       ├── render.rs    # UI rendering
 │       └── mod.rs
-├── emojis.toml          # Emoji database (1898 emoji)
-└── Cargo.toml           # Dependencies
+├── emojis.toml          # Emoji database (1898 emoji, embedded in binary)
+├── Cargo.toml           # Dependencies and metadata
+└── dist-workspace.toml  # cargo-dist release configuration
 ```
 
 ## Comparison with Original emoj
