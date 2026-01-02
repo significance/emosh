@@ -29,7 +29,7 @@ A blazing-fast, Rust-powered CLI tool for finding and copying emoji. Enhanced wi
 
 ```bash
 # Install with one command (Linux/macOS)
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/yourusername/emosh/releases/latest/download/emosh-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/significance/emosh/releases/latest/download/emosh-installer.sh | sh
 
 # Or via npm (all platforms)
 npm install -g emosh
@@ -60,12 +60,12 @@ See [Usage](#usage) below for full details.
 
 **Shell Installer** (Linux/macOS):
 ```bash
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/yourusername/emosh/releases/latest/download/emosh-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/significance/emosh/releases/latest/download/emosh-installer.sh | sh
 ```
 
 **PowerShell Installer** (Windows):
 ```powershell
-irm https://github.com/yourusername/emosh/releases/latest/download/emosh-installer.ps1 | iex
+irm https://github.com/significance/emosh/releases/latest/download/emosh-installer.ps1 | iex
 ```
 
 These installers automatically detect your platform and architecture, download the appropriate binary, and install to your system.
@@ -79,7 +79,7 @@ npm install -g emosh
 
 **Homebrew** (macOS/Linux):
 ```bash
-brew install yourusername/emosh/emosh
+brew install significance/emosh/emosh
 ```
 
 **Cargo** (Rust package manager):
@@ -87,40 +87,40 @@ brew install yourusername/emosh/emosh
 cargo install emosh
 ```
 
-> **Note**: Replace `yourusername` with the actual GitHub username in all URLs above.
+> **Note**: Replace `significance` with the actual GitHub username in all URLs above.
 
 ### Manual Binary Installation
 
-Download pre-built binaries from the [releases page](https://github.com/yourusername/emosh/releases).
+Download pre-built binaries from the [releases page](https://github.com/significance/emosh/releases).
 
 **Linux (x86_64):**
 ```bash
-curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+curl -L https://github.com/significance/emosh/releases/latest/download/emosh-x86_64-unknown-linux-gnu.tar.gz | tar -xz
 sudo mv emosh /usr/local/bin/
 ```
 
 **Linux (ARM64):**
 ```bash
-curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-aarch64-unknown-linux-gnu.tar.gz | tar -xz
+curl -L https://github.com/significance/emosh/releases/latest/download/emosh-aarch64-unknown-linux-gnu.tar.gz | tar -xz
 sudo mv emosh /usr/local/bin/
 ```
 
 **macOS (Intel):**
 ```bash
-curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-x86_64-apple-darwin.tar.gz | tar -xz
+curl -L https://github.com/significance/emosh/releases/latest/download/emosh-x86_64-apple-darwin.tar.gz | tar -xz
 sudo mv emosh /usr/local/bin/
 ```
 
 **macOS (Apple Silicon):**
 ```bash
-curl -L https://github.com/yourusername/emosh/releases/latest/download/emosh-aarch64-apple-darwin.tar.gz | tar -xz
+curl -L https://github.com/significance/emosh/releases/latest/download/emosh-aarch64-apple-darwin.tar.gz | tar -xz
 sudo mv emosh /usr/local/bin/
 ```
 
 **Windows (x86_64):**
 ```powershell
 # Download from releases page
-https://github.com/yourusername/emosh/releases/latest/download/emosh-x86_64-pc-windows-msvc.zip
+https://github.com/significance/emosh/releases/latest/download/emosh-x86_64-pc-windows-msvc.zip
 # Extract and add to PATH
 ```
 
@@ -129,7 +129,7 @@ https://github.com/yourusername/emosh/releases/latest/download/emosh-x86_64-pc-w
 Requires [Rust](https://rustup.rs/) 1.70+:
 
 ```bash
-git clone https://github.com/yourusername/emosh.git
+git clone https://github.com/significance/emosh.git
 cd emosh
 cargo build --release
 # Binary will be at target/release/emosh
@@ -137,7 +137,7 @@ cargo build --release
 
 Or install directly via cargo:
 ```bash
-cargo install --git https://github.com/yourusername/emosh.git
+cargo install --git https://github.com/significance/emosh.git
 ```
 
 ## Usage
@@ -228,7 +228,7 @@ Performance targets (achieved on M1 MacBook Pro):
 ### Building
 
 ```bash
-git clone https://github.com/yourusername/emosh.git
+git clone https://github.com/significance/emosh.git
 cd emosh
 cargo build --release
 ```

@@ -2,10 +2,10 @@
   "name": "emosh",
   "version": "0.1.0",
   "description": "Find relevant emoji from text on the command-line",
-  "homepage": "https://github.com/yourusername/emosh",
+  "homepage": "https://github.com/significance/emosh",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/emosh.git"
+    "url": "git+https://github.com/significance/emosh.git"
   },
   "keywords": [
     "emoji",
@@ -17,6 +17,6 @@
   "author": "Emosh Contributors",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yourusername/emosh/issues"
+    "url": "https://github.com/significance/emosh/issues"
   }
 }

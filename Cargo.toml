@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Emosh Contributors"]
 description = "Find relevant emoji from text on the command-line"
-repository = "https://github.com/yourusername/emosh"
-homepage = "https://github.com/yourusername/emosh"
+repository = "https://github.com/significance/emosh"
+homepage = "https://github.com/significance/emosh"
 license = "MIT"
 keywords = ["emoji", "cli", "search", "fuzzy"]
 categories = ["command-line-utilities"]
@@ -67,8 +67,7 @@ lto = "thin"
 # cargo-dist configuration
 [package.metadata.dist]
 # Specify your Homebrew tap (format: username/homebrew-tapname)
-# Example: tap = "yourusername/homebrew-emosh"
-# tap = "yourusername/homebrew-emosh"
+tap = "significance/homebrew-emosh"
 
 # Debian/Ubuntu package metadata (for cargo-deb)
 [package.metadata.deb]
