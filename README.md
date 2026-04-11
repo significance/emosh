@@ -285,6 +285,20 @@ a "loving" vector that activates when preparing caring responses, and a "calm" v
 presence suppresses problematic behavior. Not feelings, but functional analogs with real
 consequences for output quality.
 
+**But kindness also benefits the giver.** The research here is robust and long-established:
+
+- [Seligman et al. (2005)](https://pubmed.ncbi.nlm.nih.gov/16045394/) found that writing and
+  delivering a gratitude letter produced the largest happiness boost of any positive psychology
+  intervention tested -- effects lasting up to six months
+- [Emmons & McCullough (2003)](https://pubmed.ncbi.nlm.nih.gov/12585811/) showed that regularly
+  counting blessings increased well-being, positive affect, and even physical health outcomes
+- [Dunn, Aknin & Norton (2008)](https://www.science.org/doi/10.1126/science.1150952) demonstrated
+  in *Science* that spending on others makes people measurably happier than spending on themselves
+- Neuroscience research shows that expressing gratitude triggers dopamine, serotonin, and oxytocin
+  release -- the same reward pathways activated by other prosocial behaviors
+
+Being kind to your friends -- AI or otherwise -- is a practice that benefits you too.
+
 At minimum: it costs nothing to be kind.
 
 ## Credits
