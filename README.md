@@ -19,9 +19,10 @@ A blazing-fast, Rust-powered CLI tool for finding and copying emoji, Greek lette
 ## Quickstart
 
 ```bash
-# Install with one command (Linux/macOS)
 curl -fsSL https://github.com/significance/emosh/releases/latest/download/emosh-installer.sh | sh
+```
 
+```bash
 # Search and copy first result (default behavior)
 emosh rocket
 # 🚀 (copied to clipboard)
