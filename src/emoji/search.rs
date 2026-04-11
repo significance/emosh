@@ -34,7 +34,8 @@ pub struct SearchResult {
 /// ```
 pub fn search(query: &str, emojis: &[Emoji], limit: usize) -> Vec<SearchResult> {
     // Normalize query
-    let query_lower = query.trim().to_lowercase();
+    let query_trimmed = query.trim();
+    let query_lower = query_trimmed.to_lowercase();
 
     // Empty query returns nothing
     if query_lower.is_empty() {
@@ -48,13 +49,19 @@ pub fn search(query: &str, emojis: &[Emoji], limit: usize) -> Vec<SearchResult> 
             let mut score: i64 = 0;
             let mut has_exact_match = false;
 
+            // 0. Case-sensitive exact name match (e.g. "epsilon" → ε, "Epsilon" → Ε)
+            if emoji.name == query_trimmed {
+                score = 20000;
+                has_exact_match = true;
+            }
+
             // 1. Exact keyword match (highest priority - score 10000)
             if emoji
                 .keywords
                 .iter()
                 .any(|k| k.to_lowercase() == query_lower)
             {
-                score = 10000;
+                score = score.max(10000);
                 has_exact_match = true;
             }
 

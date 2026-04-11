@@ -1,6 +1,346 @@
 # Enhanced emoji database for emosh
 # Generated from emojilib with enhanced keywords
-# Total emojis: 1898
+# Includes Greek letters (case-sensitive: alpha → α, Alpha → Α)
+
+# Greek letters (lowercase)
+[[emoji]]
+char = "α"
+name = "alpha"
+keywords = ["alpha", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03B1"
+supports_skin_tone = false
+[[emoji]]
+char = "β"
+name = "beta"
+keywords = ["beta", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03B2"
+supports_skin_tone = false
+[[emoji]]
+char = "γ"
+name = "gamma"
+keywords = ["gamma", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03B3"
+supports_skin_tone = false
+[[emoji]]
+char = "δ"
+name = "delta"
+keywords = ["delta", "greek", "letter", "math", "change"]
+tags = ["greek"]
+unicode = "U+03B4"
+supports_skin_tone = false
+[[emoji]]
+char = "ε"
+name = "epsilon"
+keywords = ["epsilon", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03B5"
+supports_skin_tone = false
+[[emoji]]
+char = "ζ"
+name = "zeta"
+keywords = ["zeta", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03B6"
+supports_skin_tone = false
+[[emoji]]
+char = "η"
+name = "eta"
+keywords = ["eta", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03B7"
+supports_skin_tone = false
+[[emoji]]
+char = "θ"
+name = "theta"
+keywords = ["theta", "greek", "letter", "math", "angle"]
+tags = ["greek"]
+unicode = "U+03B8"
+supports_skin_tone = false
+[[emoji]]
+char = "ι"
+name = "iota"
+keywords = ["iota", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03B9"
+supports_skin_tone = false
+[[emoji]]
+char = "κ"
+name = "kappa"
+keywords = ["kappa", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03BA"
+supports_skin_tone = false
+[[emoji]]
+char = "λ"
+name = "lambda"
+keywords = ["lambda", "greek", "letter", "math", "function"]
+tags = ["greek"]
+unicode = "U+03BB"
+supports_skin_tone = false
+[[emoji]]
+char = "μ"
+name = "mu"
+keywords = ["mu", "greek", "letter", "math", "micro"]
+tags = ["greek"]
+unicode = "U+03BC"
+supports_skin_tone = false
+[[emoji]]
+char = "ν"
+name = "nu"
+keywords = ["nu", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03BD"
+supports_skin_tone = false
+[[emoji]]
+char = "ξ"
+name = "xi"
+keywords = ["xi", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03BE"
+supports_skin_tone = false
+[[emoji]]
+char = "ο"
+name = "omicron"
+keywords = ["omicron", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03BF"
+supports_skin_tone = false
+[[emoji]]
+char = "π"
+name = "pi"
+keywords = ["pi", "greek", "letter", "math", "circle", "ratio"]
+tags = ["greek"]
+unicode = "U+03C0"
+supports_skin_tone = false
+[[emoji]]
+char = "ρ"
+name = "rho"
+keywords = ["rho", "greek", "letter", "math", "density"]
+tags = ["greek"]
+unicode = "U+03C1"
+supports_skin_tone = false
+[[emoji]]
+char = "σ"
+name = "sigma"
+keywords = ["sigma", "greek", "letter", "math", "sum", "standard_deviation"]
+tags = ["greek"]
+unicode = "U+03C3"
+supports_skin_tone = false
+[[emoji]]
+char = "τ"
+name = "tau"
+keywords = ["tau", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03C4"
+supports_skin_tone = false
+[[emoji]]
+char = "υ"
+name = "upsilon"
+keywords = ["upsilon", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03C5"
+supports_skin_tone = false
+[[emoji]]
+char = "φ"
+name = "phi"
+keywords = ["phi", "greek", "letter", "math", "golden_ratio"]
+tags = ["greek"]
+unicode = "U+03C6"
+supports_skin_tone = false
+[[emoji]]
+char = "χ"
+name = "chi"
+keywords = ["chi", "greek", "letter", "math"]
+tags = ["greek"]
+unicode = "U+03C7"
+supports_skin_tone = false
+[[emoji]]
+char = "ψ"
+name = "psi"
+keywords = ["psi", "greek", "letter", "math", "psychology"]
+tags = ["greek"]
+unicode = "U+03C8"
+supports_skin_tone = false
+[[emoji]]
+char = "ω"
+name = "omega"
+keywords = ["omega", "greek", "letter", "math", "ohm"]
+tags = ["greek"]
+unicode = "U+03C9"
+supports_skin_tone = false
+
+# Greek letters (uppercase)
+[[emoji]]
+char = "Α"
+name = "Alpha"
+keywords = ["Alpha", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+0391"
+supports_skin_tone = false
+[[emoji]]
+char = "Β"
+name = "Beta"
+keywords = ["Beta", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+0392"
+supports_skin_tone = false
+[[emoji]]
+char = "Γ"
+name = "Gamma"
+keywords = ["Gamma", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+0393"
+supports_skin_tone = false
+[[emoji]]
+char = "Δ"
+name = "Delta"
+keywords = ["Delta", "greek", "letter", "math", "uppercase", "change", "triangle"]
+tags = ["greek"]
+unicode = "U+0394"
+supports_skin_tone = false
+[[emoji]]
+char = "Ε"
+name = "Epsilon"
+keywords = ["Epsilon", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+0395"
+supports_skin_tone = false
+[[emoji]]
+char = "Ζ"
+name = "Zeta"
+keywords = ["Zeta", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+0396"
+supports_skin_tone = false
+[[emoji]]
+char = "Η"
+name = "Eta"
+keywords = ["Eta", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+0397"
+supports_skin_tone = false
+[[emoji]]
+char = "Θ"
+name = "Theta"
+keywords = ["Theta", "greek", "letter", "math", "uppercase", "angle"]
+tags = ["greek"]
+unicode = "U+0398"
+supports_skin_tone = false
+[[emoji]]
+char = "Ι"
+name = "Iota"
+keywords = ["Iota", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+0399"
+supports_skin_tone = false
+[[emoji]]
+char = "Κ"
+name = "Kappa"
+keywords = ["Kappa", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+039A"
+supports_skin_tone = false
+[[emoji]]
+char = "Λ"
+name = "Lambda"
+keywords = ["Lambda", "greek", "letter", "math", "uppercase", "function"]
+tags = ["greek"]
+unicode = "U+039B"
+supports_skin_tone = false
+[[emoji]]
+char = "Μ"
+name = "Mu"
+keywords = ["Mu", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+039C"
+supports_skin_tone = false
+[[emoji]]
+char = "Ν"
+name = "Nu"
+keywords = ["Nu", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+039D"
+supports_skin_tone = false
+[[emoji]]
+char = "Ξ"
+name = "Xi"
+keywords = ["Xi", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+039E"
+supports_skin_tone = false
+[[emoji]]
+char = "Ο"
+name = "Omicron"
+keywords = ["Omicron", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+039F"
+supports_skin_tone = false
+[[emoji]]
+char = "Π"
+name = "Pi"
+keywords = ["Pi", "greek", "letter", "math", "uppercase", "product"]
+tags = ["greek"]
+unicode = "U+03A0"
+supports_skin_tone = false
+[[emoji]]
+char = "Ρ"
+name = "Rho"
+keywords = ["Rho", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+03A1"
+supports_skin_tone = false
+[[emoji]]
+char = "Σ"
+name = "Sigma"
+keywords = ["Sigma", "greek", "letter", "math", "uppercase", "sum", "summation"]
+tags = ["greek"]
+unicode = "U+03A3"
+supports_skin_tone = false
+[[emoji]]
+char = "Τ"
+name = "Tau"
+keywords = ["Tau", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+03A4"
+supports_skin_tone = false
+[[emoji]]
+char = "Υ"
+name = "Upsilon"
+keywords = ["Upsilon", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+03A5"
+supports_skin_tone = false
+[[emoji]]
+char = "Φ"
+name = "Phi"
+keywords = ["Phi", "greek", "letter", "math", "uppercase", "golden_ratio"]
+tags = ["greek"]
+unicode = "U+03A6"
+supports_skin_tone = false
+[[emoji]]
+char = "Χ"
+name = "Chi"
+keywords = ["Chi", "greek", "letter", "math", "uppercase"]
+tags = ["greek"]
+unicode = "U+03A7"
+supports_skin_tone = false
+[[emoji]]
+char = "Ψ"
+name = "Psi"
+keywords = ["Psi", "greek", "letter", "math", "uppercase", "psychology"]
+tags = ["greek"]
+unicode = "U+03A8"
+supports_skin_tone = false
+[[emoji]]
+char = "Ω"
+name = "Omega"
+keywords = ["Omega", "greek", "letter", "math", "uppercase", "ohm", "resistance"]
+tags = ["greek"]
+unicode = "U+03A9"
+supports_skin_tone = false
 [[emoji]]
 char = "〰️"
 name = "〰️"
