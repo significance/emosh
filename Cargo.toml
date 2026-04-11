@@ -66,8 +66,8 @@ lto = "thin"
 
 # cargo-dist configuration
 [package.metadata.dist]
-# Specify your Homebrew tap (format: username/homebrew-tapname)
-tap = "significance/homebrew-emosh"
+# To enable Homebrew tap, create significance/homebrew-emosh repo and uncomment:
+# tap = "significance/homebrew-emosh"
 
 # Debian/Ubuntu package metadata (for cargo-deb)
 [package.metadata.deb]

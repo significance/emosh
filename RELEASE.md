@@ -7,9 +7,8 @@ This document describes the automated release process for emosh.
 Releases are fully automated via GitHub Actions. When you push a version tag, the system automatically:
 
 1. Builds binaries for all supported platforms
-2. Creates a GitHub Release with downloadable archives
-3. Publishes to crates.io (Rust package registry)
-4. (Optional) Updates Homebrew tap
+2. Creates shell/PowerShell installers
+3. Creates a GitHub Release with downloadable archives
 
 ## Supported Platforms
 
@@ -90,60 +89,12 @@ After the automated release completes:
    cargo install emosh
    
    # From GitHub release
-   curl -L https://github.com/yourusername/emosh/releases/download/v0.2.0/emosh-linux-x86_64.tar.gz | tar xz
+   curl -L https://github.com/significance/emosh/releases/download/v0.2.0/emosh-linux-x86_64.tar.gz | tar xz
    ```
 
-## Required GitHub Secrets
+## Package Manager Publishing
 
-For the full release process to work, configure these secrets in your repository:
-
-### CARGO_REGISTRY_TOKEN (Required for crates.io)
-
-1. Visit https://crates.io/me
-2. Click "New Token"
-3. Name it "GitHub Actions"
-4. Copy the token
-5. In GitHub: Settings → Secrets and variables → Actions → New repository secret
-6. Name: `CARGO_REGISTRY_TOKEN`
-7. Value: (paste token)
-
-### COMMITTER_TOKEN (Optional - for Homebrew)
-
-Only needed if you want automatic Homebrew tap updates:
-
-1. Create a Personal Access Token with `repo` scope
-2. Add it as `COMMITTER_TOKEN` secret
-
-## Package Managers
-
-### crates.io (Automatic)
-
-Published automatically on every release tag.
-
-Users can install with:
-```bash
-cargo install emosh
-```
-
-### Homebrew (Manual Setup Required)
-
-To enable automatic Homebrew updates:
-
-1. Create a tap repository: `yourusername/homebrew-tap`
-2. Add initial formula to the tap
-3. Update `.github/workflows/release.yml`:
-   - Change `if: github.repository == 'yourusername/emosh'` to your repo
-   - Change `homebrew-tap: yourusername/homebrew-tap` to your tap
-4. Add `COMMITTER_TOKEN` secret
-
-### Other Package Managers
-
-To add support for other package managers (apt, rpm, AUR, etc.), consider:
-
-- **cargo-deb**: For Debian/Ubuntu packages
-- **cargo-generate-rpm**: For Fedora/RHEL packages
-- **cargo-aur**: For Arch Linux AUR
-- **chocolatey/scoop**: For Windows package managers
+npm and Homebrew publishing are not yet configured. See [RELEASE_SETUP.md](RELEASE_SETUP.md) for instructions on enabling them.
 
 ## Troubleshooting
 
