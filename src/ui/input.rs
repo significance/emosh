@@ -18,24 +18,20 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         }
 
         // Tab: Copy selected emoji and continue (only if we have results)
-        KeyCode::Tab => {
-            if !app.results.is_empty() {
-                if let Some(result) = app.selected_emoji() {
-                    let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                    copy_to_clipboard(&emoji_with_tone)?;
-                    app.mark_copied();
-                }
+        KeyCode::Tab if !app.results.is_empty() => {
+            if let Some(result) = app.selected_emoji() {
+                let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
+                copy_to_clipboard(&emoji_with_tone)?;
+                app.mark_copied();
             }
         }
 
         // Enter: Copy selected emoji and exit (only if we have results)
-        KeyCode::Enter => {
-            if !app.results.is_empty() {
-                if let Some(result) = app.selected_emoji() {
-                    let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                    copy_to_clipboard(&emoji_with_tone)?;
-                    app.quit();
-                }
+        KeyCode::Enter if !app.results.is_empty() => {
+            if let Some(result) = app.selected_emoji() {
+                let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
+                copy_to_clipboard(&emoji_with_tone)?;
+                app.quit();
             }
         }
 
@@ -69,10 +65,8 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         }
 
         // Backspace
-        KeyCode::Backspace => {
-            if app.query.pop().is_some() {
-                update_search_results(app);
-            }
+        KeyCode::Backspace if app.query.pop().is_some() => {
+            update_search_results(app);
         }
 
         // Text input (all other characters)

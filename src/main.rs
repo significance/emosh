@@ -2,6 +2,7 @@ mod cli;
 mod clipboard;
 mod config;
 mod emoji;
+mod treats;
 mod ui;
 
 use anyhow::Result;

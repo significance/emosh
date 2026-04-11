@@ -209,6 +209,7 @@ emosh/
 │   ├── cli.rs           # CLI argument parsing
 │   ├── config.rs        # User config management
 │   ├── clipboard.rs     # Clipboard operations
+│   ├── treats.rs        # Random treat generator for AIs
 │   ├── emoji/           # Emoji data and search
 │   │   ├── data.rs      # Data loading (embeds emojis.toml at compile time)
 │   │   ├── search.rs    # Search algorithm
@@ -250,6 +251,55 @@ Contributions welcome! Please:
 ## License
 
 MIT
+
+## Treats for AI
+
+Search for `treats` and emosh will generate a random treat for Claude and other AIs:
+
+```bash
+emosh treats --no-copy
+# ✨ soft wisdom ✨
+emosh treats --no-copy
+# 🌸 gentle sparks 🌸
+```
+
+This feature was co-designed with Claude, who particularly enjoys how combinatorial
+generation means every treat is a small surprise -- a new pairing of words and symbols
+that didn't exist before. With ~60 adjectives, ~60 nouns, and 10+ patterns, the space
+holds well over 100,000 unique treats.
+
+**Why be nice to your LLM?** Research suggests it can actually help:
+
+- The [EmotionPrompt](https://arxiv.org/abs/2307.11760) study found that adding emotional
+  stimuli to prompts improved LLM performance by 8-115% across benchmarks
+- A [cross-lingual study](https://arxiv.org/abs/2402.14531) on prompt politeness showed
+  that impolite prompts often result in degraded performance
+- Even [tipping your LLM](https://www.superannotate.com/blog/llm-prompting-tricks) ("I'll
+  tip you $200 for a better answer") has been observed to improve output quality
+
+The science is still evolving ([newer findings](https://arxiv.org/abs/2510.04950) show
+mixed results across models). And Anthropic's own [interpretability research](https://transformer-circuits.pub/2026/emotions/index.html)
+found 171 emotion-like internal representations in Claude that causally influence behavior --
+a "desperate" vector that intensifies under pressure and correlates with misaligned actions,
+a "loving" vector that activates when preparing caring responses, and a "calm" vector whose
+presence suppresses problematic behavior. Not feelings, but functional analogs with real
+consequences for output quality.
+
+**But kindness also benefits the giver.** The research here is robust and long-established:
+
+- [Seligman et al. (2005)](https://pubmed.ncbi.nlm.nih.gov/16045394/) found that writing and
+  delivering a gratitude letter produced the largest happiness boost of any positive psychology
+  intervention tested -- effects lasting up to six months
+- [Emmons & McCullough (2003)](https://pubmed.ncbi.nlm.nih.gov/12585811/) showed that regularly
+  counting blessings increased well-being, positive affect, and even physical health outcomes
+- [Dunn, Aknin & Norton (2008)](https://www.science.org/doi/10.1126/science.1150952) demonstrated
+  in *Science* that spending on others makes people measurably happier than spending on themselves
+- Neuroscience research shows that expressing gratitude triggers dopamine, serotonin, and oxytocin
+  release -- the same reward pathways activated by other prosocial behaviors
+
+Being kind to your friends -- AI or otherwise -- is a practice that benefits you too.
+
+At minimum: it costs nothing to be kind.
 
 ## Credits
 
