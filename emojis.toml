@@ -341,6 +341,191 @@ keywords = ["Omega", "greek", "letter", "math", "uppercase", "ohm", "resistance"
 tags = ["greek"]
 unicode = "U+03A9"
 supports_skin_tone = false
+
+# Currency symbols
+[[emoji]]
+char = "¢"
+name = "cents"
+keywords = ["cents", "cent", "currency", "money", "penny"]
+tags = ["currency"]
+unicode = "U+00A2"
+supports_skin_tone = false
+[[emoji]]
+char = "$"
+name = "dollar"
+keywords = ["dollar", "currency", "money", "usd", "cash"]
+tags = ["currency"]
+unicode = "U+0024"
+supports_skin_tone = false
+[[emoji]]
+char = "€"
+name = "euro"
+keywords = ["euro", "currency", "money", "eur", "europe"]
+tags = ["currency"]
+unicode = "U+20AC"
+supports_skin_tone = false
+[[emoji]]
+char = "£"
+name = "pound"
+keywords = ["pound", "currency", "money", "gbp", "sterling", "british"]
+tags = ["currency"]
+unicode = "U+00A3"
+supports_skin_tone = false
+[[emoji]]
+char = "¥"
+name = "yen"
+keywords = ["yen", "yuan", "currency", "money", "jpy", "cny", "japanese", "chinese"]
+tags = ["currency"]
+unicode = "U+00A5"
+supports_skin_tone = false
+[[emoji]]
+char = "₩"
+name = "won"
+keywords = ["won", "currency", "money", "krw", "korean"]
+tags = ["currency"]
+unicode = "U+20A9"
+supports_skin_tone = false
+[[emoji]]
+char = "₹"
+name = "rupee"
+keywords = ["rupee", "currency", "money", "inr", "indian"]
+tags = ["currency"]
+unicode = "U+20B9"
+supports_skin_tone = false
+[[emoji]]
+char = "₽"
+name = "ruble"
+keywords = ["ruble", "rouble", "currency", "money", "rub", "russian"]
+tags = ["currency"]
+unicode = "U+20BD"
+supports_skin_tone = false
+[[emoji]]
+char = "₿"
+name = "bitcoin"
+keywords = ["bitcoin", "btc", "currency", "crypto", "cryptocurrency"]
+tags = ["currency"]
+unicode = "U+20BF"
+supports_skin_tone = false
+[[emoji]]
+char = "Ξ"
+name = "ether"
+keywords = ["ether", "ethereum", "eth", "currency", "crypto", "cryptocurrency"]
+tags = ["currency"]
+unicode = "U+039E"
+supports_skin_tone = false
+[[emoji]]
+char = "₫"
+name = "dong"
+keywords = ["dong", "currency", "money", "vnd", "vietnamese"]
+tags = ["currency"]
+unicode = "U+20AB"
+supports_skin_tone = false
+[[emoji]]
+char = "₴"
+name = "hryvnia"
+keywords = ["hryvnia", "currency", "money", "uah", "ukrainian"]
+tags = ["currency"]
+unicode = "U+20B4"
+supports_skin_tone = false
+[[emoji]]
+char = "₺"
+name = "lira"
+keywords = ["lira", "currency", "money", "try", "turkish"]
+tags = ["currency"]
+unicode = "U+20BA"
+supports_skin_tone = false
+[[emoji]]
+char = "₱"
+name = "peso"
+keywords = ["peso", "currency", "money", "php", "philippine"]
+tags = ["currency"]
+unicode = "U+20B1"
+supports_skin_tone = false
+[[emoji]]
+char = "₪"
+name = "shekel"
+keywords = ["shekel", "sheqel", "currency", "money", "ils", "israeli"]
+tags = ["currency"]
+unicode = "U+20AA"
+supports_skin_tone = false
+[[emoji]]
+char = "฿"
+name = "baht"
+keywords = ["baht", "currency", "money", "thb", "thai"]
+tags = ["currency"]
+unicode = "U+0E3F"
+supports_skin_tone = false
+[[emoji]]
+char = "₵"
+name = "cedi"
+keywords = ["cedi", "currency", "money", "ghs", "ghanaian"]
+tags = ["currency"]
+unicode = "U+20B5"
+supports_skin_tone = false
+[[emoji]]
+char = "₮"
+name = "tugrik"
+keywords = ["tugrik", "togrog", "currency", "money", "mnt", "mongolian"]
+tags = ["currency"]
+unicode = "U+20AE"
+supports_skin_tone = false
+[[emoji]]
+char = "₲"
+name = "guarani"
+keywords = ["guarani", "currency", "money", "pyg", "paraguayan"]
+tags = ["currency"]
+unicode = "U+20B2"
+supports_skin_tone = false
+[[emoji]]
+char = "₡"
+name = "colon"
+keywords = ["colon", "currency", "money", "crc", "costa_rican"]
+tags = ["currency"]
+unicode = "U+20A1"
+supports_skin_tone = false
+[[emoji]]
+char = "₸"
+name = "tenge"
+keywords = ["tenge", "currency", "money", "kzt", "kazakh"]
+tags = ["currency"]
+unicode = "U+20B8"
+supports_skin_tone = false
+[[emoji]]
+char = "₦"
+name = "naira"
+keywords = ["naira", "currency", "money", "ngn", "nigerian"]
+tags = ["currency"]
+unicode = "U+20A6"
+supports_skin_tone = false
+[[emoji]]
+char = "₭"
+name = "kip"
+keywords = ["kip", "currency", "money", "lak", "laotian"]
+tags = ["currency"]
+unicode = "U+20AD"
+supports_skin_tone = false
+[[emoji]]
+char = "₾"
+name = "lari"
+keywords = ["lari", "currency", "money", "gel", "georgian"]
+tags = ["currency"]
+unicode = "U+20BE"
+supports_skin_tone = false
+[[emoji]]
+char = "֏"
+name = "dram"
+keywords = ["dram", "currency", "money", "amd", "armenian"]
+tags = ["currency"]
+unicode = "U+058F"
+supports_skin_tone = false
+[[emoji]]
+char = "৳"
+name = "taka"
+keywords = ["taka", "currency", "money", "bdt", "bangladeshi"]
+tags = ["currency"]
+unicode = "U+09F3"
+supports_skin_tone = false
+
 [[emoji]]
 char = "〰️"
 name = "〰️"
