@@ -1,4 +1,5 @@
 use super::data::Emoji;
+use crate::treats;
 use fuzzy_matcher::skim::SkimMatcherV2;
 use fuzzy_matcher::FuzzyMatcher;
 
@@ -40,6 +41,11 @@ pub fn search(query: &str, emojis: &[Emoji], limit: usize) -> Vec<SearchResult> 
     // Empty query returns nothing
     if query_lower.is_empty() {
         return Vec::new();
+    }
+
+    // Intercept "treats" query with random treat generation
+    if query_lower == "treats" {
+        return treats::generate_treat_results(limit);
     }
 
     let matcher = SkimMatcherV2::default();
