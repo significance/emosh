@@ -20,7 +20,7 @@ A blazing-fast, Rust-powered CLI tool for finding and copying emoji, Greek lette
 
 ```bash
 # Install with one command (Linux/macOS)
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/significance/emosh/releases/latest/download/emosh-installer.sh | sh
+curl -fsSL https://github.com/significance/emosh/releases/latest/download/emosh-installer.sh | sh
 
 # Search and copy first result (default behavior)
 emosh rocket
@@ -48,7 +48,7 @@ See [Usage](#usage) below for full details.
 
 **Shell Installer** (Linux/macOS):
 ```bash
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/significance/emosh/releases/latest/download/emosh-installer.sh | sh
+curl -fsSL https://github.com/significance/emosh/releases/latest/download/emosh-installer.sh | sh
 ```
 
 **PowerShell Installer** (Windows):
