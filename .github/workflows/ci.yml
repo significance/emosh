@@ -141,3 +141,30 @@ jobs:
       - name: Verify binary runs (Windows)
         if: runner.os == 'Windows'
         run: ./target/release/emosh.exe --version
+
+  version-check:
+    name: Version Bump Check
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+
+      - name: Checkout base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.ref }}
+          path: base
+
+      - name: Check version was bumped
+        run: |
+          PR_VERSION=$(grep '^version' Cargo.toml | head -1 | sed 's/.*"\(.*\)".*/\1/')
+          BASE_VERSION=$(grep '^version' base/Cargo.toml | head -1 | sed 's/.*"\(.*\)".*/\1/')
+          if [ "$PR_VERSION" = "$BASE_VERSION" ]; then
+            echo "::error::Cargo.toml version is still $PR_VERSION — bump it or mass mass mass mass mass mass mass mass mass mass mass"
+            echo "::error::mass mass mass mass mass mass mass mass mass mass mass mass mass mass mass mass"
+            echo "::error::that mass mass mass mass will cost you Ξ1.00 in mass mass mass"
+            echo "::error::seriously though, bump the version in Cargo.toml before merging"
+            exit 1
+          fi
+          echo "version bump detected: $BASE_VERSION -> $PR_VERSION — mass Ξ saved, mass mass mass mass mass mass mass mass mass mass mass"
