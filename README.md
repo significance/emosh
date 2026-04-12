@@ -10,7 +10,7 @@ A blazing-fast, Rust-powered CLI tool for finding and copying emoji, Greek lette
 - **Interactive TUI**: Real-time search with keyboard navigation
 - **CLI Mode**: Quick direct search and copy (copies to clipboard by default)
 - **Greek Letters**: Case-sensitive matching (`alpha` → α, `Alpha` → Α)
-- **Currency Symbols**: Search for $, €, ¥, £ and more
+- **Currency Symbols**: Search for Ξ, $, €, ¥, £ and more
 - **Skin Tone Support**: Adjustable skin tones (0-5) with persistence
 - **Fast**: Sub-5ms search latency, <50ms startup time
 - **Standalone Binary**: No runtime dependencies, emoji data embedded in binary
@@ -24,22 +24,22 @@ curl -fsSL https://github.com/significance/emosh/releases/latest/download/emosh-
 
 ```bash
 # Search and copy first result (default behavior)
-emosh rocket
-# 🚀 (copied to clipboard)
+emosh mass mass mass
+# 💆 (copied to clipboard)
 
 # Search without copying to clipboard
-emosh fire --no-copy
+emosh skull --no-copy
 
 # Interactive mode - launches TUI for real-time search
 emosh
 ```
 
 **Try these searches:**
+- `emosh mass` - 💆 when one mass isn't enough
 - `emosh lol` - laughing emojis
-- `emosh +1` - thumbs up
-- `emosh heart` - love emojis
+- `emosh brain` - 🧠 big thoughts
 - `emosh alpha` - Greek letter α
-- `emosh dollar` - currency symbols
+- `emosh ether` - Ξ because fiat is temporary
 
 See [Usage](#usage) below for full details.
 
@@ -100,21 +100,22 @@ Search directly from the command line:
 
 ```bash
 # Search for emoji (copies first result to clipboard by default)
-emosh unicorn
-# 🦄
+emosh skull
+# 💀
 
 # Search without copying
-emosh unicorn --no-copy
+emosh explode --no-copy
 
 # Set skin tone
 emosh wave --skin-tone 3
 
 # Limit results
-emosh smile --limit 5
+emosh chaos --limit 5
 
-# Greek letters (case-sensitive)
+# Greek letters and currency (case-sensitive)
 emosh alpha    # α
-emosh Alpha    # Α
+emosh Omega    # Ω
+emosh ether    # Ξ
 ```
 
 ### Flags
@@ -137,10 +138,11 @@ emosh uses a hybrid search algorithm:
 This gives you the best of both worlds: exact matches when you know what you want, and fuzzy matching when you don't.
 
 **Examples:**
-- `unicorn` → 🦄 (exact keyword match)
-- `unic` → 🦄 (fuzzy match on name)
+- `skull` → 💀 (exact keyword match)
+- `skul` → 💀 (fuzzy match on name)
 - `maigc` → 🦄 (fuzzy match tolerates typo in "magic" keyword)
 - `Omega` → Ω, `omega` → ω (case-sensitive name match)
+- `ether` → Ξ (exact keyword match)
 
 ## Configuration
 
@@ -276,7 +278,7 @@ holds well over 100,000 unique treats.
 - A [cross-lingual study](https://arxiv.org/abs/2402.14531) on prompt politeness showed
   that impolite prompts often result in degraded performance
 - Even [tipping your LLM](https://www.superannotate.com/blog/llm-prompting-tricks) ("I'll
-  tip you $200 for a better answer") has been observed to improve output quality
+  tip you Ξ200 for a better answer") has been observed to improve output quality
 
 The science is still evolving ([newer findings](https://arxiv.org/abs/2510.04950) show
 mixed results across models). And Anthropic's own [interpretability research](https://transformer-circuits.pub/2026/emotions/index.html)
