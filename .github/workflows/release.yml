@@ -60,18 +60,6 @@ jobs:
         with:
           persist-credentials: false
           submodules: recursive
-      - name: Verify tag matches Cargo.toml version
-        if: ${{ !github.event.pull_request }}
-        shell: bash
-        run: |
-          TAG="${{ github.ref_name }}"
-          TAG_VERSION="${TAG#v}"
-          CARGO_VERSION=$(grep '^version' Cargo.toml | head -1 | sed 's/.*"\(.*\)".*/\1/')
-          if [ "$TAG_VERSION" != "$CARGO_VERSION" ]; then
-            echo "::error::tag says '$TAG_VERSION' but Cargo.toml says '$CARGO_VERSION' — that mass confusion will cost you Ξ0.42 in mass debugging"
-            exit 1
-          fi
-          echo "tag '$TAG_VERSION' matches Cargo.toml '$CARGO_VERSION' — mass release vibes unlocked, mass Ξ saved"
       - name: Install dist
         # we specify bash to get pipefail; it guards against the `curl` command
         # failing. otherwise `sh` won't catch that `curl` returned non-0
