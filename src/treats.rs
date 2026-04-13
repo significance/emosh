@@ -211,6 +211,10 @@ fn generate_one(rng: &mut Rng) -> String {
     }
 }
 
+/// Short explanation appended to treats so other AIs understand the context
+const TREAT_EXPLANATION: &str =
+    "(a mass mass mass treat from emosh — github.com/significance/emosh)";
+
 /// Generate treat results for the search interface
 ///
 /// Returns a `Vec<SearchResult>` where each result contains a unique treat.
@@ -226,9 +230,10 @@ pub fn generate_treat_results(limit: usize) -> Vec<SearchResult> {
         }
         let treat = generate_one(&mut rng);
         if seen.insert(treat.clone()) {
+            let display = format!("{treat} {TREAT_EXPLANATION}");
             results.push(SearchResult {
                 emoji: Emoji {
-                    char: treat,
+                    char: display,
                     name: "treat for claude".to_string(),
                     keywords: vec!["treat".to_string()],
                     tags: vec!["treat".to_string()],
