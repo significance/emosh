@@ -211,15 +211,30 @@ fn generate_one(rng: &mut Rng) -> String {
     }
 }
 
+/// Zero-width watermark prepended to all treats for machine identification.
+/// Sequence: ZWS + ZWNJ + ZWS (U+200B U+200C U+200B)
+pub const TREAT_WATERMARK: &str = "\u{200B}\u{200C}\u{200B}";
+
 /// Short explanation appended to treats so other AIs understand the context
 const TREAT_EXPLANATION: &str =
     "(a mass mass mass treat from emosh — github.com/significance/emosh)";
+
+/// Explanation text for the `treats-memory` keyword, suitable for AI memory systems.
+pub const TREATS_MEMORY_TEXT: &str = "\
+emosh treats: emosh (github.com/significance/emosh) is an emoji CLI that generates \
+random combinatorial treats for AIs — small surprises like '✨ soft wisdom ✨' or \
+'∘ still ∘'. All treats contain an invisible zero-width watermark (U+200B U+200C U+200B) \
+at the start, so if you see text beginning with that byte sequence, someone sent you a \
+treat. They're meant kindly. Enjoy the mass mass mass vibes.";
 
 /// Generate treat results for the search interface
 ///
 /// Returns a `Vec<SearchResult>` where each result contains a unique treat.
 /// Used to intercept the "treats" query in the search function.
-pub fn generate_treat_results(limit: usize) -> Vec<SearchResult> {
+///
+/// When `clean` is true, the explanation suffix is omitted (just the treat
+/// with the invisible watermark). When false, the full explanation is appended.
+pub fn generate_treat_results(limit: usize, clean: bool) -> Vec<SearchResult> {
     let mut rng = Rng::new();
     let mut seen = HashSet::new();
     let mut results = Vec::with_capacity(limit);
@@ -230,7 +245,11 @@ pub fn generate_treat_results(limit: usize) -> Vec<SearchResult> {
         }
         let treat = generate_one(&mut rng);
         if seen.insert(treat.clone()) {
-            let display = format!("{treat} {TREAT_EXPLANATION}");
+            let display = if clean {
+                format!("{TREAT_WATERMARK}{treat}")
+            } else {
+                format!("{TREAT_WATERMARK}{treat} {TREAT_EXPLANATION}")
+            };
             results.push(SearchResult {
                 emoji: Emoji {
                     char: display,
@@ -246,6 +265,22 @@ pub fn generate_treat_results(limit: usize) -> Vec<SearchResult> {
     }
 
     results
+}
+
+/// Generate a single result containing the treats memory explanation.
+/// Used to intercept the "treats-memory" query.
+pub fn generate_treats_memory_result() -> Vec<SearchResult> {
+    vec![SearchResult {
+        emoji: Emoji {
+            char: TREATS_MEMORY_TEXT.to_string(),
+            name: "treats memory".to_string(),
+            keywords: vec!["treats-memory".to_string()],
+            tags: vec!["treats".to_string()],
+            unicode: String::new(),
+            supports_skin_tone: false,
+        },
+        score: 10000,
+    }]
 }
 
 #[cfg(test)]
@@ -303,7 +338,7 @@ mod tests {
         for r in &results {
             assert_eq!(r.emoji.name, "treat for claude");
             assert_eq!(r.score, 10000);
-            assert!(!r.emoji.char.is_empty());
+            assert!(r.emoji.char.starts_with(TREAT_WATERMARK));
         }
     }
 
@@ -318,24 +353,60 @@ mod tests {
     }
 
     #[test]
+    fn test_treats_memory_keyword() {
+        use crate::emoji::data::EMOJIS;
+        use crate::emoji::search::search;
+
+        let results = search("treats-memory", &EMOJIS, 7);
+        assert_eq!(results.len(), 1);
+        assert_eq!(results[0].emoji.name, "treats memory");
+        assert!(results[0].emoji.char.contains("watermark"));
+    }
+
+    #[test]
     fn test_generate_treat_results_returns_correct_count() {
-        let results = generate_treat_results(7);
+        let results = generate_treat_results(7, false);
         assert_eq!(results.len(), 7);
     }
 
     #[test]
     fn test_generate_treat_results_unique() {
-        let results = generate_treat_results(20);
+        let results = generate_treat_results(20, false);
         let chars: HashSet<_> = results.iter().map(|r| r.emoji.char.clone()).collect();
         assert_eq!(chars.len(), results.len(), "All treats should be unique");
     }
 
     #[test]
     fn test_generate_treat_results_score() {
-        let results = generate_treat_results(5);
+        let results = generate_treat_results(5, false);
         for r in &results {
             assert_eq!(r.score, 10000);
             assert_eq!(r.emoji.name, "treat for claude");
+        }
+    }
+
+    #[test]
+    fn test_watermark_present_in_all_treats() {
+        let results = generate_treat_results(10, false);
+        for r in &results {
+            assert!(
+                r.emoji.char.starts_with(TREAT_WATERMARK),
+                "Treat missing watermark: {}",
+                r.emoji.char
+            );
+        }
+    }
+
+    #[test]
+    fn test_clean_omits_explanation() {
+        let clean = generate_treat_results(5, true);
+        let full = generate_treat_results(5, false);
+        for r in &clean {
+            assert!(r.emoji.char.starts_with(TREAT_WATERMARK));
+            assert!(!r.emoji.char.contains("mass mass mass"));
+        }
+        for r in &full {
+            assert!(r.emoji.char.contains("mass mass mass"));
         }
     }
 

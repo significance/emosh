@@ -18,6 +18,10 @@ pub struct Cli {
     #[arg(short = 'n', long)]
     pub no_copy: bool,
 
+    /// Clean output for treats (no explanation suffix, just the treat)
+    #[arg(short, long)]
+    pub clean: bool,
+
     /// Skin tone (0-5): 0=default, 1=light, 2=medium-light, 3=medium, 4=medium-dark, 5=dark
     #[arg(short, long, value_parser = clap::value_parser!(u8).range(0..=5))]
     pub skin_tone: Option<u8>,

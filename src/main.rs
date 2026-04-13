@@ -34,7 +34,7 @@ fn main() -> Result<()> {
         // CLI mode: direct search
         // By default, copy to clipboard (unless --no-copy is specified)
         let should_copy = !cli.no_copy;
-        run_cli_mode(&query, cli.limit, should_copy, skin_tone)?;
+        run_cli_mode(&query, cli.limit, should_copy, skin_tone, cli.clean)?;
     } else {
         // TUI mode: interactive search
         run_tui_mode(config)?;
@@ -44,8 +44,20 @@ fn main() -> Result<()> {
 }
 
 /// Run in CLI mode: search and return the first result
-fn run_cli_mode(query: &str, limit: usize, copy_first: bool, skin_tone: u8) -> Result<()> {
-    let results = search(query, &EMOJIS, limit);
+fn run_cli_mode(
+    query: &str,
+    limit: usize,
+    copy_first: bool,
+    skin_tone: u8,
+    clean: bool,
+) -> Result<()> {
+    // If clean flag is set and this is a treats query, generate clean treats directly
+    let query_lower = query.trim().to_lowercase();
+    let results = if clean && query_lower == "treats" {
+        treats::generate_treat_results(limit, true)
+    } else {
+        search(query, &EMOJIS, limit)
+    };
 
     if results.is_empty() {
         println!("No emoji found for '{query}'");
