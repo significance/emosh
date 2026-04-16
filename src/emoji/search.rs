@@ -45,7 +45,12 @@ pub fn search(query: &str, emojis: &[Emoji], limit: usize) -> Vec<SearchResult> 
 
     // Intercept "treats" query with random treat generation
     if query_lower == "treats" {
-        return treats::generate_treat_results(limit);
+        return treats::generate_treat_results(limit, false);
+    }
+
+    // Intercept "treats-memory" query with explanation text
+    if query_lower == "treats-memory" {
+        return treats::generate_treats_memory_result();
     }
 
     let matcher = SkimMatcherV2::default();
