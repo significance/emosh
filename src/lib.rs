@@ -5,5 +5,6 @@ pub mod cli;
 pub mod clipboard;
 pub mod config;
 pub mod emoji;
+pub mod latex;
 pub mod treats;
 pub mod ui;

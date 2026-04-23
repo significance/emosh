@@ -1,4 +1,4 @@
-use clap::Parser;
+use clap::{Args, Parser, Subcommand};
 
 /// Find relevant emoji from text on the command-line
 #[derive(Parser, Debug)]
@@ -8,9 +8,35 @@ use clap::Parser;
     about = "Find relevant emoji from text on the command-line",
     long_about = "emosh is a blazing-fast emoji finder. \
                   Run without arguments for interactive mode, \
-                  or provide a query for direct search."
+                  or provide a query for direct search.",
+    args_conflicts_with_subcommands = true
 )]
 pub struct Cli {
+    #[command(subcommand)]
+    pub command: Option<Commands>,
+
+    #[command(flatten)]
+    pub emoji_args: EmojiArgs,
+}
+
+#[derive(Subcommand, Debug)]
+pub enum Commands {
+    /// Convert LaTeX math notation to Unicode characters
+    Latex(LatexArgs),
+}
+
+#[derive(Args, Debug)]
+pub struct LatexArgs {
+    /// LaTeX expression to convert (e.g., "x^2", "H_2O", "\\hat{x}")
+    pub expression: Option<String>,
+
+    /// Don't copy result to clipboard
+    #[arg(short = 'n', long)]
+    pub no_copy: bool,
+}
+
+#[derive(Args, Debug)]
+pub struct EmojiArgs {
     /// Search query (if provided, runs in CLI mode; otherwise launches interactive TUI)
     pub query: Option<String>,
 
@@ -38,10 +64,11 @@ mod tests {
     #[test]
     fn test_cli_with_query() {
         let cli = Cli::parse_from(["emosh", "unicorn"]);
-        assert_eq!(cli.query, Some("unicorn".to_string()));
-        assert!(!cli.no_copy); // Default: copies to clipboard
-        assert_eq!(cli.skin_tone, None);
-        assert_eq!(cli.limit, 7);
+        assert!(cli.command.is_none());
+        assert_eq!(cli.emoji_args.query, Some("unicorn".to_string()));
+        assert!(!cli.emoji_args.no_copy);
+        assert_eq!(cli.emoji_args.skin_tone, None);
+        assert_eq!(cli.emoji_args.limit, 7);
     }
 
     #[test]
@@ -55,15 +82,52 @@ mod tests {
             "--limit",
             "10",
         ]);
-        assert_eq!(cli.query, Some("unicorn".to_string()));
-        assert!(cli.no_copy); // Should not copy to clipboard
-        assert_eq!(cli.skin_tone, Some(3));
-        assert_eq!(cli.limit, 10);
+        assert!(cli.command.is_none());
+        assert_eq!(cli.emoji_args.query, Some("unicorn".to_string()));
+        assert!(cli.emoji_args.no_copy);
+        assert_eq!(cli.emoji_args.skin_tone, Some(3));
+        assert_eq!(cli.emoji_args.limit, 10);
     }
 
     #[test]
     fn test_cli_without_query() {
         let cli = Cli::parse_from(["emosh"]);
-        assert_eq!(cli.query, None);
+        assert!(cli.command.is_none());
+        assert_eq!(cli.emoji_args.query, None);
+    }
+
+    #[test]
+    fn test_cli_latex_subcommand() {
+        let cli = Cli::parse_from(["emosh", "latex", "x^2"]);
+        match cli.command {
+            Some(Commands::Latex(args)) => {
+                assert_eq!(args.expression, Some("x^2".to_string()));
+                assert!(!args.no_copy);
+            }
+            _ => panic!("expected Latex subcommand"),
+        }
+    }
+
+    #[test]
+    fn test_cli_latex_no_expression() {
+        let cli = Cli::parse_from(["emosh", "latex"]);
+        match cli.command {
+            Some(Commands::Latex(args)) => {
+                assert!(args.expression.is_none());
+            }
+            _ => panic!("expected Latex subcommand"),
+        }
+    }
+
+    #[test]
+    fn test_cli_latex_with_no_copy() {
+        let cli = Cli::parse_from(["emosh", "latex", "H_2O", "--no-copy"]);
+        match cli.command {
+            Some(Commands::Latex(args)) => {
+                assert_eq!(args.expression, Some("H_2O".to_string()));
+                assert!(args.no_copy);
+            }
+            _ => panic!("expected Latex subcommand"),
+        }
     }
 }

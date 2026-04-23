@@ -2,6 +2,7 @@ mod cli;
 mod clipboard;
 mod config;
 mod emoji;
+mod latex;
 mod treats;
 mod ui;
 
@@ -15,7 +16,7 @@ use crossterm::{
 use std::io;
 use std::time::Duration;
 
-use cli::Cli;
+use cli::{Cli, Commands};
 use clipboard::copy_to_clipboard;
 use config::{load_config, save_config};
 use emoji::{apply_skin_tone, search, EMOJIS};
@@ -24,22 +25,78 @@ use ui::{handle_key_event, render, App};
 fn main() -> Result<()> {
     let cli = Cli::parse();
 
-    // Load user configuration
-    let config = load_config().unwrap_or_default();
+    match cli.command {
+        Some(Commands::Latex(args)) => match args.expression {
+            Some(expr) => run_latex_mode(&expr, !args.no_copy)?,
+            None => print_latex_examples(),
+        },
+        None => {
+            // Load user configuration
+            let config = load_config().unwrap_or_default();
 
-    // Determine skin tone: CLI flag overrides config
-    let skin_tone = cli.skin_tone.unwrap_or(config.skin_tone);
+            // Determine skin tone: CLI flag overrides config
+            let skin_tone = cli.emoji_args.skin_tone.unwrap_or(config.skin_tone);
 
-    if let Some(query) = cli.query {
-        // CLI mode: direct search
-        // By default, copy to clipboard (unless --no-copy is specified)
-        let should_copy = !cli.no_copy;
-        run_cli_mode(&query, cli.limit, should_copy, skin_tone, cli.clean)?;
-    } else {
-        // TUI mode: interactive search
-        run_tui_mode(config)?;
+            if let Some(query) = cli.emoji_args.query {
+                // CLI mode: direct search
+                let should_copy = !cli.emoji_args.no_copy;
+                run_cli_mode(
+                    &query,
+                    cli.emoji_args.limit,
+                    should_copy,
+                    skin_tone,
+                    cli.emoji_args.clean,
+                )?;
+            } else {
+                // TUI mode: interactive search
+                run_tui_mode(config)?;
+            }
+        }
     }
 
+    Ok(())
+}
+
+/// Print examples table when `emosh latex` is run without an expression.
+fn print_latex_examples() {
+    let examples = [
+        ("Superscript single", "x^2"),
+        ("Superscript group", "x^{n+1}"),
+        ("Subscript single", "H_2O"),
+        ("Subscript group", "a_{ij}"),
+        ("Prime", "f'"),
+        ("Double prime", "f''"),
+        ("Combining hat", "\\hat{x}"),
+        ("Combining bar", "\\bar{x}"),
+        ("Combining tilde", "\\tilde{x}"),
+        ("Combining dot", "\\dot{x}"),
+        ("Combining ddot", "\\ddot{x}"),
+        ("Combining vec", "\\vec{x}"),
+    ];
+
+    println!("{:<20} {:<16} Output", "Category", "Input");
+    println!("{:<20} {:<16} ------", "--------", "-----");
+    for (category, input) in &examples {
+        let result = latex::convert_latex(input);
+        println!("{:<20} {:<16} {}", category, input, result.output);
+    }
+}
+
+/// Run in LaTeX conversion mode
+fn run_latex_mode(expression: &str, copy: bool) -> Result<()> {
+    let result = latex::convert_latex(expression);
+
+    // Print warnings to stderr
+    for warning in &result.warnings {
+        eprintln!("warning: {warning}");
+    }
+
+    // Copy to clipboard if requested
+    if copy {
+        copy_to_clipboard(&result.output)?;
+    }
+
+    println!("{}", result.output);
     Ok(())
 }
 
