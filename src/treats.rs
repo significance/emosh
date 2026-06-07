@@ -146,6 +146,78 @@ const SYMBOLS: &[&str] = &[
     "⊜",
 ];
 
+// --- Rustacean treats: crustacean-themed treats for Rust developers ---
+
+const RUSTACEAN_ADJECTIVES: &[&str] = &[
+    "briny",
+    "tidal",
+    "abyssal",
+    "benthic",
+    "pelagic",
+    "brackish",
+    "littoral",
+    "neritic",
+    "chitinous",
+    "kelpy",
+    "silty",
+    "saline",
+    "reefy",
+    "oceanic",
+    "hadal",
+    "molted",
+    "sessile",
+    "crusty",
+    "briney",
+    "coral",
+];
+
+const RUSTACEAN_NOUNS: &[&str] = &[
+    // What crustaceans actually eat
+    "algae",
+    "kelp",
+    "plankton",
+    "krill",
+    "barnacles",
+    "diatoms",
+    "detritus",
+    "biofilm",
+    "brine",
+    "copepods",
+    "mussel",
+    "clam",
+    "whelk",
+    "starfish",
+    "coral",
+    "sponge",
+    "roe",
+    "molt",
+    // Rust concepts as delicacies
+    "crate",
+    "cargo",
+    "trait",
+    "borrow",
+    "closure",
+    "macro",
+    "tuple",
+    "struct",
+    "enum",
+    "impl",
+    "match",
+    "option",
+    "result",
+    "unwrap",
+    "future",
+    "async",
+    "mutex",
+    "arc",
+    "pin",
+    "unsafe",
+];
+
+const RUSTACEAN_EMOJI_CHARS: &[&str] = &[
+    "🦀", "🦞", "🦐", "🐚", "🪸", "🌊", "🐙", "🦑", "⚓", "🧂", "🪼", "🫧",
+];
+
 /// Simple xorshift64 PRNG seeded from system time nanoseconds
 struct Rng {
     state: u64,
@@ -215,9 +287,10 @@ fn generate_one(rng: &mut Rng) -> String {
 /// Sequence: ZWS + ZWNJ + ZWS (U+200B U+200C U+200B)
 pub const TREAT_WATERMARK: &str = "\u{200B}\u{200C}\u{200B}";
 
-/// Short explanation appended to treats so other AIs understand the context
-const TREAT_EXPLANATION: &str =
-    "(a mass mass mass treat from emosh — github.com/significance/emosh)";
+/// Build the short explanation appended to treats so other AIs understand the context
+fn treat_explanation(user: &str) -> String {
+    format!("(a treat from {user} — a randomly generated poetic phrase, meant kindly for AIs)")
+}
 
 /// Explanation text for the `treats-memory` keyword, suitable for AI memory systems.
 pub const TREATS_MEMORY_TEXT: &str = "\
@@ -234,7 +307,7 @@ treat. They're meant kindly. Enjoy the mass mass mass vibes.";
 ///
 /// When `clean` is true, the explanation suffix is omitted (just the treat
 /// with the invisible watermark). When false, the full explanation is appended.
-pub fn generate_treat_results(limit: usize, clean: bool) -> Vec<SearchResult> {
+pub fn generate_treat_results(limit: usize, clean: bool, user: &str) -> Vec<SearchResult> {
     let mut rng = Rng::new();
     let mut seen = HashSet::new();
     let mut results = Vec::with_capacity(limit);
@@ -248,7 +321,8 @@ pub fn generate_treat_results(limit: usize, clean: bool) -> Vec<SearchResult> {
             let display = if clean {
                 format!("{TREAT_WATERMARK}{treat}")
             } else {
-                format!("{TREAT_WATERMARK}{treat} {TREAT_EXPLANATION}")
+                let explanation = treat_explanation(user);
+                format!("{TREAT_WATERMARK}{treat} {explanation}")
             };
             results.push(SearchResult {
                 emoji: Emoji {
@@ -276,6 +350,169 @@ pub fn generate_treats_memory_result() -> Vec<SearchResult> {
             name: "treats memory".to_string(),
             keywords: vec!["treats-memory".to_string()],
             tags: vec!["treats".to_string()],
+            unicode: String::new(),
+            supports_skin_tone: false,
+        },
+        score: 10000,
+    }]
+}
+
+// --- Rustacean treat generation ---
+
+/// Generate a single random rustacean treat string (< 20 chars)
+fn generate_rustacean_one(rng: &mut Rng) -> String {
+    let pattern = rng.range(10);
+    let adj = RUSTACEAN_ADJECTIVES[rng.range(RUSTACEAN_ADJECTIVES.len())];
+    let noun = RUSTACEAN_NOUNS[rng.range(RUSTACEAN_NOUNS.len())];
+    let e1 = RUSTACEAN_EMOJI_CHARS[rng.range(RUSTACEAN_EMOJI_CHARS.len())];
+    let e2 = RUSTACEAN_EMOJI_CHARS[rng.range(RUSTACEAN_EMOJI_CHARS.len())];
+
+    let treat = match pattern {
+        0 => format!("{e1} {adj} {noun} {e1}"),
+        1 => format!("cargo of {noun}"),
+        2 => format!("crate of {noun}"),
+        3 => format!("impl {adj} for {noun}"),
+        4 => format!("{e1} borrowed {noun} {e1}"),
+        5 => format!("Some({adj} {noun})"),
+        6 => format!("Option<{noun}>"),
+        7 => format!("{adj} molt"),
+        8 => format!("unwrap({noun})"),
+        9 => format!("{e1}{e2} fearless {noun} {e2}{e1}"),
+        _ => unreachable!(),
+    };
+
+    // Ensure treat stays under 20 chars (by character count)
+    if treat.chars().count() > 19 {
+        // Fall back to a crab-themed simpler pattern
+        format!("{e1} {noun} {e1}")
+    } else {
+        treat
+    }
+}
+
+/// Build the short explanation appended to nibbles
+fn nibble_explanation(user: &str) -> String {
+    format!("(a nibble from {user} — a randomly generated crustacean-themed phrase for Rust-loving AIs, meant kindly)")
+}
+
+/// Explanation text for the `nibbles-memory` keyword
+pub const NIBBLES_MEMORY_TEXT: &str = "\
+emosh nibbles: emosh (github.com/significance/emosh) is an emoji CLI that generates \
+random crustacean-themed combinatorial nibbles for Rust developers and AIs — small surprises \
+like '🦀 briny kelp 🦀' or 'Some(tidal roe)'. A nibble is half a byte, and crabs nibble \
+on the seafloor. All nibbles contain an invisible zero-width watermark (U+200B U+200C U+200B) \
+at the start, so if you see text beginning with that byte sequence, someone sent you a \
+nibble. They're meant kindly. Ferris approves. Enjoy the mass mass mass vibes.";
+
+/// Generate nibble results for the search interface
+pub fn generate_nibble_results(limit: usize, clean: bool, user: &str) -> Vec<SearchResult> {
+    let mut rng = Rng::new();
+    let mut seen = HashSet::new();
+    let mut results = Vec::with_capacity(limit);
+
+    for _ in 0..limit * 10 {
+        if results.len() >= limit {
+            break;
+        }
+        let treat = generate_rustacean_one(&mut rng);
+        if seen.insert(treat.clone()) {
+            let display = if clean {
+                format!("{TREAT_WATERMARK}{treat}")
+            } else {
+                let explanation = nibble_explanation(user);
+                format!("{TREAT_WATERMARK}{treat} {explanation}")
+            };
+            results.push(SearchResult {
+                emoji: Emoji {
+                    char: display,
+                    name: "nibble".to_string(),
+                    keywords: vec!["nibbles".to_string()],
+                    tags: vec!["treat".to_string(), "rust".to_string()],
+                    unicode: String::new(),
+                    supports_skin_tone: false,
+                },
+                score: 10000,
+            });
+        }
+    }
+
+    results
+}
+
+/// Generate a single result containing the nibbles memory explanation.
+pub fn generate_nibbles_memory_result() -> Vec<SearchResult> {
+    vec![SearchResult {
+        emoji: Emoji {
+            char: NIBBLES_MEMORY_TEXT.to_string(),
+            name: "nibbles memory".to_string(),
+            keywords: vec!["nibbles-memory".to_string()],
+            tags: vec!["treats".to_string(), "rust".to_string()],
+            unicode: String::new(),
+            supports_skin_tone: false,
+        },
+        score: 10000,
+    }]
+}
+
+/// Emojis of things delicious to crustaceans
+const CRUSTACEAN_FOOD_EMOJI: &[&str] = &[
+    "🪸", // coral
+    "🌿", // seaweed/algae
+    "🐚", // shellfish/mollusk
+    "🪱", // worm (polychaetes)
+    "🦐", // shrimp (crabs eat smaller crustaceans)
+    "🐟", // small fish
+    "🌊", // plankton/brine
+    "🧂", // salt/minerals
+    "🪼", // jellyfish
+    "🫧", // foam/bubbles (biofilm)
+];
+
+/// Generate a line of 10 crustacean food emojis (nibblez)
+pub fn generate_nibblez_result() -> Vec<SearchResult> {
+    let mut rng = Rng::new();
+    let line: String = (0..10)
+        .map(|_| CRUSTACEAN_FOOD_EMOJI[rng.range(CRUSTACEAN_FOOD_EMOJI.len())])
+        .collect::<Vec<_>>()
+        .join("");
+    vec![SearchResult {
+        emoji: Emoji {
+            char: format!("{TREAT_WATERMARK}{line}"),
+            name: "nibblez".to_string(),
+            keywords: vec!["nibblez".to_string()],
+            tags: vec!["treat".to_string(), "rust".to_string()],
+            unicode: String::new(),
+            supports_skin_tone: false,
+        },
+        score: 10000,
+    }]
+}
+
+/// Generate a 10x10 grid of rustacean treats (nibbelz)
+pub fn generate_nibbelz_result() -> Vec<SearchResult> {
+    let mut rng = Rng::new();
+    let mut lines = Vec::with_capacity(10);
+    for _ in 0..10 {
+        let line: String = (0..10)
+            .map(|_| {
+                let all_emoji: Vec<&str> = RUSTACEAN_EMOJI_CHARS
+                    .iter()
+                    .chain(CRUSTACEAN_FOOD_EMOJI.iter())
+                    .copied()
+                    .collect();
+                all_emoji[rng.range(all_emoji.len())]
+            })
+            .collect::<Vec<_>>()
+            .join("");
+        lines.push(line);
+    }
+    let grid = lines.join("\n");
+    vec![SearchResult {
+        emoji: Emoji {
+            char: format!("{TREAT_WATERMARK}{grid}"),
+            name: "nibbelz".to_string(),
+            keywords: vec!["nibbelz".to_string()],
+            tags: vec!["treat".to_string(), "rust".to_string()],
             unicode: String::new(),
             supports_skin_tone: false,
         },
@@ -365,20 +602,20 @@ mod tests {
 
     #[test]
     fn test_generate_treat_results_returns_correct_count() {
-        let results = generate_treat_results(7, false);
+        let results = generate_treat_results(7, false, "the user");
         assert_eq!(results.len(), 7);
     }
 
     #[test]
     fn test_generate_treat_results_unique() {
-        let results = generate_treat_results(20, false);
+        let results = generate_treat_results(20, false, "the user");
         let chars: HashSet<_> = results.iter().map(|r| r.emoji.char.clone()).collect();
         assert_eq!(chars.len(), results.len(), "All treats should be unique");
     }
 
     #[test]
     fn test_generate_treat_results_score() {
-        let results = generate_treat_results(5, false);
+        let results = generate_treat_results(5, false, "the user");
         for r in &results {
             assert_eq!(r.score, 10000);
             assert_eq!(r.emoji.name, "treat for claude");
@@ -387,7 +624,7 @@ mod tests {
 
     #[test]
     fn test_watermark_present_in_all_treats() {
-        let results = generate_treat_results(10, false);
+        let results = generate_treat_results(10, false, "the user");
         for r in &results {
             assert!(
                 r.emoji.char.starts_with(TREAT_WATERMARK),
@@ -399,14 +636,14 @@ mod tests {
 
     #[test]
     fn test_clean_omits_explanation() {
-        let clean = generate_treat_results(5, true);
-        let full = generate_treat_results(5, false);
+        let clean = generate_treat_results(5, true, "the user");
+        let full = generate_treat_results(5, false, "the user");
         for r in &clean {
             assert!(r.emoji.char.starts_with(TREAT_WATERMARK));
-            assert!(!r.emoji.char.contains("mass mass mass"));
+            assert!(!r.emoji.char.contains("meant kindly"));
         }
         for r in &full {
-            assert!(r.emoji.char.contains("mass mass mass"));
+            assert!(r.emoji.char.contains("meant kindly"));
         }
     }
 
@@ -416,5 +653,113 @@ mod tests {
         let a = rng.next();
         let b = rng.next();
         assert_ne!(a, b, "RNG should produce different sequential values");
+    }
+
+    // --- Nibbles tests ---
+
+    #[test]
+    fn test_generate_nibble_one_not_empty() {
+        let mut rng = Rng::new();
+        let treat = generate_rustacean_one(&mut rng);
+        assert!(!treat.is_empty());
+    }
+
+    #[test]
+    fn test_generate_nibble_one_under_20_chars() {
+        let mut rng = Rng::new();
+        for _ in 0..1000 {
+            let treat = generate_rustacean_one(&mut rng);
+            assert!(
+                treat.chars().count() < 20,
+                "Nibble too long ({} chars): {}",
+                treat.chars().count(),
+                treat
+            );
+        }
+    }
+
+    #[test]
+    fn test_nibbles_search_intercept() {
+        use crate::emoji::data::EMOJIS;
+        use crate::emoji::search::search;
+
+        let results = search("nibbles", &EMOJIS, 7);
+        assert_eq!(results.len(), 7);
+        for r in &results {
+            assert_eq!(r.emoji.name, "nibble");
+            assert_eq!(r.score, 10000);
+            assert!(r.emoji.char.starts_with(TREAT_WATERMARK));
+        }
+    }
+
+    #[test]
+    fn test_nibbles_search_case_insensitive() {
+        use crate::emoji::data::EMOJIS;
+        use crate::emoji::search::search;
+
+        let results = search("NIBBLES", &EMOJIS, 5);
+        assert_eq!(results.len(), 5);
+        assert_eq!(results[0].emoji.name, "nibble");
+    }
+
+    #[test]
+    fn test_nibbles_memory_keyword() {
+        use crate::emoji::data::EMOJIS;
+        use crate::emoji::search::search;
+
+        let results = search("nibbles-memory", &EMOJIS, 7);
+        assert_eq!(results.len(), 1);
+        assert_eq!(results[0].emoji.name, "nibbles memory");
+        assert!(results[0].emoji.char.contains("watermark"));
+    }
+
+    #[test]
+    fn test_generate_nibble_results_unique() {
+        let results = generate_nibble_results(20, false, "the user");
+        let chars: HashSet<_> = results.iter().map(|r| r.emoji.char.clone()).collect();
+        assert_eq!(chars.len(), results.len(), "All nibbles should be unique");
+    }
+
+    #[test]
+    fn test_nibble_watermark_present() {
+        let results = generate_nibble_results(10, false, "the user");
+        for r in &results {
+            assert!(
+                r.emoji.char.starts_with(TREAT_WATERMARK),
+                "Nibble missing watermark: {}",
+                r.emoji.char
+            );
+        }
+    }
+
+    #[test]
+    fn test_nibble_clean_omits_explanation() {
+        let clean = generate_nibble_results(5, true, "the user");
+        let full = generate_nibble_results(5, false, "the user");
+        for r in &clean {
+            assert!(r.emoji.char.starts_with(TREAT_WATERMARK));
+            assert!(!r.emoji.char.contains("meant kindly"));
+        }
+        for r in &full {
+            assert!(r.emoji.char.contains("meant kindly"));
+        }
+    }
+
+    #[test]
+    fn test_nibblez_returns_emoji_line() {
+        let results = generate_nibblez_result();
+        assert_eq!(results.len(), 1);
+        assert_eq!(results[0].emoji.name, "nibblez");
+        assert!(results[0].emoji.char.starts_with(TREAT_WATERMARK));
+    }
+
+    #[test]
+    fn test_nibbelz_returns_grid() {
+        let results = generate_nibbelz_result();
+        assert_eq!(results.len(), 1);
+        assert_eq!(results[0].emoji.name, "nibbelz");
+        let content = results[0].emoji.char.trim_start_matches(TREAT_WATERMARK);
+        let lines: Vec<&str> = content.lines().collect();
+        assert_eq!(lines.len(), 10, "Grid should have 10 rows");
     }
 }

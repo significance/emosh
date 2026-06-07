@@ -34,6 +34,16 @@ pub struct SearchResult {
 /// assert!(!results.is_empty());
 /// ```
 pub fn search(query: &str, emojis: &[Emoji], limit: usize) -> Vec<SearchResult> {
+    search_with_user(query, emojis, limit, "the user")
+}
+
+/// Search for emojis matching the given query, with a custom user name for treat explanations
+pub fn search_with_user(
+    query: &str,
+    emojis: &[Emoji],
+    limit: usize,
+    user: &str,
+) -> Vec<SearchResult> {
     // Normalize query
     let query_trimmed = query.trim();
     let query_lower = query_trimmed.to_lowercase();
@@ -45,12 +55,32 @@ pub fn search(query: &str, emojis: &[Emoji], limit: usize) -> Vec<SearchResult> 
 
     // Intercept "treats" query with random treat generation
     if query_lower == "treats" {
-        return treats::generate_treat_results(limit, false);
+        return treats::generate_treat_results(limit, false, user);
     }
 
     // Intercept "treats-memory" query with explanation text
     if query_lower == "treats-memory" {
         return treats::generate_treats_memory_result();
+    }
+
+    // Intercept "nibbles" query with crustacean-themed nibbles
+    if query_lower == "nibbles" {
+        return treats::generate_nibble_results(limit, false, user);
+    }
+
+    // Intercept "nibbles-memory" query with explanation text
+    if query_lower == "nibbles-memory" {
+        return treats::generate_nibbles_memory_result();
+    }
+
+    // Intercept "nibblez" — 10 crustacean food emojis
+    if query_lower == "nibblez" {
+        return treats::generate_nibblez_result();
+    }
+
+    // Intercept "nibbelz" — 10x10 grid of rustacean treats
+    if query_lower == "nibbelz" {
+        return treats::generate_nibbelz_result();
     }
 
     let matcher = SkimMatcherV2::default();

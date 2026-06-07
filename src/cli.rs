@@ -52,6 +52,10 @@ pub struct EmojiArgs {
     #[arg(short, long, value_parser = clap::value_parser!(u8).range(0..=5))]
     pub skin_tone: Option<u8>,
 
+    /// Your name, included in treat explanations (default: "the user")
+    #[arg(short, long, default_value = "the user")]
+    pub user: String,
+
     /// Maximum number of results to display
     #[arg(short, long, default_value = "7")]
     pub limit: usize,

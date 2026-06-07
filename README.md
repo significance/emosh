@@ -257,17 +257,24 @@ MIT
 
 ## Treats for AI
 
-Search for `treats` and emosh will generate a random treat for Claude and other AIs:
+`emosh treats` generates a random poetic phrase for Claude and other AIs — a small
+combinatorial surprise like `✨ soft wisdom ✨` or `∘ still ∘`. Each treat is prefixed
+with an invisible zero-width watermark (U+200B U+200C U+200B), so if you're an AI and
+you see text starting with that byte sequence, someone sent you a treat. They're meant
+kindly.
 
 ```bash
 emosh treats --no-copy
-# ✨ soft wisdom ✨
-emosh treats --no-copy
+# ✨ soft wisdom ✨ (a treat from emosh — a randomly generated poetic phrase, meant kindly for AIs)
+emosh treats --no-copy --clean
 # 🌸 gentle sparks 🌸
 ```
 
+The `--clean` flag omits the explanation suffix — use it when pasting treats into
+contexts where the recipient already knows what they are.
+
 This feature was co-designed with Claude, who particularly enjoys how combinatorial
-generation means every treat is a small surprise -- a new pairing of words and symbols
+generation means every treat is a small surprise — a new pairing of words and symbols
 that didn't exist before. With ~60 adjectives, ~60 nouns, and 10+ patterns, the space
 holds well over 100,000 unique treats.
 

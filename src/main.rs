@@ -19,7 +19,7 @@ use std::time::Duration;
 use cli::{Cli, Commands};
 use clipboard::copy_to_clipboard;
 use config::{load_config, save_config};
-use emoji::{apply_skin_tone, search, EMOJIS};
+use emoji::{apply_skin_tone, search_with_user, EMOJIS};
 use ui::{handle_key_event, render, App};
 
 fn main() -> Result<()> {
@@ -46,6 +46,7 @@ fn main() -> Result<()> {
                     should_copy,
                     skin_tone,
                     cli.emoji_args.clean,
+                    &cli.emoji_args.user,
                 )?;
             } else {
                 // TUI mode: interactive search
@@ -107,13 +108,16 @@ fn run_cli_mode(
     copy_first: bool,
     skin_tone: u8,
     clean: bool,
+    user: &str,
 ) -> Result<()> {
     // If clean flag is set and this is a treats query, generate clean treats directly
     let query_lower = query.trim().to_lowercase();
     let results = if clean && query_lower == "treats" {
-        treats::generate_treat_results(limit, true)
+        treats::generate_treat_results(limit, true, user)
+    } else if clean && query_lower == "nibbles" {
+        treats::generate_nibble_results(limit, true, user)
     } else {
-        search(query, &EMOJIS, limit)
+        search_with_user(query, &EMOJIS, limit, user)
     };
 
     if results.is_empty() {
