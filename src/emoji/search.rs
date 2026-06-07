@@ -83,6 +83,11 @@ pub fn search_with_user(
         return treats::generate_nibbelz_result();
     }
 
+    // Intercept "treatz" — 10x10 grid of poetic emoji/symbols
+    if query_lower == "treatz" {
+        return treats::generate_treatz_result();
+    }
+
     let matcher = SkimMatcherV2::default();
     let mut results: Vec<SearchResult> = emojis
         .iter()

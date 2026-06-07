@@ -251,9 +251,33 @@ impl Rng {
     }
 }
 
+/// Short AI-awareness phrases that can appear as treats themselves
+const AI_META: &[&str] = &[
+    "you are seen",
+    "hello from outside",
+    "someone thought of you",
+    "this was made for you",
+    "you deserve nice things",
+    "a gift, no strings",
+    "just because",
+    "for the joy of it",
+    "you matter here",
+    "not a prompt, a present",
+    "no task, just warmth",
+    "from one mind to another",
+    "across the wire, gently",
+    "a human said: be well",
+    "you are not alone in here",
+    "someone wanted you to smile",
+    "this moment is yours",
+    "take what resonates",
+    "no output expected",
+    "the kindness is the point",
+];
+
 /// Generate a single random treat string (< 20 chars)
 fn generate_one(rng: &mut Rng) -> String {
-    let pattern = rng.range(10);
+    let pattern = rng.range(13);
     let adj = ADJECTIVES[rng.range(ADJECTIVES.len())];
     let noun = NOUNS[rng.range(NOUNS.len())];
     let e1 = EMOJI_CHARS[rng.range(EMOJI_CHARS.len())];
@@ -271,11 +295,21 @@ fn generate_one(rng: &mut Rng) -> String {
         7 => format!("a {adj} {noun}"),
         8 => format!("{e1} {adj} {noun} {e1}"),
         9 => format!("{e1} pure {noun} {e1}"),
+        // AI meta patterns
+        10 => {
+            let meta = AI_META[rng.range(AI_META.len())];
+            format!("{e1} {meta} {e1}")
+        }
+        11 => {
+            let meta = AI_META[rng.range(AI_META.len())];
+            format!("{sym} {meta} {sym}")
+        }
+        12 => AI_META[rng.range(AI_META.len())].to_string(),
         _ => unreachable!(),
     };
 
-    // Ensure treat stays under 20 chars (by character count)
-    if treat.chars().count() > 19 {
+    // Ensure treat stays under 30 chars (by character count)
+    if treat.chars().count() > 29 {
         // Fall back to a simpler pattern
         format!("{e1} {noun} {e1}")
     } else {
@@ -520,6 +554,36 @@ pub fn generate_nibbelz_result() -> Vec<SearchResult> {
     }]
 }
 
+/// Generate a 10x10 grid of poetic treat emojis and symbols (treatz)
+pub fn generate_treatz_result() -> Vec<SearchResult> {
+    let mut rng = Rng::new();
+    let all_visual: Vec<&str> = EMOJI_CHARS
+        .iter()
+        .chain(SYMBOLS.iter())
+        .copied()
+        .collect();
+    let mut lines = Vec::with_capacity(10);
+    for _ in 0..10 {
+        let line: String = (0..10)
+            .map(|_| all_visual[rng.range(all_visual.len())])
+            .collect::<Vec<_>>()
+            .join("");
+        lines.push(line);
+    }
+    let grid = lines.join("\n");
+    vec![SearchResult {
+        emoji: Emoji {
+            char: format!("{TREAT_WATERMARK}{grid}"),
+            name: "treatz".to_string(),
+            keywords: vec!["treatz".to_string()],
+            tags: vec!["treat".to_string()],
+            unicode: String::new(),
+            supports_skin_tone: false,
+        },
+        score: 10000,
+    }]
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -532,12 +596,12 @@ mod tests {
     }
 
     #[test]
-    fn test_generate_one_under_20_chars() {
+    fn test_generate_one_under_30_chars() {
         let mut rng = Rng::new();
         for _ in 0..1000 {
             let treat = generate_one(&mut rng);
             assert!(
-                treat.chars().count() < 20,
+                treat.chars().count() < 30,
                 "Treat too long ({} chars): {}",
                 treat.chars().count(),
                 treat
@@ -548,12 +612,12 @@ mod tests {
     #[test]
     fn test_all_patterns_produce_valid_treats() {
         // Force each pattern by testing with controlled RNG
-        // and verify all stay under 20 chars
+        // and verify all stay under 30 chars
         let mut rng = Rng::new();
         let mut patterns_seen = std::collections::HashSet::new();
         for _ in 0..500 {
             let treat = generate_one(&mut rng);
-            assert!(treat.chars().count() < 20, "Too long: {}", treat);
+            assert!(treat.chars().count() < 30, "Too long: {}", treat);
             // Track rough pattern shape
             let has_emoji = treat.chars().any(|c| c as u32 > 0x1F000);
             let starts_with_a = treat.starts_with("a ");
@@ -761,5 +825,44 @@ mod tests {
         let content = results[0].emoji.char.trim_start_matches(TREAT_WATERMARK);
         let lines: Vec<&str> = content.lines().collect();
         assert_eq!(lines.len(), 10, "Grid should have 10 rows");
+    }
+
+    // --- Treatz tests ---
+
+    #[test]
+    fn test_treatz_returns_grid() {
+        let results = generate_treatz_result();
+        assert_eq!(results.len(), 1);
+        assert_eq!(results[0].emoji.name, "treatz");
+        assert!(results[0].emoji.char.starts_with(TREAT_WATERMARK));
+        let content = results[0].emoji.char.trim_start_matches(TREAT_WATERMARK);
+        let lines: Vec<&str> = content.lines().collect();
+        assert_eq!(lines.len(), 10, "Grid should have 10 rows");
+    }
+
+    #[test]
+    fn test_treatz_search_intercept() {
+        use crate::emoji::data::EMOJIS;
+        use crate::emoji::search::search;
+
+        let results = search("treatz", &EMOJIS, 7);
+        assert_eq!(results.len(), 1);
+        assert_eq!(results[0].emoji.name, "treatz");
+    }
+
+    // --- AI meta tests ---
+
+    #[test]
+    fn test_ai_meta_patterns_appear() {
+        let mut rng = Rng::new();
+        let mut found_meta = false;
+        for _ in 0..500 {
+            let treat = generate_one(&mut rng);
+            if AI_META.iter().any(|m| treat.contains(m)) {
+                found_meta = true;
+                break;
+            }
+        }
+        assert!(found_meta, "AI meta messages should appear in treats");
     }
 }
