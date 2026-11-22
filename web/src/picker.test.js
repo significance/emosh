@@ -592,3 +592,54 @@ describe('mountPicker — recents', () => {
     expect(options()).toHaveLength(0)
   })
 })
+
+describe('mountPicker — skin tone (emoji)', () => {
+  beforeEach(() => vi.useFakeTimers())
+  afterEach(() => vi.useRealTimers())
+
+  const tone = () => ctx.root.querySelector('[data-picker-tone]')
+
+  it('offers tones 0–5 starting from the saved one, like the CLI', () => {
+    setup({ storage: memoryStorage({ 'emosh.skin_tone': '3' }) })
+    expect([...tone().options].map((o) => o.value)).toEqual(['0', '1', '2', '3', '4', '5'])
+    expect(tone().value).toBe('3')
+    type('wave')
+    vi.advanceTimersByTime(60)
+    expect(ctx.search).toHaveBeenCalledWith('wave', 24, 3)
+    expect(options()[0].textContent).toBe('e0~3')
+  })
+
+  it('changing the tone saves it and re-runs the query at once', () => {
+    setup()
+    type('wave')
+    vi.advanceTimersByTime(60)
+    tone().value = '4'
+    tone().dispatchEvent(new Event('change', { bubbles: true }))
+    expect(ctx.storage.getItem('emosh.skin_tone')).toBe('4')
+    expect(ctx.search).toHaveBeenLastCalledWith('wave', 24, 4)
+  })
+
+  it('falls back to the default tone for bad saved values', () => {
+    setup({ storage: memoryStorage({ 'emosh.skin_tone': '9' }) })
+    expect(tone().value).toBe('0')
+    setup({ storage: memoryStorage({ 'emosh.skin_tone': 'purple' }) })
+    expect(tone().value).toBe('0')
+  })
+
+  it('keeps working when the tone cannot be saved', () => {
+    const storage = {
+      getItem: () => null,
+      setItem: () => {
+        throw new Error('blocked')
+      },
+    }
+    setup({ storage })
+    tone().value = '2'
+    expect(() => tone().dispatchEvent(new Event('change', { bubbles: true }))).not.toThrow()
+  })
+
+  it('kaomoji mode has no tone selector', () => {
+    setup({ mode: 'kaomoji' })
+    expect(tone()).toBeNull()
+  })
+})

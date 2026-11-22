@@ -38,6 +38,26 @@ const RECENT_MAX = 12
 /** How long the "copied" pulse stays on a tile, in milliseconds. */
 const PULSE_MS = 600
 
+/** Where the skin tone lives; the same 0–5 scale as the CLI's `--skin-tone`. */
+const TONE_KEY = 'emosh.skin_tone'
+const TONES = ['✋ default', '✋🏻 light', '✋🏼 medium-light', '✋🏽 medium', '✋🏾 medium-dark', '✋🏿 dark']
+
+/**
+ * Read the saved skin tone, falling back to 0 for anything outside 0–5.
+ *
+ * @param {Pick<Storage, 'getItem'>} storage
+ * @returns {number}
+ */
+function savedTone(storage) {
+  let tone
+  try {
+    tone = Number(storage.getItem(TONE_KEY))
+  } catch {
+    return 0
+  }
+  return Number.isInteger(tone) && tone >= 0 && tone <= 5 ? tone : 0
+}
+
 const ARROWS = { ArrowLeft: true, ArrowRight: true, ArrowUp: true, ArrowDown: true }
 
 /**
@@ -86,6 +106,12 @@ export function mountPicker(root, options) {
       aria-autocomplete="list" aria-expanded="false" aria-controls="picker-results-${mode}"
       autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done"
       placeholder="${labels.hint}" />
+    ${
+      mode === 'emoji'
+        ? `<label class="picker-tone"><span class="visually-hidden">Skin tone</span>
+        <select data-picker-tone>${TONES.map((t, i) => `<option value="${i}">${t}</option>`).join('')}</select></label>`
+        : ''
+    }
     <p class="picker-hint" data-picker-hint>${labels.hint}</p>
     <p class="picker-empty" data-picker-empty hidden>No matches. Try another word.</p>
     <p class="picker-recent" data-picker-recent hidden>recent</p>
@@ -110,6 +136,8 @@ export function mountPicker(root, options) {
   const fallbackField = fallback.querySelector('input')
   const setStatus = createCopyStatus(root.querySelector('[data-picker-status]'))
   const recentKey = `emosh.recent.${mode}`
+  const toneSelect = root.querySelector('[data-picker-tone]')
+  let tone = 0
 
   /** @type {PickResult[]} */
   let items = []
@@ -119,7 +147,7 @@ export function mountPicker(root, options) {
 
   function runSearch() {
     const query = input.value.trim()
-    items = query === '' ? loadRecents() : search(query, limitFor(viewportWidth()), 0)
+    items = query === '' ? loadRecents() : search(query, limitFor(viewportWidth()), tone)
     render(query)
   }
 
@@ -259,6 +287,20 @@ export function mountPicker(root, options) {
     const option = event.target.closest('[role="option"]')
     if (option) copyAt(Number(option.dataset.index))
   })
+
+  if (toneSelect) {
+    tone = savedTone(storage)
+    toneSelect.value = String(tone)
+    toneSelect.addEventListener('change', () => {
+      tone = Number(toneSelect.value)
+      try {
+        storage.setItem(TONE_KEY, String(tone))
+      } catch {
+        // Unsaved is fine; the tone still applies for this visit.
+      }
+      runSearch()
+    })
+  }
 
   input.addEventListener('input', scheduleSearch)
 
