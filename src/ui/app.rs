@@ -49,6 +49,22 @@ pub enum Mode {
 }
 
 impl Mode {
+    /// The text shown before the query on the prompt line.
+    pub fn prompt_prefix(self) -> &'static str {
+        match self {
+            Mode::Emoji => "> ",
+            Mode::Kaomoji => "kaomoji › ",
+        }
+    }
+
+    /// Placeholder shown while the query is empty.
+    pub fn placeholder(self) -> &'static str {
+        match self {
+            Mode::Emoji => "Relevant emojis will appear when you start writing",
+            Mode::Kaomoji => "Relevant kaomoji will appear when you start writing",
+        }
+    }
+
     /// Search this mode's database for `query`, returning at most `limit` results.
     pub fn search(self, query: &str, limit: usize) -> Vec<SearchResult> {
         match self {

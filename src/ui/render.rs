@@ -33,15 +33,15 @@ fn render_prompt(frame: &mut Frame, app: &App, area: ratatui::layout::Rect) {
     let text = if app.query.is_empty() {
         // Show placeholder text in gray
         Line::from(vec![
-            Span::raw("> "),
-            Span::styled(
-                "Relevant emojis will appear when you start writing",
-                Style::default().fg(Color::DarkGray),
-            ),
+            Span::raw(app.mode.prompt_prefix()),
+            Span::styled(app.mode.placeholder(), Style::default().fg(Color::DarkGray)),
         ])
     } else {
         // Show actual query
-        Line::from(vec![Span::raw("> "), Span::raw(&app.query)])
+        Line::from(vec![
+            Span::raw(app.mode.prompt_prefix()),
+            Span::raw(&app.query),
+        ])
     };
 
     let paragraph = Paragraph::new(text);

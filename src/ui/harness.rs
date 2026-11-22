@@ -244,4 +244,22 @@ mod tests {
         type_text(&mut app, "shrug");
         assert_ne!(app.picker.selected().unwrap().emoji.char, "¯\\_(ツ)_/¯");
     }
+
+    #[test]
+    fn test_kaomoji_prompt_shows_mode_hint_and_placeholder() {
+        let (app, _) = recording_kaomoji_app();
+        let buf = render_app(&app, 80, 5);
+        assert_eq!(
+            row_text(&buf, 0),
+            "kaomoji › Relevant kaomoji will appear when you start writing"
+        );
+    }
+
+    #[test]
+    fn test_kaomoji_prompt_shows_query_after_hint() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "happy");
+        let buf = render_app(&app, 80, 12);
+        assert_eq!(row_text(&buf, 0), "kaomoji › happy");
+    }
 }
