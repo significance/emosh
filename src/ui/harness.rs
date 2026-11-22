@@ -262,4 +262,68 @@ mod tests {
         let buf = render_app(&app, 80, 12);
         assert_eq!(row_text(&buf, 0), "kaomoji › happy");
     }
+
+    // --- kaomoji list layout ---
+
+    #[test]
+    fn test_kaomoji_results_render_as_numbered_list() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "shrug");
+        let buf = render_app(&app, 60, 12);
+        assert!(row_text(&buf, 2).starts_with("1 ¯\\_(ツ)_/¯"));
+        assert!(row_text(&buf, 2).ends_with("shrug"));
+        assert!(row_text(&buf, 3).starts_with("2 "));
+        assert!(row_text(&buf, 8).starts_with("7 "));
+        assert_eq!(row_text(&buf, 9), "");
+    }
+
+    #[test]
+    fn test_kaomoji_list_highlights_only_the_selected_row() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "happy");
+        press(&mut app, KeyCode::Right).unwrap();
+        let buf = render_app(&app, 60, 12);
+        assert_eq!(buf[(0, 3)].bg, ratatui::style::Color::Gray);
+        assert_ne!(buf[(0, 2)].bg, ratatui::style::Color::Gray);
+        assert_ne!(buf[(0, 4)].bg, ratatui::style::Color::Gray);
+    }
+
+    #[test]
+    fn test_kaomoji_list_truncates_with_ellipsis_and_never_wraps() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "happy");
+        for width in 6..60u16 {
+            let buf = render_app(&app, width, 12);
+            let rows: Vec<String> = (2..9).map(|y| row_text(&buf, y)).collect();
+            for (i, row) in rows.iter().enumerate() {
+                assert!(
+                    UnicodeWidthStr::width(row.as_str()) <= width as usize,
+                    "{width}: {row}"
+                );
+                assert!(row.starts_with(&format!("{} ", i + 1)), "{width}: {row}");
+            }
+            // exactly one row per result below the prompt: nothing wrapped onto extra rows
+            assert_eq!(row_text(&buf, 9), "", "wrapped at width {width}");
+        }
+        let narrow = render_app(&app, 14, 12);
+        assert!(row_text(&narrow, 2).ends_with('…'));
+    }
+
+    #[test]
+    fn test_kaomoji_list_clips_to_short_terminals_without_panicking() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "happy");
+        let buf = render_app(&app, 40, 4);
+        assert!(row_text(&buf, 2).starts_with("1 "));
+        assert!(row_text(&buf, 3).starts_with("2 "));
+    }
+
+    #[test]
+    fn test_kaomoji_copy_feedback_shows_on_the_prompt_line() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "happy");
+        press(&mut app, KeyCode::Tab).unwrap();
+        let buf = render_app(&app, 60, 12);
+        assert!(row_text(&buf, 0).ends_with("✓"));
+    }
 }
