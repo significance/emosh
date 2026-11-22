@@ -41,6 +41,7 @@ runs as WebAssembly and the site picks a new **emoshion** colour palette every v
 | Ξ€ **Currency** | Ξ, $, €, ¥, £ and friends |
 | x² **LaTeX → Unicode** | `emosh latex 'x^2'` → x², `H_2O` → H₂O, `\hat{x}` → x̂ |
 | ✨ **Treats for AIs** | Watermarked poetic phrases, meant kindly |
+| ( ͡° ͜ʖ ͡°) **Kaomoji** | 751 Japanese text faces: `emosh -k shrug` → ¯\\_(ツ)_/¯, `emosh -k table flip` → (╯°□°)╯︵ ┻━┻ |
 | 🎨 **Skin tones** | Tones 0–5, remembered between runs |
 | 🚀 **Fast** | Sub-5 ms search, under 50 ms startup, single static binary |
 | 🌍 **Everywhere** | Linux, macOS (Intel and Apple Silicon), Windows, Raspberry Pi (32- and 64-bit), and the web via WASM |
@@ -116,9 +117,23 @@ emosh Omega                 # Ω
 emosh ether                 # Ξ
 ```
 
+#### Kaomoji
+
+```bash
+emosh -k happy              # up to 7 faces, first one copied
+emosh --kaomoji shrug       # ¯\\_(ツ)_/¯   (exact name wins)
+emosh -k table flip -n      # (╯°□°)╯︵ ┻━┻   shown, not copied (no quotes needed)
+emosh -k                    # interactive TUI in kaomoji mode
+emosh -k treats -c -u sig   # a treat decorated with kaomoji
+emosh -k random             # one random face
+```
+
+In the kaomoji TUI, `↑`/`↓` (and `←`/`→`) move through the list; the other keys are the same.
+
 | Flag | Meaning |
 |---|---|
 | `-n, --no-copy` | Don't copy the first result to the clipboard |
+| `-k, --kaomoji` | Search kaomoji instead of emoji (`--skin-tone` is ignored) |
 | `-s, --skin-tone <0-5>` | 0 default, 1 light, 2 medium-light, 3 medium, 4 medium-dark, 5 dark |
 | `-l, --limit <N>` | Maximum results (default 7) |
 | `-c, --clean` | Treats only: omit the explanation suffix |
@@ -284,12 +299,14 @@ emosh/
 │   ├── clipboard.rs     # Clipboard operations
 │   ├── treats.rs        # Treats, treatz, nibbles and friends
 │   ├── emoji/           # Data loading and hybrid search
+│   ├── kaomoji/         # Kaomoji data, search and CLI output
 │   ├── latex/           # LaTeX → Unicode conversion
 │   └── ui/              # ratatui TUI
 ├── web/                 # Vite web app for emosh.digital
 │   ├── src/             # main.js, emoshions.js, settings.js, donate.js, style.css
 │   └── public/          # favicon.svg, CNAME
 ├── emojis.toml          # Emoji database (1972 entries)
+├── kaomojis.toml        # Kaomoji database (751 faces)
 └── .github/workflows/   # CI, release, Pages deploy
 ```
 
