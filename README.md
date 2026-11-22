@@ -207,6 +207,26 @@ Each visit picks a random **emoshion**, a colour palette with a mood, so the pag
 quite the same twice. Add `?emoshion=joy` (or `calm`, `love`, `wonder`, `mischief`,
 `melancholy`, `serenity`, `opal`, `ember`, `tide`) to the URL to choose one.
 
+The site also has two pickers that run the real Rust search in your browser, plus a note:
+
+| Page | What it does |
+|---|---|
+| [emosh.digital/emoji](https://emosh.digital/emoji/) | Emoji picker, with a skin-tone selector that remembers your choice |
+| [emosh.digital/kaomoji](https://emosh.digital/kaomoji/) | Kaomoji picker, listing faces with their names |
+| [emosh.digital/authors-note](https://emosh.digital/authors-note/) | A note from Sig, with links to the research |
+
+The search box is focused when the page opens; `?q=happy` pre-fills it. Results appear as you
+type. Click or tap one to copy it; your recent copies show up when the box is empty.
+
+| Key | Action |
+|---|---|
+| `Tab` / `Shift+Tab` | Move through the results (and back to the search box) |
+| `↑` `↓` `←` `→` | Move around the results |
+| `1`–`9` | Copy that result (once you're in the results) |
+| `Enter` | Copy the highlighted result, or the first one from the search box |
+| `Esc` | Clear the search |
+| type | Typing from the results goes back into the search box |
+
 ### Why be nice to your LLM?
 
 Research suggests it can help:
@@ -235,6 +255,8 @@ Being kind to your friends, AI or otherwise, is a practice that benefits you too
 At minimum, it costs nothing to be kind.
 
 ## A note from Sig
+
+Also on the web at [emosh.digital/authors-note](https://emosh.digital/authors-note/).
 
 > I started to write this because I wanted to find a nice way to always access the emoji I
 > wanted at any time, and vibe coding was just becoming popular, so I thought I'd try it out.
@@ -278,8 +300,13 @@ wasm-pack build --target web --out-dir web/src/wasm -- --no-default-features --f
 
 cd web
 npm ci
-npm run dev        # http://localhost:5173
+npm run dev        # http://localhost:5173 (also /emoji/, /kaomoji/, /authors-note/)
 npm run build      # static site in web/dist
+npm test           # unit tests (vitest + jsdom)
+npm run coverage   # unit tests with coverage
+npx playwright install chromium   # once
+npm run e2e        # Playwright end-to-end: phone, tablet, desktop × light, dark
+npm run e2e:shots  # full-page screenshots + contact sheet in web/test-results/shots/
 ```
 
 Donation addresses for the donate modal come from `web/.env` locally (see `web/.env.example`)
@@ -294,6 +321,7 @@ emosh/
 │   ├── main.rs          # CLI entry point
 │   ├── lib.rs           # Library crate (shared by CLI and WASM)
 │   ├── wasm.rs          # wasm-bindgen exports for the web app
+│   ├── pick.rs          # Picker search results for the web pages
 │   ├── cli.rs           # Argument parsing
 │   ├── config.rs        # User config
 │   ├── clipboard.rs     # Clipboard operations
@@ -303,7 +331,9 @@ emosh/
 │   ├── latex/           # LaTeX → Unicode conversion
 │   └── ui/              # ratatui TUI
 ├── web/                 # Vite web app for emosh.digital
-│   ├── src/             # main.js, emoshions.js, settings.js, donate.js, style.css
+│   ├── src/             # shell, picker, author's note, settings, donate, styles (+ *.test.js)
+│   ├── emoji/ kaomoji/ authors-note/   # the extra pages (index.html each)
+│   ├── e2e/             # Playwright specs
 │   └── public/          # favicon.svg, CNAME
 ├── emojis.toml          # Emoji database (1972 entries)
 ├── kaomojis.toml        # Kaomoji database (751 faces)
