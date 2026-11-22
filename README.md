@@ -207,13 +207,15 @@ Each visit picks a random **emoshion**, a colour palette with a mood, so the pag
 quite the same twice. Add `?emoshion=joy` (or `calm`, `love`, `wonder`, `mischief`,
 `melancholy`, `serenity`, `opal`, `ember`, `tide`) to the URL to choose one.
 
-The site also has two pickers that run the real Rust search in your browser, plus a note:
+The site also has two pickers that run the real Rust search in your browser, a note, and a
+support page:
 
 | Page | What it does |
 |---|---|
 | [emosh.digital/emoji](https://emosh.digital/emoji/) | Emoji picker, with a skin-tone selector that remembers your choice |
 | [emosh.digital/kaomoji](https://emosh.digital/kaomoji/) | Kaomoji picker, listing faces with their names |
 | [emosh.digital/authors-note](https://emosh.digital/authors-note/) | A note from Sig, with links to the research |
+| [emosh.digital/support](https://emosh.digital/support/) | Ways to say thanks (the ♥ in the corner of every page), plus a star or a share |
 
 The search box is focused when the page opens; `?q=happy` pre-fills it. Results appear as you
 type. Click or tap one to copy it; your recent copies show up when the box is empty.
@@ -306,10 +308,11 @@ npm test           # unit tests (vitest + jsdom)
 npm run coverage   # unit tests with coverage
 npx playwright install chromium   # once
 npm run e2e        # Playwright end-to-end: phone, tablet, desktop × light, dark
+                   # (builds with the fake donation values in web/.env.e2e)
 npm run e2e:shots  # full-page screenshots + contact sheet in web/test-results/shots/
 ```
 
-Donation addresses for the donate modal come from `web/.env` locally (see `web/.env.example`)
+Donation addresses for the support page come from `web/.env` locally (see `web/.env.example`)
 and from repository variables in the Pages deploy. `web/CAPACITOR.md` covers wrapping the site
 as a mobile app.
 
@@ -331,8 +334,8 @@ emosh/
 │   ├── latex/           # LaTeX → Unicode conversion
 │   └── ui/              # ratatui TUI
 ├── web/                 # Vite web app for emosh.digital
-│   ├── src/             # shell, picker, author's note, settings, donate, styles (+ *.test.js)
-│   ├── emoji/ kaomoji/ authors-note/   # the extra pages (index.html each)
+│   ├── src/             # shell, picker, author's note, support, settings, styles (+ *.test.js)
+│   ├── emoji/ kaomoji/ authors-note/ support/   # the extra pages (index.html each)
 │   ├── e2e/             # Playwright specs
 │   └── public/          # favicon.svg, CNAME
 ├── emojis.toml          # Emoji database (1972 entries)
