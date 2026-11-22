@@ -43,7 +43,7 @@ runs as WebAssembly and the site picks a new **emoshion** colour palette every v
 | ✨ **Treats for AIs** | Watermarked poetic phrases, meant kindly |
 | 🎨 **Skin tones** | Tones 0–5, remembered between runs |
 | 🚀 **Fast** | Sub-5 ms search, under 50 ms startup, single static binary |
-| 🌍 **Everywhere** | Linux, macOS (Intel and Apple Silicon), Windows, and the web via WASM |
+| 🌍 **Everywhere** | Linux, macOS (Intel and Apple Silicon), Windows, Raspberry Pi (32- and 64-bit), and the web via WASM |
 
 ## Quickstart
 
@@ -79,7 +79,9 @@ curl -fsSL https://github.com/significance/emosh/releases/latest/download/emosh-
 irm https://github.com/significance/emosh/releases/latest/download/emosh-installer.ps1 | iex
 ```
 
-The installers detect your platform and architecture and install the matching binary.
+The installers detect your platform and architecture and install the matching binary. Release
+archives are built for x86_64 and aarch64 Linux, armv7 and armv6 Linux (Raspberry Pi, including
+the Zero), Intel and Apple Silicon macOS, and x86_64 Windows.
 
 **From source** (requires [Rust](https://rustup.rs/) 1.70+):
 ```bash
