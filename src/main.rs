@@ -21,6 +21,7 @@ use cli::{Cli, Commands};
 use clipboard::copy_to_clipboard;
 use config::{load_config, save_config};
 use emoji::{apply_skin_tone, search_with_user, EMOJIS};
+use ui::app::Mode;
 use ui::{handle_key_event, render, App};
 
 fn main() -> Result<()> {
@@ -64,7 +65,12 @@ fn main() -> Result<()> {
                 )?;
             } else {
                 // TUI mode: interactive search
-                run_tui_mode(config)?;
+                let mode = if cli.emoji_args.kaomoji {
+                    Mode::Kaomoji
+                } else {
+                    Mode::Emoji
+                };
+                run_tui_mode(config, mode)?;
             }
         }
     }
@@ -154,7 +160,7 @@ fn run_cli_mode(
 }
 
 /// Run in TUI mode: interactive search
-fn run_tui_mode(config: config::Config) -> Result<()> {
+fn run_tui_mode(config: config::Config, mode: Mode) -> Result<()> {
     // Setup terminal
     enable_raw_mode()?;
     let mut stdout = io::stdout();
@@ -164,7 +170,7 @@ fn run_tui_mode(config: config::Config) -> Result<()> {
     let mut terminal = ratatui::Terminal::new(backend)?;
 
     // Create app state
-    let mut app = App::new(&config);
+    let mut app = App::new(&config).with_mode(mode);
 
     // Main event loop
     let result = run_app(&mut terminal, &mut app);

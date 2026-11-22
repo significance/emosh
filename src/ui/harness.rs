@@ -3,6 +3,7 @@
 
 use crate::config::Config;
 use crate::ui::app::ClipboardSink;
+use crate::ui::app::Mode;
 use crate::ui::{handle_key_event, render, App};
 use anyhow::Result;
 use crossterm::event::{KeyCode, KeyEvent, KeyModifiers};
@@ -26,6 +27,12 @@ pub fn recording_app() -> (App, Copies) {
         }),
     );
     (app, copies)
+}
+
+/// Like [`recording_app`] but searching kaomoji.
+pub fn recording_kaomoji_app() -> (App, Copies) {
+    let (app, copies) = recording_app();
+    (app.with_mode(Mode::Kaomoji), copies)
 }
 
 /// Build an app whose clipboard always fails.
@@ -211,5 +218,30 @@ mod tests {
         let mut app = failing_app();
         type_text(&mut app, "grin");
         assert!(press(&mut app, KeyCode::Enter).is_err());
+    }
+
+    // --- kaomoji mode ---
+
+    #[test]
+    fn test_kaomoji_mode_typing_searches_kaomoji() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "shrug");
+        assert_eq!(app.picker.selected().unwrap().emoji.char, "¯\\_(ツ)_/¯");
+    }
+
+    #[test]
+    fn test_kaomoji_mode_enter_copies_selected_face() {
+        let (mut app, copies) = recording_kaomoji_app();
+        type_text(&mut app, "lenny");
+        press(&mut app, KeyCode::Enter).unwrap();
+        assert_eq!(copies.borrow().as_slice(), ["( ͡° ͜ʖ ͡°)"]);
+        assert!(app.should_quit);
+    }
+
+    #[test]
+    fn test_emoji_mode_is_the_default_and_ignores_kaomoji() {
+        let (mut app, _) = recording_app();
+        type_text(&mut app, "shrug");
+        assert_ne!(app.picker.selected().unwrap().emoji.char, "¯\\_(ツ)_/¯");
     }
 }

@@ -1,6 +1,8 @@
 use crate::clipboard::copy_to_clipboard;
 use crate::config::Config;
-use crate::emoji::search::SearchResult;
+use crate::emoji::search::{search as emoji_search, SearchResult};
+use crate::emoji::EMOJIS;
+use crate::kaomoji;
 use crate::ui::picker::Picker;
 use anyhow::Result;
 use std::fmt;
@@ -36,9 +38,31 @@ impl fmt::Debug for ClipboardSink {
     }
 }
 
+/// What the picker searches.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
+pub enum Mode {
+    /// Search emoji (the default)
+    #[default]
+    Emoji,
+    /// Search kaomoji (Japanese text emoticons)
+    Kaomoji,
+}
+
+impl Mode {
+    /// Search this mode's database for `query`, returning at most `limit` results.
+    pub fn search(self, query: &str, limit: usize) -> Vec<SearchResult> {
+        match self {
+            Mode::Emoji => emoji_search(query, &EMOJIS, limit),
+            Mode::Kaomoji => kaomoji::search(query, limit),
+        }
+    }
+}
+
 /// Application state for the TUI
 #[derive(Debug)]
 pub struct App {
+    /// Which database is being searched
+    pub mode: Mode,
     /// The current search query
     pub query: String,
     /// Search results and the current selection
@@ -62,6 +86,7 @@ impl App {
     /// Create a new App that copies into `clipboard` instead of the system clipboard
     pub fn with_clipboard(config: &Config, clipboard: ClipboardSink) -> Self {
         Self {
+            mode: Mode::default(),
             query: String::new(),
             picker: Picker::new(),
             skin_tone: config.skin_tone,
@@ -69,6 +94,12 @@ impl App {
             copy_feedback: None,
             clipboard,
         }
+    }
+
+    /// Switch the app to search `mode` instead.
+    pub fn with_mode(mut self, mode: Mode) -> Self {
+        self.mode = mode;
+        self
     }
 
     /// Update the search query and refresh results

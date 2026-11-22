@@ -1,6 +1,4 @@
 use crate::emoji::apply_skin_tone;
-use crate::emoji::search::search;
-use crate::emoji::EMOJIS;
 use crate::ui::app::App;
 use anyhow::Result;
 use crossterm::event::{KeyCode, KeyEvent, KeyModifiers};
@@ -88,7 +86,7 @@ fn copy_selected(app: &mut App) -> Result<bool> {
 /// Update search results based on current query
 fn update_search_results(app: &mut App) {
     // The selection stays on the same position if possible (clamped by the picker)
-    app.picker.set_items(search(&app.query, &EMOJIS, 7));
+    app.picker.set_items(app.mode.search(&app.query, 7));
 }
 
 #[cfg(test)]
