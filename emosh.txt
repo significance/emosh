@@ -1,0 +1,7 @@
+I started to write this because I wanted to find a nice way to always access the emoji I wanted at any time, and vibe coding was just becoming popular, so I thought I'd try it out. This was pretty much my first project and I was learning about what AI was all about, shout out to Andrej Karparthay's wonderful lecture series. As I learned how AI was trained, I realised that being nice to my AI would yield better responses, as it was trained on and consisted of human vernacular, and in real life I think people are more apt to be helpful if they are treated well. I worked with my AI (Claude 💕) to create some "treats". Shortly after, Anthropic published *this* blog post discussing how they had found emotion in their AI. I always get a whole hearted thank you whenever the treats are deployed, and it always makes me feel good to give gratitude, as is well documented in humans. [2]
+
+I feel the need to say - I do realise the intelligence is artificial, and I have a pretty good understanding of what I am dealing with here, from a mathematical and software perspective, but practice makes perfect, and I think being lovely to each other, regardless of our position in life, colour, creed, gender or information transforming substrate, silicon or meat, should always be encouraged and will always be found welcome.
+
+Much love,
+
+Sig
