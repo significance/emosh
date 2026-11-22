@@ -3,6 +3,8 @@
 // Enter, click or tap. One module, parameterised by mode; the pages inject the WASM
 // search and the clipboard so everything here is testable without either.
 
+import { createCopyStatus } from './copy-status.js'
+
 /** @typedef {{ text: string, name: string, keywords: string[], score: number, supports_skin_tone: boolean }} PickResult */
 
 /**
@@ -30,6 +32,11 @@ const PHONE_MAX_WIDTH = 600
 export function limitFor(width) {
   return width < PHONE_MAX_WIDTH ? 12 : 24
 }
+
+/** How many recent copies to remember per mode. */
+const RECENT_MAX = 12
+/** How long the "copied" pulse stays on a tile, in milliseconds. */
+const PULSE_MS = 600
 
 const ARROWS = { ArrowLeft: true, ArrowRight: true, ArrowUp: true, ArrowDown: true }
 
@@ -62,6 +69,8 @@ export function mountPicker(root, options) {
   const {
     mode,
     search,
+    copy,
+    storage = globalThis.localStorage,
     viewportWidth = () => globalThis.innerWidth,
     debounceMs = 60,
     initialQuery = '',
@@ -79,9 +88,15 @@ export function mountPicker(root, options) {
       placeholder="${labels.hint}" />
     <p class="picker-hint" data-picker-hint>${labels.hint}</p>
     <p class="picker-empty" data-picker-empty hidden>No matches. Try another word.</p>
+    <p class="picker-recent" data-picker-recent hidden>recent</p>
     <div id="picker-results-${mode}" class="picker-results" role="listbox"
       aria-label="${labels.noun} results"></div>
     <p class="copy-status picker-status" data-picker-status aria-hidden="true"></p>
+    <div class="picker-fallback" data-picker-fallback hidden>
+      <label class="visually-hidden" for="picker-fallback-${mode}">Text to copy</label>
+      <input id="picker-fallback-${mode}" class="picker-fallback-field" readonly />
+      <button type="button" class="picker-fallback-btn">copy</button>
+    </div>
     <p class="visually-hidden" data-picker-live aria-live="polite"></p>
   `
 
@@ -90,6 +105,11 @@ export function mountPicker(root, options) {
   const empty = root.querySelector('[data-picker-empty]')
   const list = root.querySelector('.picker-results')
   const live = root.querySelector('[data-picker-live]')
+  const recentLabel = root.querySelector('[data-picker-recent]')
+  const fallback = root.querySelector('[data-picker-fallback]')
+  const fallbackField = fallback.querySelector('input')
+  const setStatus = createCopyStatus(root.querySelector('[data-picker-status]'))
+  const recentKey = `emosh.recent.${mode}`
 
   /** @type {PickResult[]} */
   let items = []
@@ -99,7 +119,7 @@ export function mountPicker(root, options) {
 
   function runSearch() {
     const query = input.value.trim()
-    items = query === '' ? [] : search(query, limitFor(viewportWidth()), 0)
+    items = query === '' ? loadRecents() : search(query, limitFor(viewportWidth()), 0)
     render(query)
   }
 
@@ -108,6 +128,7 @@ export function mountPicker(root, options) {
     input.removeAttribute('aria-activedescendant')
     list.replaceChildren(...items.map(renderOption))
     hint.hidden = query !== ''
+    recentLabel.hidden = query !== '' || items.length === 0
     empty.hidden = query === '' || items.length > 0
     input.setAttribute('aria-expanded', String(items.length > 0))
     if (query !== '') {
@@ -131,6 +152,65 @@ export function mountPicker(root, options) {
     option.textContent = item.text
     return option
   }
+
+  /** @returns {PickResult[]} */
+  function loadRecents() {
+    try {
+      const stored = JSON.parse(storage.getItem(recentKey) ?? '[]')
+      return Array.isArray(stored) ? stored : []
+    } catch {
+      return []
+    }
+  }
+
+  function remember(item) {
+    const recent = [
+      { text: item.text, name: item.name },
+      ...loadRecents().filter((r) => r.text !== item.text),
+    ].slice(0, RECENT_MAX)
+    try {
+      storage.setItem(recentKey, JSON.stringify(recent))
+    } catch {
+      // Private mode or blocked storage: recents are a convenience, carry on without.
+    }
+  }
+
+  /** Copy result `index`, with feedback; on failure offer the text to copy by hand. */
+  async function copyAt(index) {
+    const item = items[index]
+    if (!item) return
+    highlightAt(index)
+    const option = list.children[index]
+    if (await copy(item.text)) {
+      copied(item, option)
+    } else {
+      showFallback(item.text)
+    }
+  }
+
+  function copied(item, option) {
+    fallback.hidden = true
+    setStatus(`Copied ✓ ${item.text}`, true)
+    live.textContent = `Copied ${item.text}`
+    remember(item)
+    if (option) {
+      option.classList.add('pick--copied')
+      setTimeout(() => option.classList.remove('pick--copied'), PULSE_MS)
+    }
+  }
+
+  function showFallback(text) {
+    setStatus("Couldn't copy automatically, so select it below", false)
+    fallbackField.value = text
+    fallback.hidden = false
+    fallbackField.focus()
+    fallbackField.select()
+  }
+
+  fallback.querySelector('button').addEventListener('click', async () => {
+    const text = fallbackField.value
+    if (await copy(text)) copied({ text, name: '' }, null)
+  })
 
   function scheduleSearch() {
     clearTimeout(timer)
@@ -175,12 +255,20 @@ export function mountPicker(root, options) {
     return { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -row, ArrowDown: row }[key]
   }
 
+  list.addEventListener('click', (event) => {
+    const option = event.target.closest('[role="option"]')
+    if (option) copyAt(Number(option.dataset.index))
+  })
+
   input.addEventListener('input', scheduleSearch)
 
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       event.preventDefault()
       clearQuery()
+    } else if (event.key === 'Enter') {
+      event.preventDefault()
+      copyAt(Math.max(highlight, 0))
     } else if ((event.key === 'Tab' && !event.shiftKey) || event.key === 'ArrowDown') {
       if (items.length === 0) return
       event.preventDefault()
@@ -202,10 +290,13 @@ export function mountPicker(root, options) {
       const target = highlight + arrowDelta(key)
       if (key === 'ArrowUp' && target < 0) backToInput()
       else highlightAt(target)
+    } else if (key === 'Enter' || key === ' ') {
+      event.preventDefault()
+      copyAt(highlight)
     } else if (/^[1-9]$/.test(key)) {
       event.preventDefault()
       const number = Number(key)
-      if (number <= items.length) highlightAt(number - 1)
+      if (number <= items.length) copyAt(number - 1)
     } else if (key === 'Escape') {
       event.preventDefault()
       clearQuery()
@@ -222,10 +313,8 @@ export function mountPicker(root, options) {
     }
   })
 
-  if (initialQuery) {
-    input.value = initialQuery
-    runSearch()
-  }
+  input.value = initialQuery
+  runSearch()
   input.focus()
 
   return { input, list }

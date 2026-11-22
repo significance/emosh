@@ -91,6 +91,7 @@ describe('mountPicker — search and render', () => {
 
   it('debounces typing and searches once with the desktop limit', () => {
     setup()
+    ctx.onRender.mockClear() // the mount render (recents) is not part of the burst
     type('h')
     type('ha')
     type('hap')
@@ -354,5 +355,240 @@ describe('measureColumns', () => {
     key('ArrowDown')
     expect(indexOf(document.activeElement)).toBe(9)
     vi.useRealTimers()
+  })
+})
+
+/** Let pending promise callbacks (the async copy) run. */
+const flush = () => vi.advanceTimersByTimeAsync(0)
+
+describe('mountPicker — copying', () => {
+  beforeEach(() => {
+    vi.useFakeTimers()
+  })
+  afterEach(() => vi.useRealTimers())
+
+  function ready(opts) {
+    setup(opts)
+    type('happy')
+    vi.advanceTimersByTime(60)
+  }
+
+  it('Enter in the input copies the first result when nothing is highlighted', async () => {
+    ready()
+    key('Enter')
+    await flush()
+    expect(ctx.copy).toHaveBeenCalledWith('e0')
+  })
+
+  it('Enter in the input with no results does nothing', async () => {
+    ready()
+    type('nothing')
+    vi.advanceTimersByTime(60)
+    key('Enter')
+    await flush()
+    expect(ctx.copy).not.toHaveBeenCalled()
+  })
+
+  it('Enter on a highlighted result copies that result', async () => {
+    ready()
+    key('Tab')
+    key('Tab')
+    const event = key('Enter')
+    await flush()
+    expect(event.defaultPrevented).toBe(true)
+    expect(ctx.copy).toHaveBeenCalledOnce()
+    expect(ctx.copy).toHaveBeenCalledWith('e1')
+  })
+
+  it('Space on a highlighted result copies it instead of typing a space', async () => {
+    ready()
+    key('Tab')
+    key(' ')
+    await flush()
+    expect(ctx.copy).toHaveBeenCalledWith('e0')
+    expect(ctx.input.value).toBe('happy')
+  })
+
+  it('a digit quick-picks and copies that result', async () => {
+    ready()
+    key('Tab')
+    key('3')
+    await flush()
+    expect(ctx.copy).toHaveBeenCalledWith('e2')
+  })
+
+  it('clicking or tapping a result copies it and highlights it', async () => {
+    ready()
+    options()[4].click()
+    await flush()
+    expect(ctx.copy).toHaveBeenCalledWith('e4')
+    expect(highlighted()).toBe(options()[4])
+  })
+
+  it('clicks on the list background are ignored', async () => {
+    ready()
+    ctx.results.click()
+    await flush()
+    expect(ctx.copy).not.toHaveBeenCalled()
+  })
+
+  it('shows "Copied ✓" feedback, announces it and pulses the tile', async () => {
+    ready()
+    options()[0].click()
+    await flush()
+    expect(ctx.status.textContent).toBe('Copied ✓ e0')
+    expect(ctx.status.classList.contains('is-success')).toBe(true)
+    expect(ctx.live.textContent).toBe('Copied e0')
+    expect(options()[0].classList.contains('pick--copied')).toBe(true)
+    vi.advanceTimersByTime(600)
+    expect(options()[0].classList.contains('pick--copied')).toBe(false)
+  })
+
+  it('on copy failure shows the text in a selectable field instead of an error', async () => {
+    const copy = vi.fn(async () => false)
+    ready({ copy })
+    options()[2].click()
+    await flush()
+    const fallback = ctx.root.querySelector('[data-picker-fallback]')
+    expect(fallback.hidden).toBe(false)
+    const field = fallback.querySelector('input')
+    expect(field.value).toBe('e2')
+    expect(field.readOnly).toBe(true)
+    expect(document.activeElement).toBe(field)
+    expect(field.selectionStart).toBe(0)
+    expect(field.selectionEnd).toBe(2)
+    expect(ctx.status.textContent).toMatch(/select it below/)
+    expect(ctx.status.classList.contains('is-success')).toBe(false)
+  })
+
+  it('the fallback "copy" button retries and hides the field when it works', async () => {
+    let allow = false
+    const copy = vi.fn(async () => allow)
+    ready({ copy })
+    options()[2].click()
+    await flush()
+    allow = true
+    ctx.root.querySelector('[data-picker-fallback] button').click()
+    await flush()
+    expect(copy).toHaveBeenLastCalledWith('e2')
+    expect(ctx.root.querySelector('[data-picker-fallback]').hidden).toBe(true)
+    expect(ctx.status.textContent).toBe('Copied ✓ e2')
+  })
+
+  it('the fallback button keeps the field up while copying still fails', async () => {
+    const copy = vi.fn(async () => false)
+    ready({ copy })
+    options()[2].click()
+    await flush()
+    ctx.root.querySelector('[data-picker-fallback] button').click()
+    await flush()
+    expect(ctx.root.querySelector('[data-picker-fallback]').hidden).toBe(false)
+  })
+
+  it('a successful copy hides an earlier fallback', async () => {
+    let allow = false
+    const copy = vi.fn(async () => allow)
+    ready({ copy })
+    options()[0].click()
+    await flush()
+    allow = true
+    options()[1].click()
+    await flush()
+    expect(ctx.root.querySelector('[data-picker-fallback]').hidden).toBe(true)
+  })
+})
+
+describe('mountPicker — recents', () => {
+  beforeEach(() => vi.useFakeTimers())
+  afterEach(() => vi.useRealTimers())
+
+  const recentOf = (storage, mode = 'emoji') =>
+    JSON.parse(storage.getItem(`emosh.recent.${mode}`) ?? '[]')
+
+  it('remembers copies newest first, without duplicates, per mode', async () => {
+    setup()
+    type('happy')
+    vi.advanceTimersByTime(60)
+    options()[0].click()
+    await flush()
+    options()[1].click()
+    await flush()
+    options()[0].click()
+    await flush()
+    expect(recentOf(ctx.storage).map((r) => r.text)).toEqual(['e0', 'e1'])
+    expect(recentOf(ctx.storage)[0].name).toBe('happy-0')
+  })
+
+  it('keeps only the last 12', async () => {
+    setup({ count: 20, storage: memoryStorage() })
+    type('happy')
+    vi.advanceTimersByTime(60)
+    for (const option of options().slice(0, 15)) {
+      option.click()
+      await flush()
+    }
+    const recent = recentOf(ctx.storage)
+    expect(recent).toHaveLength(12)
+    expect(recent[0].text).toBe('e14')
+  })
+
+  it('does not remember failed copies', async () => {
+    setup({ copy: vi.fn(async () => false) })
+    type('happy')
+    vi.advanceTimersByTime(60)
+    options()[0].click()
+    await flush()
+    expect(recentOf(ctx.storage)).toEqual([])
+  })
+
+  it('shows recents as pickable results while the query is empty', async () => {
+    const storage = memoryStorage({
+      'emosh.recent.emoji': JSON.stringify([{ text: '💀', name: 'skull' }, { text: '🦄', name: 'unicorn' }]),
+    })
+    setup({ storage })
+    expect(options().map((o) => o.textContent)).toEqual(['💀', '🦄'])
+    expect(ctx.root.querySelector('[data-picker-recent]').hidden).toBe(false)
+    expect(ctx.search).not.toHaveBeenCalled()
+    options()[1].click()
+    await flush()
+    expect(ctx.copy).toHaveBeenCalledWith('🦄')
+    type('happy')
+    vi.advanceTimersByTime(60)
+    expect(ctx.root.querySelector('[data-picker-recent]').hidden).toBe(true)
+  })
+
+  it('Escape brings the recents back', () => {
+    const storage = memoryStorage({
+      'emosh.recent.emoji': JSON.stringify([{ text: '💀', name: 'skull' }]),
+    })
+    setup({ storage })
+    type('happy')
+    vi.advanceTimersByTime(60)
+    key('Escape')
+    expect(options().map((o) => o.textContent)).toEqual(['💀'])
+  })
+
+  it('ignores corrupt or unavailable storage', async () => {
+    setup({ storage: memoryStorage({ 'emosh.recent.emoji': '{not json' }) })
+    expect(options()).toHaveLength(0)
+    const broken = {
+      getItem: () => {
+        throw new Error('blocked')
+      },
+      setItem: () => {
+        throw new Error('blocked')
+      },
+    }
+    setup({ storage: broken })
+    type('happy')
+    vi.advanceTimersByTime(60)
+    options()[0].click()
+    await flush()
+    expect(ctx.status.textContent).toBe('Copied ✓ e0')
+  })
+
+  it('ignores stored recents that are not a list', () => {
+    setup({ storage: memoryStorage({ 'emosh.recent.emoji': '{"text":"x"}' }) })
+    expect(options()).toHaveLength(0)
   })
 })
