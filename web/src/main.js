@@ -8,6 +8,7 @@
 
 import init, { treat } from './wasm/emosh.js'
 import { copyText } from './clipboard.js'
+import { createCopyStatus } from './copy-status.js'
 import { pickEmoshion } from './emoshions.js'
 
 // Pick this visit's emoshion first so the palette lands before the first paint.
@@ -38,13 +39,12 @@ export function makeTreat(user, clean) {
 const TREAT_WATERMARK = '​‌​'
 // Written by the settings panel (issue 06). Absent/empty → generate in "clean" mode.
 const USERNAME_KEY = 'emosh.username'
-const COPY_RESET_MS = 2200
 
 const generateBtn = document.getElementById('generate-btn')
 const treatDisplay = document.getElementById('treat-display')
 const copyStatus = document.getElementById('copy-status')
 
-let copyStatusTimer
+const setCopyStatus = createCopyStatus(copyStatus)
 
 /**
  * Derive the pretty phrase to show on screen from a full treat string: drop the
@@ -55,16 +55,6 @@ function displayPhrase(full) {
   const explainAt = withoutMark.indexOf(' (a treat from')
   const phrase = explainAt === -1 ? withoutMark : withoutMark.slice(0, explainAt)
   return phrase.trim()
-}
-
-function setCopyStatus(message, ok) {
-  copyStatus.textContent = message
-  copyStatus.classList.toggle('is-success', ok === true)
-  clearTimeout(copyStatusTimer)
-  copyStatusTimer = setTimeout(() => {
-    copyStatus.textContent = ''
-    copyStatus.classList.remove('is-success')
-  }, COPY_RESET_MS)
 }
 
 async function generate() {
