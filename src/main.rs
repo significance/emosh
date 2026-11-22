@@ -2,6 +2,7 @@ mod cli;
 mod clipboard;
 mod config;
 mod emoji;
+mod kaomoji;
 mod latex;
 mod treats;
 mod ui;
@@ -37,9 +38,18 @@ fn main() -> Result<()> {
             // Determine skin tone: CLI flag overrides config
             let skin_tone = cli.emoji_args.skin_tone.unwrap_or(config.skin_tone);
 
-            if let Some(query) = cli.emoji_args.query {
+            if let Some(query) = cli.emoji_args.query_text() {
                 // CLI mode: direct search
                 let should_copy = !cli.emoji_args.no_copy;
+                if cli.emoji_args.kaomoji {
+                    return kaomoji::output::run_query(
+                        &query,
+                        cli.emoji_args.limit,
+                        should_copy,
+                        &mut copy_to_clipboard,
+                        &mut io::stdout(),
+                    );
+                }
                 run_cli_mode(
                     &query,
                     cli.emoji_args.limit,

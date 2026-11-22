@@ -1,6 +1,7 @@
 //! Kaomoji (Japanese text emoticons) data and search.
 
 pub mod data;
+pub mod output;
 
 pub use data::KAOMOJIS;
 
