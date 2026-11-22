@@ -1,6 +1,39 @@
+use crate::clipboard::copy_to_clipboard;
 use crate::config::Config;
 use crate::emoji::search::SearchResult;
+use anyhow::Result;
+use std::fmt;
 use std::time::Instant;
+
+/// Where copied text goes. The system clipboard in production; tests inject a recorder
+/// so they never touch `arboard` (which fails on headless systems).
+pub struct ClipboardSink(Box<CopyFn>);
+
+/// A function that copies text somewhere.
+type CopyFn = dyn FnMut(&str) -> Result<()>;
+
+impl ClipboardSink {
+    /// Wrap any copy function as a sink.
+    pub fn new(copier: impl FnMut(&str) -> Result<()> + 'static) -> Self {
+        Self(Box::new(copier))
+    }
+
+    /// A sink that copies to the system clipboard.
+    pub fn system() -> Self {
+        Self::new(copy_to_clipboard)
+    }
+
+    /// Copy `text` to the destination.
+    pub fn copy(&mut self, text: &str) -> Result<()> {
+        (self.0)(text)
+    }
+}
+
+impl fmt::Debug for ClipboardSink {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str("ClipboardSink")
+    }
+}
 
 /// Application state for the TUI
 #[derive(Debug)]
@@ -17,11 +50,18 @@ pub struct App {
     pub should_quit: bool,
     /// Timestamp of last copy action (for feedback display)
     pub copy_feedback: Option<Instant>,
+    /// Destination for copied text
+    pub clipboard: ClipboardSink,
 }
 
 impl App {
     /// Create a new App with configuration
     pub fn new(config: &Config) -> Self {
+        Self::with_clipboard(config, ClipboardSink::system())
+    }
+
+    /// Create a new App that copies into `clipboard` instead of the system clipboard
+    pub fn with_clipboard(config: &Config, clipboard: ClipboardSink) -> Self {
         Self {
             query: String::new(),
             results: Vec::new(),
@@ -29,6 +69,7 @@ impl App {
             skin_tone: config.skin_tone,
             should_quit: false,
             copy_feedback: None,
+            clipboard,
         }
     }
 

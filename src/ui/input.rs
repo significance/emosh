@@ -1,4 +1,3 @@
-use crate::clipboard::copy_to_clipboard;
 use crate::emoji::apply_skin_tone;
 use crate::emoji::search::search;
 use crate::emoji::EMOJIS;
@@ -21,7 +20,7 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         KeyCode::Tab if !app.results.is_empty() => {
             if let Some(result) = app.selected_emoji() {
                 let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                copy_to_clipboard(&emoji_with_tone)?;
+                app.clipboard.copy(&emoji_with_tone)?;
                 app.mark_copied();
             }
         }
@@ -30,7 +29,7 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         KeyCode::Enter if !app.results.is_empty() => {
             if let Some(result) = app.selected_emoji() {
                 let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                copy_to_clipboard(&emoji_with_tone)?;
+                app.clipboard.copy(&emoji_with_tone)?;
                 app.quit();
             }
         }
@@ -44,7 +43,7 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
                 // Copy and exit
                 if let Some(result) = app.selected_emoji() {
                     let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                    copy_to_clipboard(&emoji_with_tone)?;
+                    app.clipboard.copy(&emoji_with_tone)?;
                     app.quit();
                 }
             }
