@@ -90,5 +90,11 @@ test('key moments on the phone @shots', async ({ browser, baseURL }) => {
   await page.goto('authors-note/?emoshion=wonder')
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.35))
   await shot('5-authors-note-mid-scroll')
+
+  await page.goto('support/?emoshion=wonder')
+  await page.locator('[data-copy="btc"]').tap()
+  await expect(page.locator('[data-copy="btc"] [data-copy-label]')).toHaveText('Copied ✓')
+  await page.locator('[data-method="btc"]').scrollIntoViewIfNeeded()
+  await shot('6-support-copied')
   await context.close()
 })
