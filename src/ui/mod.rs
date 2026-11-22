@@ -1,7 +1,10 @@
 //! Terminal user interface components
 
 pub mod app;
+#[cfg(test)]
+pub mod harness;
 pub mod input;
+pub mod picker;
 pub mod render;
 
 pub use app::App;

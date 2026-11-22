@@ -8,6 +8,7 @@ pub mod clipboard;
 #[cfg(feature = "cli")]
 pub mod config;
 pub mod emoji;
+pub mod kaomoji;
 pub mod latex;
 pub mod treats;
 #[cfg(feature = "cli")]

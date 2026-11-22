@@ -37,8 +37,13 @@ pub struct LatexArgs {
 
 #[derive(Args, Debug)]
 pub struct EmojiArgs {
-    /// Search query (if provided, runs in CLI mode; otherwise launches interactive TUI)
-    pub query: Option<String>,
+    /// Search query, several words allowed without quotes (if provided, runs in CLI mode;
+    /// otherwise launches interactive TUI)
+    pub query: Vec<String>,
+
+    /// Search kaomoji (Japanese text emoticons) instead of emoji
+    #[arg(short = 'k', long)]
+    pub kaomoji: bool,
 
     /// Don't copy the first result to clipboard (default: copies to clipboard)
     #[arg(short = 'n', long)]
@@ -61,6 +66,17 @@ pub struct EmojiArgs {
     pub limit: usize,
 }
 
+impl EmojiArgs {
+    /// The query words joined with single spaces, or `None` when no query was given.
+    pub fn query_text(&self) -> Option<String> {
+        if self.query.is_empty() {
+            None
+        } else {
+            Some(self.query.join(" "))
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -69,10 +85,41 @@ mod tests {
     fn test_cli_with_query() {
         let cli = Cli::parse_from(["emosh", "unicorn"]);
         assert!(cli.command.is_none());
-        assert_eq!(cli.emoji_args.query, Some("unicorn".to_string()));
+        assert_eq!(cli.emoji_args.query_text(), Some("unicorn".to_string()));
         assert!(!cli.emoji_args.no_copy);
         assert_eq!(cli.emoji_args.skin_tone, None);
         assert_eq!(cli.emoji_args.limit, 7);
+    }
+
+    #[test]
+    fn test_cli_multi_word_query_is_joined_without_quotes() {
+        let cli = Cli::parse_from(["emosh", "table", "flip", "-n"]);
+        assert_eq!(cli.emoji_args.query_text(), Some("table flip".to_string()));
+        assert!(cli.emoji_args.no_copy);
+    }
+
+    #[test]
+    fn test_cli_query_text_none_without_words() {
+        let cli = Cli::parse_from(["emosh"]);
+        assert_eq!(cli.emoji_args.query_text(), None);
+    }
+
+    #[test]
+    fn test_cli_kaomoji_flag_short_and_long() {
+        assert!(Cli::parse_from(["emosh", "-k", "happy"]).emoji_args.kaomoji);
+        assert!(
+            Cli::parse_from(["emosh", "--kaomoji", "shrug"])
+                .emoji_args
+                .kaomoji
+        );
+        assert!(!Cli::parse_from(["emosh", "happy"]).emoji_args.kaomoji);
+    }
+
+    #[test]
+    fn test_cli_kaomoji_alone_has_no_query() {
+        let cli = Cli::parse_from(["emosh", "-k"]);
+        assert!(cli.emoji_args.kaomoji);
+        assert_eq!(cli.emoji_args.query_text(), None);
     }
 
     #[test]
@@ -87,7 +134,7 @@ mod tests {
             "10",
         ]);
         assert!(cli.command.is_none());
-        assert_eq!(cli.emoji_args.query, Some("unicorn".to_string()));
+        assert_eq!(cli.emoji_args.query_text(), Some("unicorn".to_string()));
         assert!(cli.emoji_args.no_copy);
         assert_eq!(cli.emoji_args.skin_tone, Some(3));
         assert_eq!(cli.emoji_args.limit, 10);
@@ -97,7 +144,7 @@ mod tests {
     fn test_cli_without_query() {
         let cli = Cli::parse_from(["emosh"]);
         assert!(cli.command.is_none());
-        assert_eq!(cli.emoji_args.query, None);
+        assert_eq!(cli.emoji_args.query_text(), None);
     }
 
     #[test]

@@ -1,8 +1,5 @@
-use crate::clipboard::copy_to_clipboard;
 use crate::emoji::apply_skin_tone;
-use crate::emoji::search::search;
-use crate::emoji::EMOJIS;
-use crate::ui::app::App;
+use crate::ui::app::{App, Mode};
 use anyhow::Result;
 use crossterm::event::{KeyCode, KeyEvent, KeyModifiers};
 
@@ -17,37 +14,35 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
             app.quit();
         }
 
-        // Tab: Copy selected emoji and continue (only if we have results)
-        KeyCode::Tab if !app.results.is_empty() => {
-            if let Some(result) = app.selected_emoji() {
-                let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                copy_to_clipboard(&emoji_with_tone)?;
-                app.mark_copied();
-            }
+        // Tab: Copy selected emoji and continue (no-op without results)
+        KeyCode::Tab if copy_selected(app)? => {
+            app.mark_copied();
         }
 
-        // Enter: Copy selected emoji and exit (only if we have results)
-        KeyCode::Enter if !app.results.is_empty() => {
-            if let Some(result) = app.selected_emoji() {
-                let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                copy_to_clipboard(&emoji_with_tone)?;
-                app.quit();
-            }
+        // Enter: Copy selected emoji and exit (no-op without results)
+        KeyCode::Enter if copy_selected(app)? => {
+            app.quit();
         }
 
         // Number keys: Quick select (1-9) - only if we have results
-        KeyCode::Char(c @ '1'..='9') if key.modifiers.is_empty() && !app.results.is_empty() => {
+        KeyCode::Char(c @ '1'..='9') if key.modifiers.is_empty() && !app.picker.is_empty() => {
             let number = c.to_digit(10).unwrap() as usize;
-            if number <= app.results.len() {
+            if number <= app.picker.len() {
                 app.select_by_number(number);
 
                 // Copy and exit
-                if let Some(result) = app.selected_emoji() {
-                    let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                    copy_to_clipboard(&emoji_with_tone)?;
+                if copy_selected(app)? {
                     app.quit();
                 }
             }
+        }
+
+        // Kaomoji mode: all four arrows move the selection (there is no skin tone)
+        KeyCode::Up | KeyCode::Left if app.mode == Mode::Kaomoji => {
+            app.select_previous();
+        }
+        KeyCode::Down | KeyCode::Right if app.mode == Mode::Kaomoji => {
+            app.select_next();
         }
 
         // Arrow keys: Only work when query length > 1
@@ -72,6 +67,7 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         // Text input (all other characters)
         KeyCode::Char(c) if key.modifiers.is_empty() || key.modifiers == KeyModifiers::SHIFT => {
             app.query.push(c);
+            app.clipboard_error = None;
             update_search_results(app);
         }
 
@@ -81,15 +77,30 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
     Ok(())
 }
 
+/// Copy the selected result (with the current skin tone) to the clipboard.
+/// Returns whether anything was copied. A clipboard failure is not fatal: it is
+/// recorded on the app so the notice can be shown and the search kept.
+fn copy_selected(app: &mut App) -> Result<bool> {
+    let Some(result) = app.selected_emoji() else {
+        return Ok(false);
+    };
+    let text = apply_skin_tone(&result.emoji, app.skin_tone);
+    match app.clipboard.copy(&text) {
+        Ok(()) => {
+            app.clipboard_error = None;
+            Ok(true)
+        }
+        Err(_) => {
+            app.clipboard_error = Some("clipboard unavailable".to_string());
+            Ok(false)
+        }
+    }
+}
+
 /// Update search results based on current query
 fn update_search_results(app: &mut App) {
-    app.results = search(&app.query, &EMOJIS, 7);
-
-    // Clamp selected_index to valid range instead of resetting to 0
-    // This provides better UX - the selection stays on the same emoji if possible
-    if app.selected_index >= app.results.len() {
-        app.selected_index = app.results.len().saturating_sub(1);
-    }
+    // The selection stays on the same position if possible (clamped by the picker)
+    app.picker.set_items(app.mode.search(&app.query, 7));
 }
 
 #[cfg(test)]

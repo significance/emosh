@@ -88,6 +88,19 @@ pub fn search_with_user(
         return treats::generate_treatz_result();
     }
 
+    rank(query_trimmed, emojis, limit)
+}
+
+/// Rank `emojis` against `query` (exact name > exact keyword > fuzzy) without any
+/// of the treat keyword intercepts. Returns at most `limit` results, best first.
+pub fn rank(query: &str, emojis: &[Emoji], limit: usize) -> Vec<SearchResult> {
+    let query_trimmed = query.trim();
+    let query_lower = query_trimmed.to_lowercase();
+
+    if query_lower.is_empty() {
+        return Vec::new();
+    }
+
     let matcher = SkimMatcherV2::default();
     let mut results: Vec<SearchResult> = emojis
         .iter()
@@ -272,5 +285,11 @@ mod tests {
 
         let results = search("  unicorn  ", &emojis, 10);
         assert!(!results.is_empty());
+    }
+
+    #[test]
+    fn test_search_intercepts_nibblez_and_nibbelz() {
+        assert_eq!(search("nibblez", &[], 7)[0].emoji.name, "nibblez");
+        assert_eq!(search("nibbelz", &[], 7)[0].emoji.name, "nibbelz");
     }
 }
