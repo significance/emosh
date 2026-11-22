@@ -50,9 +50,14 @@ mod tests {
     }
 
     #[test]
-    fn test_search_table_flip_finds_flip_faces() {
-        let names = top("table flip");
-        assert!(names.iter().any(|n| n.contains("table-flip")), "{names:?}");
+    fn test_search_table_flip_ranks_classic_flip_first() {
+        assert_eq!(search("table flip", 7)[0].emoji.char, "(╯°□°)╯︵ ┻━┻");
+        assert!(top("table flip").contains(&"angry-table-flip".to_string()));
+    }
+
+    #[test]
+    fn test_search_unflip_ranks_first_for_its_name() {
+        assert_eq!(search("unflip", 7)[0].emoji.name, "unflip");
     }
 
     #[test]

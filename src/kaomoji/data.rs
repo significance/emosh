@@ -86,8 +86,8 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_kaomojis_load_all_seed_faces() {
-        assert_eq!(KAOMOJIS.len(), 750);
+    fn test_kaomojis_load_all_faces() {
+        assert_eq!(KAOMOJIS.len(), 751);
     }
 
     #[test]

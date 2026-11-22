@@ -4372,13 +4372,13 @@ tags = ["special"]
 [[kaomoji]]
 text = "(╯°益°)╯彡┻━┻"
 name = "angry-table-flip"
-keywords = ["table flip", "flip", "rage", "rage quit", "angry", "special", "misc"]
+keywords = ["angry table flip", "flip", "rage", "rage quit", "angry", "special", "misc"]
 tags = ["special"]
 
 [[kaomoji]]
 text = "(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻"
 name = "special-04"
-keywords = ["table flip", "flip", "rage", "rage quit", "special", "misc"]
+keywords = ["double table flip", "flip", "rage", "rage quit", "special", "misc"]
 tags = ["special"]
 
 [[kaomoji]]
@@ -4499,4 +4499,10 @@ tags = ["special"]
 text = "∠( ᐛ 」∠)_"
 name = "special-24"
 keywords = ["lying down", "lazy", "lounging", "chill", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(╯°□°)╯︵ ┻━┻"
+name = "table-flip"
+keywords = ["table flip", "flip", "flip table", "rage", "angry", "upset", "fury", "flipping"]
 tags = ["special"]
