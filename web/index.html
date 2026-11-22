@@ -20,18 +20,11 @@
   </head>
   <body>
     <div class="app">
-      <!-- Top bar: donate (left) / settings cog (right).
-           Buttons + empty containers only; behavior wired in issues 06/07. -->
+      <!-- Top bar: support heart (left) / settings cog (right). -->
       <header class="top-bar">
-        <button
-          id="donate-btn"
-          class="icon-btn"
-          type="button"
-          aria-label="Open donation options"
-          aria-haspopup="dialog"
-        >
+        <a id="donate-btn" class="icon-btn" href="support/" aria-label="Support emosh">
           <span class="icon" aria-hidden="true">&#9829;</span>
-        </button>
+        </a>
 
         <button
           id="settings-btn"
@@ -44,8 +37,7 @@
         </button>
       </header>
 
-      <!-- Empty containers for later runners to populate (kept out of flow until used). -->
-      <div id="donate-modal" class="overlay" hidden></div>
+      <!-- Settings drawer, filled in by settings.js -->
       <div id="settings-panel" class="overlay" hidden></div>
 
       <!-- Main: centered treat display + big generate button. Behavior in issue 05. -->

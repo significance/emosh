@@ -1,7 +1,6 @@
 // The page shell every emosh page shares: this visit's emoshion (palette, favicon and
-// footer label), the settings cog and the donate heart.
+// footer label) and the settings cog. The heart is a plain link to /support/.
 
-import { initDonate } from './donate.js'
 import { pickEmoshion } from './emoshions.js'
 import { initSettings } from './settings.js'
 
@@ -16,6 +15,5 @@ export function initShell(search = location.search) {
   const tag = document.getElementById('emoshion-tag')
   if (tag) tag.textContent = `emosh is ${emoshion.feel} today`
   initSettings()
-  initDonate()
   return emoshion
 }

@@ -1,7 +1,7 @@
 // Emosh Treats — app entry point.
 //
 // Boots the WASM treat generator and wires up the generate/copy flow. The top bar
-// (settings cog, donate heart) and the emoshion come from the shared shell.js.
+// (settings cog, support heart) and the emoshion come from the shared shell.js.
 
 import init, { treat } from './wasm/emosh.js'
 import { copyText } from './clipboard.js'

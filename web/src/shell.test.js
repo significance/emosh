@@ -1,11 +1,9 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 vi.mock('./settings.js', () => ({ initSettings: vi.fn() }))
-vi.mock('./donate.js', () => ({ initDonate: vi.fn() }))
 
 const { initShell } = await import('./shell.js')
 const { initSettings } = await import('./settings.js')
-const { initDonate } = await import('./donate.js')
 
 describe('initShell', () => {
   beforeEach(() => {
@@ -24,10 +22,9 @@ describe('initShell', () => {
     expect(initShell('').name).toBeTruthy()
   })
 
-  it('wires the settings cog and the donate heart', () => {
+  it('wires the settings cog', () => {
     initShell('')
     expect(initSettings).toHaveBeenCalledOnce()
-    expect(initDonate).toHaveBeenCalledOnce()
   })
 
   it('tolerates a page without the footer tag', () => {

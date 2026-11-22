@@ -87,7 +87,7 @@ body {
   min-height: 100dvh;
 }
 
-/* --- Top bar: donate left / cog right --- */
+/* --- Top bar: support heart left / cog right --- */
 .top-bar {
   display: flex;
   align-items: center;
@@ -98,6 +98,7 @@ body {
 
 .icon-btn {
   display: inline-flex;
+  text-decoration: none;
   align-items: center;
   justify-content: center;
   min-width: var(--hit);
@@ -127,6 +128,10 @@ body {
 
 #donate-btn .icon {
   color: #e0567a;
+}
+
+#donate-btn[aria-current='page'] {
+  border-color: var(--accent);
 }
 
 /* --- Main: centered treat area + generate button --- */
@@ -338,7 +343,7 @@ body {
   }
 }
 
-/* --- Overlay containers (donate modal / settings panel) --- */
+/* --- Overlay container (settings panel) --- */
 .overlay {
   position: fixed;
   inset: 0;
@@ -352,9 +357,6 @@ body {
 /* Hide a trigger button while its own overlay is open, so it can't peek past the
    drawer/modal edge (e.g. the cog next to the settings drawer's close button). */
 body:has(#settings-panel:not([hidden])) #settings-btn,
-body:has(#donate-modal:not([hidden])) #donate-btn {
-  visibility: hidden;
-}
 
 /* --- issue 06: settings drawer / sheet --- */
 .overlay__backdrop {
@@ -566,209 +568,6 @@ body:has(#donate-modal:not([hidden])) #donate-btn {
 @media (prefers-reduced-motion: reduce) {
   .overlay__backdrop,
   .settings-drawer {
-    animation: none;
-  }
-}
-
-/* --- issue 07: donate modal / sheet --- */
-.donate-dialog {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  background: var(--surface);
-  color: var(--fg);
-  border: 1px solid var(--surface-border);
-  box-shadow: var(--shadow);
-  padding: var(--space-lg);
-  overflow-y: auto;
-
-  /* Mobile: full-screen sheet. */
-  inset: 0;
-  max-height: 100vh;
-  max-height: 100dvh;
-  border-radius: 0;
-  animation: settings-sheet-in 0.22s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.donate-dialog:focus {
-  outline: none;
-}
-
-.donate-dialog__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-md);
-}
-
-.donate-dialog__title {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
-}
-
-.donate-dialog__close {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-.donate-dialog__desc {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.donate-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-.donate-method {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  padding: var(--space-md);
-  background: var(--bg);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius);
-}
-
-.donate-method__head {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-weight: 600;
-}
-
-.donate-method__icon {
-  font-size: 1.1rem;
-}
-
-.donate-qr {
-  align-self: center;
-  width: min(11rem, 60vw);
-  height: min(11rem, 60vw);
-  padding: var(--space-sm);
-  background: #ffffff;
-  border-radius: var(--radius);
-}
-
-.donate-qr svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.donate-address-row {
-  display: flex;
-  align-items: stretch;
-  gap: var(--space-xs);
-}
-
-.donate-address {
-  flex: 1;
-  min-width: 0;
-  padding: var(--space-sm);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.8rem;
-  word-break: break-all;
-  color: var(--fg);
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius);
-}
-
-.donate-copy {
-  flex-shrink: 0;
-  min-height: var(--hit);
-  padding: 0 var(--space-md);
-  font: inherit;
-  font-weight: 700;
-  color: var(--accent-fg);
-  background: var(--accent);
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: transform 0.12s ease, filter 0.12s ease;
-}
-
-.donate-copy:hover {
-  filter: brightness(1.08);
-}
-
-.donate-copy:active {
-  transform: scale(0.97);
-}
-
-.donate-copy:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.donate-copy.is-success {
-  filter: none;
-  background: color-mix(in srgb, var(--accent) 25%, var(--surface));
-  color: var(--fg);
-}
-
-.donate-link {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  min-height: var(--hit);
-  padding: var(--space-sm) var(--space-md);
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--fg);
-  background: var(--bg);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius);
-  transition: border-color 0.12s ease, transform 0.12s ease;
-}
-
-.donate-link:hover {
-  border-color: var(--accent);
-}
-
-.donate-link:active {
-  transform: scale(0.98);
-}
-
-.donate-link:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.donate-link__icon {
-  font-size: 1.2rem;
-}
-
-.donate-link__label {
-  flex: 1;
-}
-
-.donate-link__ext {
-  color: var(--muted);
-}
-
-/* Tablet + desktop: comfortable centered modal instead of full-screen sheet. */
-@media (min-width: 768px) {
-  .donate-dialog {
-    inset: auto;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: min(28rem, 92vw);
-    max-height: min(85vh, 44rem);
-    border-radius: var(--radius);
-    animation: settings-fade 0.2s ease;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .donate-dialog {
     animation: none;
   }
 }

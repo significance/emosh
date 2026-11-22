@@ -4,7 +4,7 @@ import { expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
 /** Every page on the site, by path. */
-export const PAGES = ['', 'emoji/', 'kaomoji/', 'authors-note/']
+export const PAGES = ['', 'emoji/', 'kaomoji/', 'authors-note/', 'support/']
 
 /** Open a page with a fixed emoshion so runs are deterministic, and wait until it is ready. */
 export async function open(page, path, query = '') {
