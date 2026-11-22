@@ -1,0 +1,4502 @@
+# Kaomoji database for emosh
+# Faces are traditional Japanese text emoticons; names/keywords authored for emosh.
+
+[[kaomoji]]
+text = "(* ^ ω ^)"
+name = "joy-01"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(´ ∀ ` *)"
+name = "joy-02"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "٩(◕‿◕｡)۶"
+name = "joy-03"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "☆*:.｡.o(≧▽≦)o.｡.:*☆"
+name = "joy-04"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(o^▽^o)"
+name = "joy-05"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(⌒▽⌒)☆"
+name = "joy-06"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "。.:☆*:･'(*⌒―⌒*)))"
+name = "joy-07"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "ヽ(・∀・)ﾉ"
+name = "joy-08"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(´｡• ω •｡`)"
+name = "joy-09"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(￣ω￣)"
+name = "joy-10"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "｀;:゛;｀;･(°ε° )"
+name = "joy-11"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(o･ω･o)"
+name = "joy-12"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(＠＾◡＾)"
+name = "joy-13"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "ヽ(*・ω・)ﾉ"
+name = "joy-14"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(o_ _)ﾉ彡☆"
+name = "joy-15"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(^人^)"
+name = "joy-16"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(o´▽`o)"
+name = "joy-17"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(*´▽`*)"
+name = "joy-18"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "｡ﾟ( ﾟ^∀^ﾟ)ﾟ｡"
+name = "joy-19"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "( ´ ω ` )"
+name = "joy-20"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(((o(*°▽°*)o)))"
+name = "joy-21"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(≧◡≦)"
+name = "joy-22"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(o´∀`o)"
+name = "joy-23"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(´• ω •`)"
+name = "joy-24"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(＾▽＾)"
+name = "joy-25"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(⌒ω⌒)"
+name = "joy-26"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "∑d(°∀°d)"
+name = "joy-27"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "╰(▔∀▔)╯"
+name = "joy-28"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(─‿‿─)"
+name = "joy-29"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(*^‿^*)"
+name = "joy-30"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "ヽ(o^ ^o)ﾉ"
+name = "joy-31"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(✯◡✯)"
+name = "joy-32"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(◕‿◕)"
+name = "joy-33"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(*≧ω≦*)"
+name = "joy-34"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(☆▽☆)"
+name = "joy-35"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(⌒‿⌒)"
+name = "joy-36"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "＼(≧▽≦)／"
+name = "joy-37"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "ヽ(o＾▽＾o)ノ"
+name = "joy-38"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "☆ ～('▽^人)"
+name = "joy-39"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(*°▽°*)"
+name = "joy-40"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "٩(｡•́‿•̀｡)۶"
+name = "joy-41"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(✧ω✧)"
+name = "joy-42"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "ヽ(*⌒▽⌒*)ﾉ"
+name = "joy-43"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(´｡• ᵕ •｡`)"
+name = "joy-44"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "( ´ ▽ ` )"
+name = "joy-45"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(￣▽￣)"
+name = "joy-46"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "╰(*´︶`*)╯"
+name = "joy-47"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "ヽ(>∀<☆)ノ"
+name = "joy-48"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "o(≧▽≦)o"
+name = "joy-49"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(☆ω☆)"
+name = "joy-50"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(っ˘ω˘ς )"
+name = "joy-51"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "＼(￣▽￣)／"
+name = "joy-52"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(*¯︶¯*)"
+name = "joy-53"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "＼(＾▽＾)／"
+name = "joy-54"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "٩(◕‿◕)۶"
+name = "joy-55"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(o˘◡˘o)"
+name = "joy-56"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "\\(★ω★)/"
+name = "joy-57"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "\\(^ヮ^)/"
+name = "joy-58"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(〃＾▽＾〃)"
+name = "joy-59"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(╯✧▽✧)╯"
+name = "joy-60"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "o(>ω<)o"
+name = "joy-61"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "o( ❛ᴗ❛ )o"
+name = "joy-62"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "｡ﾟ(TヮT)ﾟ｡"
+name = "joy-63"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "( ‾́ ◡ ‾́ )"
+name = "joy-64"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(ﾉ´ヮ`)ﾉ*: ･ﾟ"
+name = "joy-65"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(b ᵔ▽ᵔ)b"
+name = "joy-66"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(๑˃ᴗ˂)ﻭ"
+name = "joy-67"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(๑˘︶˘๑)"
+name = "joy-68"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "( ˙꒳˙ )"
+name = "joy-69"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(*꒦ິ꒳꒦ີ)"
+name = "joy-70"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "°˖✧◝(⁰▿⁰)◜✧˖°"
+name = "joy-71"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(´･ᴗ･ ` )"
+name = "joy-72"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧"
+name = "sparkles"
+keywords = ["sparkles", "throw sparkles", "magic", "yay", "celebrate", "happy", "joy", "joyful", "glad", "smile", "laugh", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(„• ֊ •„)"
+name = "joy-74"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(.❛ ᴗ ❛.)"
+name = "joy-75"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(⁀ᗢ⁀)"
+name = "joy-76"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(￢‿￢ )"
+name = "joy-77"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(¬‿¬ )"
+name = "joy-78"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(*￣▽￣)b"
+name = "joy-79"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "( ˙▿˙ )"
+name = "joy-80"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(¯▿¯)"
+name = "joy-81"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "( ◕▿◕ )"
+name = "joy-82"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "＼(٥⁀▽⁀ )／"
+name = "joy-83"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(„• ᴗ •„)"
+name = "joy-84"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(ᵔ◡ᵔ)"
+name = "joy-85"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "( ´ ▿ ` )"
+name = "joy-86"
+keywords = ["happy", "joy", "joyful", "glad", "smile", "laugh", "yay", "cheer", "excited"]
+tags = ["joy"]
+
+[[kaomoji]]
+text = "(ﾉ´ з `)ノ"
+name = "love-01"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(♡μ_μ)"
+name = "love-02"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(*^^*)♡"
+name = "love-03"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "☆⌒ヽ(*'､^*)chu"
+name = "love-04"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(♡-_-♡)"
+name = "love-05"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(￣ε￣＠)"
+name = "love-06"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "ヽ(♡‿♡)ノ"
+name = "love-07"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "( ´ ∀ `)ノ～ ♡"
+name = "love-08"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(─‿‿─)♡"
+name = "love-09"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(´｡• ᵕ •｡`) ♡"
+name = "love-10"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(*♡∀♡)"
+name = "love-11"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(｡・//ε//・｡)"
+name = "love-12"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(´ ω `♡)"
+name = "love-13"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "♡( ◡‿◡ )"
+name = "love-14"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(◕‿◕)♡"
+name = "love-15"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(/▽＼*)｡o○♡"
+name = "love-16"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(ღ˘⌣˘ღ)"
+name = "love-17"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(♡°▽°♡)"
+name = "love-18"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "♡(｡- ω -)"
+name = "love-19"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "♡ ～('▽^人)"
+name = "love-20"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(´• ω •`) ♡"
+name = "love-21"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(´ ε ` )♡"
+name = "love-22"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(´｡• ω •｡`) ♡"
+name = "love-23"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "( ´ ▽ ` ).｡ｏ♡"
+name = "love-24"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "╰(*´︶`*)╯♡"
+name = "love-25"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(*˘︶˘*).｡.:*♡"
+name = "love-26"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(♡˙︶˙♡)"
+name = "love-27"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "♡＼(￣▽￣)／♡"
+name = "love-28"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(≧◡≦) ♡"
+name = "love-29"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(⌒▽⌒)♡"
+name = "love-30"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(*¯ ³¯*)♡"
+name = "love-31"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(っ˘з(˘⌣˘ ) ♡"
+name = "love-32"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "♡ (˘▽˘>ԅ( ˘⌣˘)"
+name = "love-33"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "( ˘⌣˘)♡(˘⌣˘ )"
+name = "love-34"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(/^-^(^ ^*)/ ♡"
+name = "love-35"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "٩(♡ε♡)۶"
+name = "love-36"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "σ(≧ε≦σ) ♡"
+name = "love-37"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "♡ (⇀ 3 ↼)"
+name = "love-38"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "♡ (￣З￣)"
+name = "love-39"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(❤ω❤)"
+name = "love-40"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(˘∀˘)/(μ‿μ) ❤"
+name = "love-41"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "❤ (ɔˆз(ˆ⌣ˆc)"
+name = "love-42"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(´♡‿♡`)"
+name = "love-43"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(°◡°♡)"
+name = "love-44"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "Σ>―(〃°ω°〃)♡→"
+name = "love-45"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(´,,•ω•,,)♡"
+name = "love-46"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(´꒳`)♡"
+name = "love-47"
+keywords = ["love", "heart", "kiss", "romance", "crush", "affection", "adore"]
+tags = ["love"]
+
+[[kaomoji]]
+text = "(⌒_⌒;)"
+name = "embarrassment-01"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(o^ ^o)"
+name = "embarrassment-02"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(*/ω＼)"
+name = "embarrassment-03"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(*/。＼)"
+name = "embarrassment-04"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(*/_＼)"
+name = "embarrassment-05"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(*ﾉωﾉ)"
+name = "embarrassment-06"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(o-_-o)"
+name = "embarrassment-07"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(*μ_μ)"
+name = "embarrassment-08"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "( ◡‿◡ *)"
+name = "embarrassment-09"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(ᵔ.ᵔ)"
+name = "embarrassment-10"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(*ﾉ∀`*)"
+name = "embarrassment-11"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(//▽//)"
+name = "embarrassment-12"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(//ω//)"
+name = "embarrassment-13"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(ノ*°▽°*)"
+name = "embarrassment-14"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(*^.^*)"
+name = "embarrassment-15"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(*ﾉ▽ﾉ)"
+name = "embarrassment-16"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(￣▽￣*)ゞ"
+name = "embarrassment-17"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(⁄ ⁄•⁄ω⁄•⁄ ⁄)"
+name = "embarrassment-18"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(*/▽＼*)"
+name = "embarrassment-19"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)"
+name = "embarrassment-20"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(„ಡωಡ„)"
+name = "embarrassment-21"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(ง ื▿ ื)ว"
+name = "embarrassment-22"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "( 〃▽〃)"
+name = "embarrassment-23"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(/▿＼ )"
+name = "embarrassment-24"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(///￣ ￣///)"
+name = "embarrassment-25"
+keywords = ["embarrassed", "shy", "blush", "awkward", "bashful", "flustered"]
+tags = ["embarrassment"]
+
+[[kaomoji]]
+text = "(ノ_<。)ヾ(´ ▽ ` )"
+name = "sympathy-01"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "｡･ﾟ･(ﾉД`)ヽ(￣ω￣ )"
+name = "sympathy-02"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "ρ(- ω -、)ヾ(￣ω￣; )"
+name = "sympathy-03"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "ヽ(￣ω￣(。。 )ゝ"
+name = "sympathy-04"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "(*´ I `)ﾉﾟ(ﾉД｀ﾟ)ﾟ｡"
+name = "sympathy-05"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "ヽ(~_~(・_・ )ゝ"
+name = "sympathy-06"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "(ﾉ_；)ヾ(´ ∀ ` )"
+name = "sympathy-07"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "(; ω ; )ヾ(´∀`* )"
+name = "sympathy-08"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "(*´ー)ﾉ(ノд`)"
+name = "sympathy-09"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "(´-ω-`( _ _ )"
+name = "sympathy-10"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "(っ´ω`)ﾉ(╥ω╥)"
+name = "sympathy-11"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "(ｏ・_・)ノ”(ノ_<、)"
+name = "sympathy-12"
+keywords = ["sympathy", "comfort", "there there", "pat", "consoling", "support"]
+tags = ["sympathy"]
+
+[[kaomoji]]
+text = "(＃＞＜)"
+name = "dissatisfaction-01"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(；⌣̀_⌣́)"
+name = "dissatisfaction-02"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "☆ｏ(＞＜；)○"
+name = "dissatisfaction-03"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(￣ ￣|||)"
+name = "dissatisfaction-04"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(；￣Д￣)"
+name = "dissatisfaction-05"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(￣□￣」)"
+name = "dissatisfaction-06"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(＃￣0￣)"
+name = "dissatisfaction-07"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(＃￣ω￣)"
+name = "dissatisfaction-08"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(￢_￢;)"
+name = "dissatisfaction-09"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(＞ｍ＜)"
+name = "dissatisfaction-10"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(」°ロ°)」"
+name = "dissatisfaction-11"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(〃＞＿＜;〃)"
+name = "dissatisfaction-12"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(＾＾＃)"
+name = "dissatisfaction-13"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(︶︹︺)"
+name = "dissatisfaction-14"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(￣ヘ￣)"
+name = "dissatisfaction-15"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(￣︿￣)"
+name = "dissatisfaction-16"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(＞﹏＜)"
+name = "dissatisfaction-17"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(--_--)"
+name = "dissatisfaction-18"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "凸(￣ヘ￣)"
+name = "dissatisfaction-19"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "ヾ( ￣O￣)ツ"
+name = "dissatisfaction-20"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(⇀‸↼‶)"
+name = "dissatisfaction-21"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "o(>< )o"
+name = "dissatisfaction-22"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(」＞＜)」"
+name = "dissatisfaction-23"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(ᗒᗣᗕ)՞"
+name = "dissatisfaction-24"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(눈_눈)"
+name = "dissatisfaction-25"
+keywords = ["dissatisfied", "annoyed", "grumpy", "meh", "ugh", "displeased", "pout"]
+tags = ["dissatisfaction"]
+
+[[kaomoji]]
+text = "(＃`Д´)"
+name = "anger-01"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(`皿´＃)"
+name = "anger-02"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "( ` ω ´ )"
+name = "anger-03"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "ヽ( `д´*)ノ"
+name = "anger-04"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(・`ω´・)"
+name = "anger-05"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(`ー´)"
+name = "anger-06"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "ヽ(`⌒´メ)ノ"
+name = "anger-07"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "凸(`△´＃)"
+name = "anger-08"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "( `ε´ )"
+name = "anger-09"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "ψ( ` ∇ ´ )ψ"
+name = "anger-10"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "ヾ(`ヘ´)ﾉﾞ"
+name = "anger-11"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "ヽ(‵﹏´)ノ"
+name = "anger-12"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(ﾒ` ﾛ ´)"
+name = "anger-13"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(╬`益´)"
+name = "anger-14"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "┌∩┐(◣_◢)┌∩┐"
+name = "anger-15"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "凸( ` ﾛ ´ )凸"
+name = "anger-16"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "Σ(▼□▼メ)"
+name = "anger-17"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(°ㅂ°╬)"
+name = "anger-18"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "ψ(▼へ▼メ)～→"
+name = "anger-19"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(ノ°益°)ノ"
+name = "anger-20"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(҂ `з´ )"
+name = "anger-21"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(‡▼益▼)"
+name = "anger-22"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(҂` ﾛ ´)凸"
+name = "anger-23"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "((╬◣﹏◢))"
+name = "anger-24"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "٩(╬ʘ益ʘ╬)۶"
+name = "anger-25"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(╬ Ò﹏Ó)"
+name = "anger-26"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "＼＼٩(๑`^´๑)۶／／"
+name = "anger-27"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(凸ಠ益ಠ)凸"
+name = "anger-28"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "↑_(ΦwΦ)Ψ"
+name = "anger-29"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "←~(Ψ▼ｰ▼)∈"
+name = "anger-30"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "୧((#Φ益Φ#))୨"
+name = "anger-31"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "٩(ఠ益ఠ)۶"
+name = "anger-32"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(ﾉಥ益ಥ)ﾉ"
+name = "anger-33"
+keywords = ["angry", "anger", "rage", "mad", "furious", "grr", "fury"]
+tags = ["anger"]
+
+[[kaomoji]]
+text = "(ノ_<。)"
+name = "sadness-01"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(-_-)"
+name = "sadness-02"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(´-ω-`)"
+name = "sadness-03"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = ".･ﾟﾟ･(／ω＼)･ﾟﾟ･."
+name = "sadness-04"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(μ_μ)"
+name = "sadness-05"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(ﾉД`)"
+name = "sadness-06"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(-ω-、)"
+name = "sadness-07"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "。゜゜(´Ｏ`) ゜゜。"
+name = "sadness-08"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "o(TヘTo)"
+name = "sadness-09"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "( ; ω ; )"
+name = "sadness-10"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(｡╯︵╰｡)"
+name = "sadness-11"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "｡･ﾟﾟ*(>д<)*ﾟﾟ･｡"
+name = "sadness-12"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "( ﾟ，_ゝ｀)"
+name = "sadness-13"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(个_个)"
+name = "sadness-14"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(╯︵╰,)"
+name = "sadness-15"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "｡･ﾟ(ﾟ><ﾟ)ﾟ･｡"
+name = "sadness-16"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "( ╥ω╥ )"
+name = "sadness-17"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(╯_╰)"
+name = "sadness-18"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(╥_╥)"
+name = "sadness-19"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = ".｡･ﾟﾟ･(＞_＜)･ﾟﾟ･｡."
+name = "sadness-20"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(／ˍ・、)"
+name = "sadness-21"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(ノ_<、)"
+name = "sadness-22"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(╥﹏╥)"
+name = "sadness-23"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "｡ﾟ(｡ﾉωヽ｡)ﾟ｡"
+name = "sadness-24"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(つω`｡)"
+name = "sadness-25"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(｡T ω T｡)"
+name = "sadness-26"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(ﾉω･､)"
+name = "sadness-27"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "･ﾟ･(｡>ω<｡)･ﾟ･"
+name = "sadness-28"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(T_T)"
+name = "sadness-29"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(>_<)"
+name = "sadness-30"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(っ˘̩╭╮˘̩)っ"
+name = "sadness-31"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "｡ﾟ･ (>﹏<) ･ﾟ｡"
+name = "sadness-32"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "o(〒﹏〒)o"
+name = "sadness-33"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(｡•́︿•̀｡)"
+name = "sadness-34"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(ಥ﹏ಥ)"
+name = "ugly-cry"
+keywords = ["cry", "crying", "sob", "sad", "tears", "unhappy", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "(ಡ‸ಡ)"
+name = "sadness-36"
+keywords = ["sad", "cry", "crying", "tears", "unhappy", "sob", "depressed", "down"]
+tags = ["sadness"]
+
+[[kaomoji]]
+text = "~(>_<~)"
+name = "pain-01"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "☆⌒(> _ <)"
+name = "pain-02"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "☆⌒(>。<)"
+name = "pain-03"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "(☆_@)"
+name = "pain-04"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "(×_×)"
+name = "pain-05"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "(x_x)"
+name = "pain-06"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "(×_×)⌒☆"
+name = "pain-07"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "(x_x)⌒☆"
+name = "pain-08"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "(×﹏×)"
+name = "pain-09"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "☆(＃××)"
+name = "pain-10"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "(＋_＋)"
+name = "pain-11"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "[ ± _ ± ]"
+name = "pain-12"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "٩(× ×)۶"
+name = "pain-13"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "_:(´ཀ`」 ∠):_"
+name = "pain-14"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "(ﾒ﹏ﾒ)"
+name = "pain-15"
+keywords = ["pain", "hurt", "ouch", "ow", "ache", "suffering"]
+tags = ["pain"]
+
+[[kaomoji]]
+text = "(ノωヽ)"
+name = "fear-01"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "(／。＼)"
+name = "fear-02"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "(ﾉ_ヽ)"
+name = "fear-03"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "..・ヾ(。＞＜)シ"
+name = "fear-04"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "(″ロ゛)"
+name = "fear-05"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "(;;;*_*)"
+name = "fear-06"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "(・人・)"
+name = "fear-07"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "＼(〇_ｏ)／"
+name = "fear-08"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "(/ω＼)"
+name = "fear-09"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "(/_＼)"
+name = "fear-10"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "〜(＞＜)〜"
+name = "fear-11"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "Σ(°△°|||)︴"
+name = "fear-12"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "(((＞＜)))"
+name = "fear-13"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "{{ (>_<) }}"
+name = "fear-14"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "＼(º □ º l|l)/"
+name = "fear-15"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "〣( ºΔº )〣"
+name = "fear-16"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "▓▒░(°◡°)░▒▓"
+name = "fear-17"
+keywords = ["fear", "scared", "afraid", "terrified", "spooked", "frightened", "hide"]
+tags = ["fear"]
+
+[[kaomoji]]
+text = "ヽ(ー_ー )ノ"
+name = "indifference-01"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "ヽ(´ー` )┌"
+name = "indifference-02"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐(‘～` )┌"
+name = "indifference-03"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "ヽ(　￣д￣)ノ"
+name = "indifference-04"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐(￣ヘ￣)┌"
+name = "indifference-05"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "ヽ(￣～￣　)ノ"
+name = "indifference-06"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "╮(￣_￣)╭"
+name = "indifference-07"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "ヽ(ˇヘˇ)ノ"
+name = "indifference-08"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐(￣～￣)┌"
+name = "indifference-09"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐(︶▽︶)┌"
+name = "indifference-10"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "╮(￣～￣)╭"
+name = "indifference-11"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "¯\\_(ツ)_/¯"
+name = "shrug"
+keywords = ["shrug", "idk", "dunno", "whatever", "oh well", "indifferent", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐( ´ д ` )┌"
+name = "indifference-13"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "╮(︶︿︶)╭"
+name = "indifference-14"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐(￣∀￣)┌"
+name = "indifference-15"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐( ˘ ､ ˘ )┌"
+name = "indifference-16"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "╮(︶▽︶)╭"
+name = "indifference-17"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "╮( ˘ ､ ˘ )╭"
+name = "indifference-18"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐( ˘_˘ )┌"
+name = "indifference-19"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "╮( ˘_˘ )╭"
+name = "indifference-20"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐(￣ヮ￣)┌"
+name = "indifference-21"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "ᕕ( ᐛ )ᕗ"
+name = "strut"
+keywords = ["strut", "run", "yolo", "happy run", "going", "indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "┐(シ)┌"
+name = "indifference-23"
+keywords = ["indifferent", "whatever", "shrug", "idk", "dunno", "meh", "bored"]
+tags = ["indifference"]
+
+[[kaomoji]]
+text = "(￣ω￣;)"
+name = "confusion-01"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "σ(￣、￣〃)"
+name = "confusion-02"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(￣～￣;)"
+name = "confusion-03"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(-_-;)・・・"
+name = "confusion-04"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "┐('～`;)┌"
+name = "confusion-05"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(・_・ヾ"
+name = "confusion-06"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(〃￣ω￣〃ゞ"
+name = "confusion-07"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "┐(￣ヘ￣;)┌"
+name = "confusion-08"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(・_・;)"
+name = "confusion-09"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(￣_￣)・・・"
+name = "confusion-10"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "╮(￣ω￣;)╭"
+name = "confusion-11"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(¯ . ¯;)"
+name = "confusion-12"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(＠_＠)"
+name = "confusion-13"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(・・;)ゞ"
+name = "confusion-14"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "Σ(￣。￣ﾉ)"
+name = "confusion-15"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(・・ ) ?"
+name = "confusion-16"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(•ิ_•ิ)?"
+name = "confusion-17"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(◎ ◎)ゞ"
+name = "confusion-18"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(ーー;)"
+name = "confusion-19"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "ლ(ಠ_ಠ ლ)"
+name = "confusion-20"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "ლ(¯ロ¯\"ლ)"
+name = "confusion-21"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(¯ . ¯٥)"
+name = "confusion-22"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(¯  ¯٥)"
+name = "confusion-23"
+keywords = ["confused", "confusion", "huh", "what", "puzzled", "thinking", "hmm"]
+tags = ["confusion"]
+
+[[kaomoji]]
+text = "(￢_￢)"
+name = "doubt-01"
+keywords = ["doubt", "suspicious", "skeptical", "side eye", "hmm", "sus", "squint"]
+tags = ["doubt"]
+
+[[kaomoji]]
+text = "(→_→)"
+name = "doubt-02"
+keywords = ["doubt", "suspicious", "skeptical", "side eye", "hmm", "sus", "squint"]
+tags = ["doubt"]
+
+[[kaomoji]]
+text = "(￢ ￢)"
+name = "doubt-03"
+keywords = ["doubt", "suspicious", "skeptical", "side eye", "hmm", "sus", "squint"]
+tags = ["doubt"]
+
+[[kaomoji]]
+text = "(¬_¬ )"
+name = "doubt-04"
+keywords = ["doubt", "suspicious", "skeptical", "side eye", "hmm", "sus", "squint"]
+tags = ["doubt"]
+
+[[kaomoji]]
+text = "(←_←)"
+name = "doubt-05"
+keywords = ["doubt", "suspicious", "skeptical", "side eye", "hmm", "sus", "squint"]
+tags = ["doubt"]
+
+[[kaomoji]]
+text = "(¬ ¬ )"
+name = "doubt-06"
+keywords = ["doubt", "suspicious", "skeptical", "side eye", "hmm", "sus", "squint"]
+tags = ["doubt"]
+
+[[kaomoji]]
+text = "(↼_↼)"
+name = "doubt-07"
+keywords = ["doubt", "suspicious", "skeptical", "side eye", "hmm", "sus", "squint"]
+tags = ["doubt"]
+
+[[kaomoji]]
+text = "(⇀_⇀)"
+name = "doubt-08"
+keywords = ["doubt", "suspicious", "skeptical", "side eye", "hmm", "sus", "squint"]
+tags = ["doubt"]
+
+[[kaomoji]]
+text = "(ᓀ ᓀ)"
+name = "doubt-09"
+keywords = ["doubt", "suspicious", "skeptical", "side eye", "hmm", "sus", "squint"]
+tags = ["doubt"]
+
+[[kaomoji]]
+text = "w(°ｏ°)w"
+name = "surprise-01"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "ヽ(°〇°)ﾉ"
+name = "surprise-02"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "Σ(O_O)"
+name = "surprise-03"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "Σ(°ロ°)"
+name = "surprise-04"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "(⊙_⊙)"
+name = "surprise-05"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "(o_O)"
+name = "surprise-06"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "(O_O;)"
+name = "surprise-07"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "(O.O)"
+name = "surprise-08"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "(°ロ°) !"
+name = "surprise-09"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "(o_O) !"
+name = "surprise-10"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "(□_□)"
+name = "surprise-11"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "Σ(□_□)"
+name = "surprise-12"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "∑(O_O;)"
+name = "surprise-13"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "( : ౦ ‸ ౦ : )"
+name = "surprise-14"
+keywords = ["surprised", "surprise", "shock", "shocked", "wow", "omg", "gasp", "whoa"]
+tags = ["surprise"]
+
+[[kaomoji]]
+text = "(*・ω・)ﾉ"
+name = "greeting-01"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(￣▽￣)ノ"
+name = "greeting-02"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(°▽°)/"
+name = "greeting-03"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "( ´ ∀ ` )ﾉ"
+name = "greeting-04"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(^-^*)/"
+name = "greeting-05"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(＠´ー`)ﾉﾞ"
+name = "greeting-06"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(´• ω •`)ﾉ"
+name = "greeting-07"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "( ° ∀ ° )ﾉﾞ"
+name = "greeting-08"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "ヾ(*'▽'*)"
+name = "greeting-09"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "＼(⌒▽⌒)"
+name = "greeting-10"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "ヾ(☆▽☆)"
+name = "greeting-11"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "( ´ ▽ ` )ﾉ"
+name = "greeting-12"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(^０^)ノ"
+name = "greeting-13"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "~ヾ(・ω・)"
+name = "greeting-14"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(・∀・)ノ"
+name = "greeting-15"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "ヾ(・ω・*)"
+name = "greeting-16"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(*°ｰ°)ﾉ"
+name = "greeting-17"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(・_・)ノ"
+name = "greeting-18"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(o´ω`o)ﾉ"
+name = "greeting-19"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "( ´ ▽ ` )/"
+name = "greeting-20"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(￣ω￣)/"
+name = "greeting-21"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "( ´ ω ` )ノﾞ"
+name = "greeting-22"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(⌒ω⌒)ﾉ"
+name = "greeting-23"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(o^ ^o)/"
+name = "greeting-24"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(≧▽≦)/"
+name = "greeting-25"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(✧∀✧)/"
+name = "greeting-26"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(o´▽`o)ﾉ"
+name = "greeting-27"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(￣▽￣)/"
+name = "greeting-28"
+keywords = ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye", "waving"]
+tags = ["greeting"]
+
+[[kaomoji]]
+text = "(づ￣ ³￣)づ"
+name = "kiss-hug"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "(つ≧▽≦)つ"
+name = "hugging-02"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "(つ✧ω✧)つ"
+name = "hugging-03"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "(づ ◕‿◕ )づ"
+name = "hugging-04"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "(⊃｡•́‿•̀｡)⊃"
+name = "hugging-05"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "(つ . •́ _ʖ •̀ .)つ"
+name = "hugging-06"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "(っಠ‿ಠ)っ"
+name = "hugging-07"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "(づ◡﹏◡)づ"
+name = "hugging-08"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "⊂(´• ω •`⊂)"
+name = "hugging-09"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "⊂(･ω･*⊂)"
+name = "hugging-10"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "⊂(￣▽￣)⊃"
+name = "hugging-11"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "⊂( ´ ▽ ` )⊃"
+name = "hugging-12"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "( ~*-*)~"
+name = "hugging-13"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "(｡•̀ᴗ-)✧"
+name = "hugging-14"
+keywords = ["hug", "hugs", "cuddle", "embrace", "squeeze", "hugging"]
+tags = ["hugging"]
+
+[[kaomoji]]
+text = "(^_~)"
+name = "winking-01"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "( ﾟｏ⌒)"
+name = "winking-02"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(^_-)≡☆"
+name = "winking-03"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(^ω~)"
+name = "winking-04"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(>ω^)"
+name = "winking-05"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(~人^)"
+name = "winking-06"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(^_-)"
+name = "winking-07"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "( -_・)"
+name = "winking-08"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(^_<)〜☆"
+name = "winking-09"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(^人<)〜☆"
+name = "winking-10"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "☆⌒(≧▽° )"
+name = "winking-11"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "☆⌒(ゝ。∂)"
+name = "winking-12"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(^_<)"
+name = "winking-13"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(^_−)☆"
+name = "winking-14"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(･ω<)☆"
+name = "winking-15"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(^.~)☆"
+name = "winking-16"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "(^.~)"
+name = "winking-17"
+keywords = ["wink", "winking", "flirt", "cheeky", "nudge"]
+tags = ["winking"]
+
+[[kaomoji]]
+text = "m(_ _)m"
+name = "bow"
+keywords = ["sorry", "apology", "apologize", "bow", "forgive", "my bad"]
+tags = ["apologizing"]
+
+[[kaomoji]]
+text = "(シ_ _)シ"
+name = "apologizing-02"
+keywords = ["sorry", "apology", "apologize", "bow", "forgive", "my bad"]
+tags = ["apologizing"]
+
+[[kaomoji]]
+text = "m(. .)m"
+name = "apologizing-03"
+keywords = ["sorry", "apology", "apologize", "bow", "forgive", "my bad"]
+tags = ["apologizing"]
+
+[[kaomoji]]
+text = "人(_ _*)"
+name = "apologizing-04"
+keywords = ["sorry", "apology", "apologize", "bow", "forgive", "my bad"]
+tags = ["apologizing"]
+
+[[kaomoji]]
+text = "(*_ _)人"
+name = "apologizing-05"
+keywords = ["sorry", "apology", "apologize", "bow", "forgive", "my bad"]
+tags = ["apologizing"]
+
+[[kaomoji]]
+text = "m(_ _;m)"
+name = "apologizing-06"
+keywords = ["sorry", "apology", "apologize", "bow", "forgive", "my bad"]
+tags = ["apologizing"]
+
+[[kaomoji]]
+text = "(m;_ _)m"
+name = "apologizing-07"
+keywords = ["sorry", "apology", "apologize", "bow", "forgive", "my bad"]
+tags = ["apologizing"]
+
+[[kaomoji]]
+text = "(シ. .)シ"
+name = "apologizing-08"
+keywords = ["sorry", "apology", "apologize", "bow", "forgive", "my bad"]
+tags = ["apologizing"]
+
+[[kaomoji]]
+text = "(*￣ii￣)"
+name = "nosebleeding-01"
+keywords = ["nosebleed", "nosebleeding", "hot", "attractive", "swoon", "wow"]
+tags = ["nosebleeding"]
+
+[[kaomoji]]
+text = "(￣ﾊ￣*)"
+name = "nosebleeding-02"
+keywords = ["nosebleed", "nosebleeding", "hot", "attractive", "swoon", "wow"]
+tags = ["nosebleeding"]
+
+[[kaomoji]]
+text = "\\(￣ﾊ￣)"
+name = "nosebleeding-03"
+keywords = ["nosebleed", "nosebleeding", "hot", "attractive", "swoon", "wow"]
+tags = ["nosebleeding"]
+
+[[kaomoji]]
+text = "(＾་།＾)"
+name = "nosebleeding-04"
+keywords = ["nosebleed", "nosebleeding", "hot", "attractive", "swoon", "wow"]
+tags = ["nosebleeding"]
+
+[[kaomoji]]
+text = "(＾〃＾)"
+name = "nosebleeding-05"
+keywords = ["nosebleed", "nosebleeding", "hot", "attractive", "swoon", "wow"]
+tags = ["nosebleeding"]
+
+[[kaomoji]]
+text = "(￣ ¨ヽ￣)"
+name = "nosebleeding-06"
+keywords = ["nosebleed", "nosebleeding", "hot", "attractive", "swoon", "wow"]
+tags = ["nosebleeding"]
+
+[[kaomoji]]
+text = "(￣ ;￣)"
+name = "nosebleeding-07"
+keywords = ["nosebleed", "nosebleeding", "hot", "attractive", "swoon", "wow"]
+tags = ["nosebleeding"]
+
+[[kaomoji]]
+text = "(￣ ;;￣)"
+name = "nosebleeding-08"
+keywords = ["nosebleed", "nosebleeding", "hot", "attractive", "swoon", "wow"]
+tags = ["nosebleeding"]
+
+[[kaomoji]]
+text = "|･ω･)"
+name = "hiding-01"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "ﾍ(･_|"
+name = "hiding-02"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "|ω･)ﾉ"
+name = "hiding-03"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "ヾ(･|"
+name = "hiding-04"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "|д･)"
+name = "hiding-05"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "|_￣))"
+name = "hiding-06"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "|▽//)"
+name = "hiding-07"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "┬┴┬┴┤(･_├┬┴┬┴"
+name = "hiding-08"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "┬┴┬┴┤･ω･)ﾉ"
+name = "hiding-09"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "┬┴┬┴┤( ͡° ͜ʖ├┬┴┬┴"
+name = "hiding-10"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "|_・)"
+name = "hiding-11"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "|･д･)ﾉ"
+name = "hiding-12"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "|ʘ‿ʘ)╯"
+name = "hiding-13"
+keywords = ["hiding", "hide", "peek", "peeking", "shy", "lurk", "lurking", "sneak"]
+tags = ["hiding"]
+
+[[kaomoji]]
+text = "__φ(．．)"
+name = "writing-01"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "( ￣ー￣)φ__"
+name = "writing-02"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "__φ(。。)"
+name = "writing-03"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "__φ(．．;)"
+name = "writing-04"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "ヾ( `ー´)シφ__"
+name = "writing-05"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "__〆(￣ー￣ )"
+name = "writing-06"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "....φ(・∀・*)"
+name = "writing-07"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "___〆(・∀・)"
+name = "writing-08"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "( ^▽^)ψ__"
+name = "writing-09"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "....φ(︶▽︶)φ...."
+name = "writing-10"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "( . .)φ__"
+name = "writing-11"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "__φ(◎◎ヘ)"
+name = "writing-12"
+keywords = ["writing", "write", "notes", "study", "studying", "homework", "pen"]
+tags = ["writing"]
+
+[[kaomoji]]
+text = "☆ﾐ(o*･ω･)ﾉ"
+name = "running-01"
+keywords = ["running", "run", "hurry", "late", "rush", "flee", "dash", "zoom"]
+tags = ["running"]
+
+[[kaomoji]]
+text = "C= C= C= C= C=┌(;・ω・)┘"
+name = "running-02"
+keywords = ["running", "run", "hurry", "late", "rush", "flee", "dash", "zoom"]
+tags = ["running"]
+
+[[kaomoji]]
+text = "─=≡Σ((( つ＞＜)つ"
+name = "running-03"
+keywords = ["running", "run", "hurry", "late", "rush", "flee", "dash", "zoom"]
+tags = ["running"]
+
+[[kaomoji]]
+text = "ε=ε=ε=ε=┌(;￣▽￣)┘"
+name = "running-04"
+keywords = ["running", "run", "hurry", "late", "rush", "flee", "dash", "zoom"]
+tags = ["running"]
+
+[[kaomoji]]
+text = "ε=ε=┌( >_<)┘"
+name = "running-05"
+keywords = ["running", "run", "hurry", "late", "rush", "flee", "dash", "zoom"]
+tags = ["running"]
+
+[[kaomoji]]
+text = "C= C= C= C=┌( `ー´)┘"
+name = "running-06"
+keywords = ["running", "run", "hurry", "late", "rush", "flee", "dash", "zoom"]
+tags = ["running"]
+
+[[kaomoji]]
+text = "ε===(っ≧ω≦)っ"
+name = "running-07"
+keywords = ["running", "run", "hurry", "late", "rush", "flee", "dash", "zoom"]
+tags = ["running"]
+
+[[kaomoji]]
+text = "ヽ(￣д￣;)ノ=3=3=3"
+name = "running-08"
+keywords = ["running", "run", "hurry", "late", "rush", "flee", "dash", "zoom"]
+tags = ["running"]
+
+[[kaomoji]]
+text = "。。。ミヽ(。＞＜)ノ"
+name = "running-09"
+keywords = ["running", "run", "hurry", "late", "rush", "flee", "dash", "zoom"]
+tags = ["running"]
+
+[[kaomoji]]
+text = "[(－－)]..zzZ"
+name = "sleeping-01"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(－_－) zzZ"
+name = "sleeping-02"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(∪｡∪)｡｡｡zzZ"
+name = "sleeping-03"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(－ω－) zzZ"
+name = "sleeping-04"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(￣o￣) zzZZzzZZ"
+name = "sleeping-05"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(( _ _ ))..zzzZZ"
+name = "sleeping-06"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(￣ρ￣)..zzZZ"
+name = "sleeping-07"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(－.－)...zzz"
+name = "sleeping-08"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(＿ ＿*) Z z z"
+name = "sleeping-09"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(x . x) ~~zzZ"
+name = "sleeping-10"
+keywords = ["sleep", "sleeping", "sleepy", "tired", "zzz", "nap", "bed", "snore"]
+tags = ["sleeping"]
+
+[[kaomoji]]
+text = "(=^･ω･^=)"
+name = "neko"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(=^･ｪ･^=)"
+name = "cat-02"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(=①ω①=)"
+name = "cat-03"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "( =ω=)..nyaa"
+name = "cat-04"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(= ; ｪ ; =)"
+name = "cat-05"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(=`ω´=)"
+name = "cat-06"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(=^‥^=)"
+name = "cat-07"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "( =ノωヽ=)"
+name = "cat-08"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(=⌒‿‿⌒=)"
+name = "cat-09"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(=^ ◡ ^=)"
+name = "cat-10"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(=^-ω-^=)"
+name = "cat-11"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "ヾ(=`ω´=)ノ”"
+name = "cat-12"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(＾• ω •＾)"
+name = "cat-13"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(/ =ω=)/"
+name = "cat-14"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "ฅ(•ㅅ•❀)ฅ"
+name = "cat-15"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "ฅ(• ɪ •)ฅ"
+name = "cat-16"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "ଲ(ⓛ ω ⓛ)ଲ"
+name = "cat-17"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(^=◕ᴥ◕=^)"
+name = "cat-18"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "( =ω= )"
+name = "cat-19"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(^˵◕ω◕˵^)"
+name = "cat-20"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(^◔ᴥ◔^)"
+name = "cat-21"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "(^◕ᴥ◕^)"
+name = "cat-22"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "ต(=ω=)ต"
+name = "cat-23"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "( Φ ω Φ )"
+name = "cat-24"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "ฅ(^◕ᴥ◕^)ฅ"
+name = "cat-25"
+keywords = ["cat", "kitty", "kitten", "meow", "neko", "animal"]
+tags = ["cat"]
+
+[[kaomoji]]
+text = "( ´(ｴ)ˋ )"
+name = "bear-01"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "(*￣(ｴ)￣*)"
+name = "bear-02"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "ヽ(￣(ｴ)￣)ﾉ"
+name = "bear-03"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "(／￣(ｴ)￣)／"
+name = "bear-04"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "(￣(ｴ)￣)"
+name = "bear-05"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "ヽ( ˋ(ｴ)´ )ﾉ"
+name = "bear-06"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "⊂(￣(ｴ)￣)⊃"
+name = "bear-07"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "(／(ｴ)＼)"
+name = "bear-08"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "⊂(´(ェ)ˋ)⊃"
+name = "bear-09"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "(/-(ｴ)-＼)"
+name = "bear-10"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "(/°(ｴ)°)/"
+name = "bear-11"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "ʕ ᵔᴥᵔ ʔ"
+name = "bear-12"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "ʕ •ᴥ• ʔ"
+name = "bear-13"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "ʕ •̀ ω •́ ʔ"
+name = "bear-14"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "ʕ •̀ o •́ ʔ"
+name = "bear-15"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "ʕಠᴥಠʔ"
+name = "bear-16"
+keywords = ["bear", "teddy", "kuma", "animal"]
+tags = ["bear"]
+
+[[kaomoji]]
+text = "∪＾ェ＾∪"
+name = "dog-01"
+keywords = ["dog", "puppy", "doggo", "woof", "inu", "animal"]
+tags = ["dog"]
+
+[[kaomoji]]
+text = "∪･ω･∪"
+name = "dog-02"
+keywords = ["dog", "puppy", "doggo", "woof", "inu", "animal"]
+tags = ["dog"]
+
+[[kaomoji]]
+text = "∪￣-￣∪"
+name = "dog-03"
+keywords = ["dog", "puppy", "doggo", "woof", "inu", "animal"]
+tags = ["dog"]
+
+[[kaomoji]]
+text = "∪･ｪ･∪"
+name = "dog-04"
+keywords = ["dog", "puppy", "doggo", "woof", "inu", "animal"]
+tags = ["dog"]
+
+[[kaomoji]]
+text = "Ｕ^皿^Ｕ"
+name = "dog-05"
+keywords = ["dog", "puppy", "doggo", "woof", "inu", "animal"]
+tags = ["dog"]
+
+[[kaomoji]]
+text = "ＵＴｪＴＵ"
+name = "dog-06"
+keywords = ["dog", "puppy", "doggo", "woof", "inu", "animal"]
+tags = ["dog"]
+
+[[kaomoji]]
+text = "U^ｪ^U"
+name = "dog-07"
+keywords = ["dog", "puppy", "doggo", "woof", "inu", "animal"]
+tags = ["dog"]
+
+[[kaomoji]]
+text = "V●ᴥ●V"
+name = "dog-08"
+keywords = ["dog", "puppy", "doggo", "woof", "inu", "animal"]
+tags = ["dog"]
+
+[[kaomoji]]
+text = "U・ᴥ・U"
+name = "dog-09"
+keywords = ["dog", "puppy", "doggo", "woof", "inu", "animal"]
+tags = ["dog"]
+
+[[kaomoji]]
+text = "／(≧ x ≦)＼"
+name = "rabbit-01"
+keywords = ["rabbit", "bunny", "usagi", "hop", "animal"]
+tags = ["rabbit"]
+
+[[kaomoji]]
+text = "／(･ × ･)＼"
+name = "rabbit-02"
+keywords = ["rabbit", "bunny", "usagi", "hop", "animal"]
+tags = ["rabbit"]
+
+[[kaomoji]]
+text = "／(=´x`=)＼"
+name = "rabbit-03"
+keywords = ["rabbit", "bunny", "usagi", "hop", "animal"]
+tags = ["rabbit"]
+
+[[kaomoji]]
+text = "／(^ x ^)＼"
+name = "rabbit-04"
+keywords = ["rabbit", "bunny", "usagi", "hop", "animal"]
+tags = ["rabbit"]
+
+[[kaomoji]]
+text = "／(=･ x ･=)＼"
+name = "rabbit-05"
+keywords = ["rabbit", "bunny", "usagi", "hop", "animal"]
+tags = ["rabbit"]
+
+[[kaomoji]]
+text = "／(^ × ^)＼"
+name = "rabbit-06"
+keywords = ["rabbit", "bunny", "usagi", "hop", "animal"]
+tags = ["rabbit"]
+
+[[kaomoji]]
+text = "／(＞×＜)＼"
+name = "rabbit-07"
+keywords = ["rabbit", "bunny", "usagi", "hop", "animal"]
+tags = ["rabbit"]
+
+[[kaomoji]]
+text = "／(˃ᆺ˂)＼"
+name = "rabbit-08"
+keywords = ["rabbit", "bunny", "usagi", "hop", "animal"]
+tags = ["rabbit"]
+
+[[kaomoji]]
+text = "( ´(00)ˋ )"
+name = "pig-01"
+keywords = ["pig", "piggy", "oink", "buta", "animal"]
+tags = ["pig"]
+
+[[kaomoji]]
+text = "(￣(ω)￣)"
+name = "pig-02"
+keywords = ["pig", "piggy", "oink", "buta", "animal"]
+tags = ["pig"]
+
+[[kaomoji]]
+text = "ヽ( ˋ(00)´ )ノ"
+name = "pig-03"
+keywords = ["pig", "piggy", "oink", "buta", "animal"]
+tags = ["pig"]
+
+[[kaomoji]]
+text = "( ´(oo)ˋ )"
+name = "pig-04"
+keywords = ["pig", "piggy", "oink", "buta", "animal"]
+tags = ["pig"]
+
+[[kaomoji]]
+text = "＼(￣(oo)￣)／"
+name = "pig-05"
+keywords = ["pig", "piggy", "oink", "buta", "animal"]
+tags = ["pig"]
+
+[[kaomoji]]
+text = "｡ﾟ(ﾟ´(00)`ﾟ)ﾟ｡"
+name = "pig-06"
+keywords = ["pig", "piggy", "oink", "buta", "animal"]
+tags = ["pig"]
+
+[[kaomoji]]
+text = "(￣(00)￣)"
+name = "pig-07"
+keywords = ["pig", "piggy", "oink", "buta", "animal"]
+tags = ["pig"]
+
+[[kaomoji]]
+text = "(ˆ(oo)ˆ)"
+name = "pig-08"
+keywords = ["pig", "piggy", "oink", "buta", "animal"]
+tags = ["pig"]
+
+[[kaomoji]]
+text = "(￣Θ￣)"
+name = "bird-01"
+keywords = ["bird", "birb", "chick", "tweet", "tori", "animal"]
+tags = ["bird"]
+
+[[kaomoji]]
+text = "(`･Θ･´)"
+name = "bird-02"
+keywords = ["bird", "birb", "chick", "tweet", "tori", "animal"]
+tags = ["bird"]
+
+[[kaomoji]]
+text = "( ˋ Θ ´ )"
+name = "bird-03"
+keywords = ["bird", "birb", "chick", "tweet", "tori", "animal"]
+tags = ["bird"]
+
+[[kaomoji]]
+text = "(◉Θ◉)"
+name = "bird-04"
+keywords = ["bird", "birb", "chick", "tweet", "tori", "animal"]
+tags = ["bird"]
+
+[[kaomoji]]
+text = "＼( ˋ Θ ´ )／"
+name = "bird-05"
+keywords = ["bird", "birb", "chick", "tweet", "tori", "animal"]
+tags = ["bird"]
+
+[[kaomoji]]
+text = "(･θ･)"
+name = "bird-06"
+keywords = ["bird", "birb", "chick", "tweet", "tori", "animal"]
+tags = ["bird"]
+
+[[kaomoji]]
+text = "(・Θ・)"
+name = "bird-07"
+keywords = ["bird", "birb", "chick", "tweet", "tori", "animal"]
+tags = ["bird"]
+
+[[kaomoji]]
+text = "ヾ(￣◇￣)ノ〃"
+name = "bird-08"
+keywords = ["bird", "birb", "chick", "tweet", "tori", "animal"]
+tags = ["bird"]
+
+[[kaomoji]]
+text = "(･Θ･)"
+name = "bird-09"
+keywords = ["bird", "birb", "chick", "tweet", "tori", "animal"]
+tags = ["bird"]
+
+[[kaomoji]]
+text = "(°)#))<<"
+name = "fish-01"
+keywords = ["fish", "swim", "sea", "ocean", "sakana", "animal"]
+tags = ["fish"]
+
+[[kaomoji]]
+text = "<<"
+name = "fish-02"
+keywords = ["fish", "swim", "sea", "ocean", "sakana", "animal"]
+tags = ["fish"]
+
+[[kaomoji]]
+text = "ζ°)))彡"
+name = "fish-03"
+keywords = ["fish", "swim", "sea", "ocean", "sakana", "animal"]
+tags = ["fish"]
+
+[[kaomoji]]
+text = ">°))))彡"
+name = "fish-04"
+keywords = ["fish", "swim", "sea", "ocean", "sakana", "animal"]
+tags = ["fish"]
+
+[[kaomoji]]
+text = "(°))<<"
+name = "fish-05"
+keywords = ["fish", "swim", "sea", "ocean", "sakana", "animal"]
+tags = ["fish"]
+
+[[kaomoji]]
+text = ">^)))<～～"
+name = "fish-06"
+keywords = ["fish", "swim", "sea", "ocean", "sakana", "animal"]
+tags = ["fish"]
+
+[[kaomoji]]
+text = "≧( ° ° )≦"
+name = "fish-07"
+keywords = ["fish", "swim", "sea", "ocean", "sakana", "animal"]
+tags = ["fish"]
+
+[[kaomoji]]
+text = "/╲/\\╭(ఠఠ益ఠఠ)╮/\\╱\\"
+name = "spider-01"
+keywords = ["spider", "creepy", "crawly", "bug", "web", "animal"]
+tags = ["spider"]
+
+[[kaomoji]]
+text = "/╲/\\╭(ರರ⌓ರರ)╮/\\╱\\"
+name = "spider-02"
+keywords = ["spider", "creepy", "crawly", "bug", "web", "animal"]
+tags = ["spider"]
+
+[[kaomoji]]
+text = "/╲/\\╭༼ ººل͟ºº ༽╮/\\╱\\"
+name = "spider-03"
+keywords = ["spider", "creepy", "crawly", "bug", "web", "animal"]
+tags = ["spider"]
+
+[[kaomoji]]
+text = "/╲/\\╭( ͡°͡° ͜ʖ ͡°͡°)╮/\\╱\\"
+name = "spider-04"
+keywords = ["spider", "creepy", "crawly", "bug", "web", "animal"]
+tags = ["spider"]
+
+[[kaomoji]]
+text = "/╲/\\╭[ ᴼᴼ ౪ ᴼᴼ]╮/\\╱\\"
+name = "spider-05"
+keywords = ["spider", "creepy", "crawly", "bug", "web", "animal"]
+tags = ["spider"]
+
+[[kaomoji]]
+text = "/╲/\\( •̀ ω •́ )/\\╱\\"
+name = "spider-06"
+keywords = ["spider", "creepy", "crawly", "bug", "web", "animal"]
+tags = ["spider"]
+
+[[kaomoji]]
+text = "/╲/\\╭[☉﹏☉]╮/\\╱\\"
+name = "spider-07"
+keywords = ["spider", "creepy", "crawly", "bug", "web", "animal"]
+tags = ["spider"]
+
+[[kaomoji]]
+text = "ヾ(・ω・)メ(・ω・)ノ"
+name = "friends-01"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "ヽ(∀° )人( °∀)ノ"
+name = "friends-02"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "ヽ( ⌒o⌒)人(⌒-⌒ )ﾉ"
+name = "friends-03"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "(*^ω^)八(⌒▽⌒)八(-‿‿- )ヽ"
+name = "friends-04"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "＼(＾∀＾)メ(＾∀＾)ノ"
+name = "friends-05"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "ヾ(￣ー￣(≧ω≦*)ゝ"
+name = "friends-06"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "ヽ( ⌒ω⌒)人(=^‥^= )ﾉ"
+name = "friends-07"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "ヽ(≧◡≦)八(o^ ^o)ノ"
+name = "friends-08"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "(*・∀・)爻(・∀・*)"
+name = "friends-09"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "｡*:☆(・ω・人・ω・)｡:゜☆｡"
+name = "friends-10"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "o(^^o)(o^^o)(o^^o)(o^^)o"
+name = "friends-11"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "(((￣(￣(￣▽￣)￣)￣)))"
+name = "friends-12"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "(°(°ω(°ω°(☆ω☆)°ω°)ω°)°)"
+name = "friends-13"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "ヾ(・ω・`)ノヾ(´・ω・)ノ゛"
+name = "friends-14"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "Ψ( `∀)(∀´ )Ψ"
+name = "friends-15"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "(っ˘▽˘)(˘▽˘)˘▽˘ς)"
+name = "friends-16"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "(((*°▽°*)八(*°▽°*)))"
+name = "friends-17"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "☆ヾ(*´・∀・)ﾉヾ(・∀・`*)ﾉ☆"
+name = "friends-18"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "(*＾ω＾)人(＾ω＾*)"
+name = "friends-19"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "٩(๑･ิᴗ･ิ)۶٩(･ิᴗ･ิ๑)۶"
+name = "friends-20"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "(☞°ヮ°)☞ ☜(°ヮ°☜)"
+name = "friends-21"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "＼(▽￣ \\ (￣▽￣) / ￣▽)／"
+name = "friends-22"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "\\( ˙▿˙ )/\\( ˙▿˙ )/"
+name = "friends-23"
+keywords = ["friends", "friend", "together", "buddies", "team", "high five", "mates"]
+tags = ["friends"]
+
+[[kaomoji]]
+text = "ヽ( ･∀･)ﾉ_θ彡☆Σ(ノ `Д´)ノ"
+name = "enemies-01"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(*´∇`)┌θ☆(ﾉ>_<)ﾉ"
+name = "enemies-02"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "( ￣ω￣)ノﾞ⌒☆ﾐ(o _ _)o"
+name = "enemies-03"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(*`0´)θ☆(メ°皿°)ﾉ"
+name = "enemies-04"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(o¬‿¬o )...☆ﾐ(*x_x)"
+name = "enemies-05"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(╬￣皿￣)=○＃(￣#)３￣)"
+name = "enemies-06"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(; -_-)――――――C<―_-)"
+name = "enemies-07"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "＜( ￣︿￣)︵θ︵θ︵☆(＞口＜－)"
+name = "enemies-08"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(￣ε(#￣)☆╰╮o(￣▽￣///)"
+name = "enemies-09"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "ヽ(>_<ヽ) ―⊂|=0ヘ(^‿^ )"
+name = "enemies-10"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "ヘ(>_<ヘ) ￢o(￣‿￣ﾒ)"
+name = "enemies-11"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = ",,((( ￣□)_／ ＼_(○￣ ))),,"
+name = "enemies-12"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(҂` ﾛ ´)︻デ═一 ＼(º □ º l|l)/"
+name = "enemies-13"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(╯°Д°)╯︵ /(.□ . ＼)"
+name = "enemies-14"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(¬_¬'')ԅ(￣ε￣ԅ)"
+name = "enemies-15"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "/( .□.)＼ ︵╰(°益°)╯︵ /(.□. /)"
+name = "enemies-16"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(ﾉ-.-)ﾉ….((((((((((((●~* ( >_<)"
+name = "enemies-17"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "!!(ﾒ￣ ￣)_θ☆°0°)/"
+name = "enemies-18"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(`⌒*)O-(`⌒´Q)"
+name = "enemies-19"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(((ง’ω’)و三 ง’ω’)ڡ≡　☆⌒ﾐ((x_x)"
+name = "enemies-20"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(งಠ_ಠ)ง　σ( •̀ ω •́ σ)"
+name = "enemies-21"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(っ•﹏•)っ ✴==≡눈٩(`皿´҂)ง"
+name = "enemies-22"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "(｢• ω •)｢ (⌒ω⌒`)"
+name = "enemies-23"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "( °ᴗ°)~ð (/❛o❛\\)"
+name = "enemies-24"
+keywords = ["enemies", "enemy", "fight", "throw", "attack", "rival", "punch", "hit"]
+tags = ["enemies"]
+
+[[kaomoji]]
+text = "( ・∀・)・・・--------☆"
+name = "weapons-01"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "(/-_・)/D・・・・・------ →"
+name = "weapons-02"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "(^ω^)ノﾞ(((((((((●～*"
+name = "weapons-03"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "( -ω-)／占~~~~~"
+name = "weapons-04"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "(/・・)ノ　　 (( く ((へ"
+name = "weapons-05"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "―⊂|=0ヘ(^^ )"
+name = "weapons-06"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "○∞∞∞∞ヽ(^ー^ )"
+name = "weapons-07"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "(; ・_・)――――C"
+name = "weapons-08"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "(ಠ o ಠ)¤=[]:::::>"
+name = "weapons-09"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "(*＾＾)/~~~~~~~~~~◎"
+name = "weapons-10"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "￢o(￣-￣ﾒ)"
+name = "weapons-11"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "―(T_T)→"
+name = "weapons-12"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "((( ￣□)_／"
+name = "weapons-13"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "(ﾒ` ﾛ ´)︻デ═一"
+name = "weapons-14"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "( ´-ω･)︻┻┳══━一"
+name = "weapons-15"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "(ﾒ￣▽￣)︻┳═一"
+name = "weapons-16"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "✴==≡눈٩(`皿´҂)ง"
+name = "weapons-17"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "Q(`⌒´Q)"
+name = "weapons-18"
+keywords = ["weapon", "gun", "sword", "shoot", "pew", "bang", "attack", "blast"]
+tags = ["weapons"]
+
+[[kaomoji]]
+text = "(ノ ˘_˘)ノ　ζ|||ζ　ζ|||ζ　ζ|||ζ"
+name = "magic-01"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "(ﾉ≧∀≦)ﾉ ‥…━━━★"
+name = "magic-02"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "(ﾉ>ω<)ﾉ :｡･:*:･ﾟ’★,｡･:*:･ﾟ’☆"
+name = "magic-03"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "(ノ°∀°)ノ⌒･*:.｡. .｡.:*･゜ﾟ･*☆"
+name = "magic-04"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "╰( ͡° ͜ʖ ͡° )つ──☆*:・ﾟ"
+name = "magic-05"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "(＃￣□￣)o━∈・・━━━━☆"
+name = "magic-06"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "(⊃｡•́‿•̀｡)⊃━✿✿✿✿✿✿"
+name = "magic-07"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "(∩ᄑ_ᄑ)⊃━☆ﾟ*･｡*･:≡( ε:)"
+name = "magic-08"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "(/￣ー￣)/~~☆’.･.･:★’.･.･:☆"
+name = "magic-09"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "(∩` ﾛ ´)⊃━炎炎炎炎炎"
+name = "magic-10"
+keywords = ["magic", "spell", "wizard", "sparkle", "sparkles", "wand", "cast", "abracadabra"]
+tags = ["magic"]
+
+[[kaomoji]]
+text = "(っ˘ڡ˘ς)"
+name = "food-01"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( o˘◡˘o) ┌iii┐"
+name = "food-02"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "(　’ω’)旦~~"
+name = "food-03"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( ˘▽˘)っ♨"
+name = "food-04"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "♨o(>_<)o♨"
+name = "food-05"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( ・ω・)o-{{[〃]}}"
+name = "food-06"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "(　・ω・)⊃-[二二]"
+name = "food-07"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( ・・)つ―{}@{}@{}-"
+name = "food-08"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( ・・)つ-●●●"
+name = "food-09"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "(*´ー`)旦 旦(￣ω￣*)"
+name = "food-10"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "(*´з`)口ﾟ｡ﾟ口(・∀・ )"
+name = "food-11"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( o^ ^o)且 且(´ω`*)"
+name = "food-12"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( ￣▽￣)[] [](≧▽≦ )"
+name = "food-13"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( *^^)o∀*∀o(^^* )"
+name = "food-14"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( ^^)_旦~~　 ~~U_(^^ )"
+name = "food-15"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "(*￣▽￣)旦 且(´∀`*)"
+name = "food-16"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "-●●●-ｃ(・・ )"
+name = "food-17"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "( ・・)つ―●○◎-"
+name = "food-18"
+keywords = ["food", "eat", "eating", "yum", "delicious", "snack", "tea", "coffee", "drink"]
+tags = ["food"]
+
+[[kaomoji]]
+text = "ヾ(´〇`)ﾉ♪♪♪"
+name = "music-01"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "ヘ(￣ω￣ヘ)"
+name = "music-02"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "(〜￣▽￣)〜"
+name = "music-03"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "〜(￣▽￣〜)"
+name = "music-04"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "ヽ(o´∀`)ﾉ♪♬"
+name = "music-05"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "(ﾉ≧∀≦)ﾉ"
+name = "music-06"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "♪ヽ(^^ヽ)♪"
+name = "music-07"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "♪(/_ _ )/♪"
+name = "music-08"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "♪♬((d⌒ω⌒b))♬♪"
+name = "music-09"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "└(￣-￣└))"
+name = "music-10"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "((┘￣ω￣)┘"
+name = "music-11"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "√(￣‥￣√)"
+name = "music-12"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "└(＾＾)┐"
+name = "music-13"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "┌(＾＾)┘"
+name = "music-14"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "＼(￣▽￣)＼"
+name = "music-15"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "／(￣▽￣)／"
+name = "music-16"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "(￣▽￣)/♫•*¨*•.¸¸♪"
+name = "music-17"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "(^_^♪)"
+name = "music-18"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "(~˘▽˘)~"
+name = "music-19"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "~(˘▽˘~)"
+name = "music-20"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "ヾ(⌐■_■)ノ♪"
+name = "music-21"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "(〜￣△￣)〜"
+name = "music-22"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "(~‾▽‾)~"
+name = "music-23"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "~(˘▽˘)~"
+name = "music-24"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "乁( • ω •乁)"
+name = "music-25"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "(｢• ω •)｢"
+name = "music-26"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "⁽⁽◝( • ω • )◜⁾⁾"
+name = "music-27"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "✺◟( • ω • )◞✺"
+name = "music-28"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "♬♫♪◖(● o ●)◗♪♫♬"
+name = "music-29"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "( ˘ ɜ˘) ♬♪♫"
+name = "music-30"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "♪♪♪ ヽ(ˇ∀ˇ )ゞ"
+name = "music-31"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "(ˇ▽ˇ)ノ♪♬♫"
+name = "music-32"
+keywords = ["music", "sing", "singing", "dance", "dancing", "song", "party", "la la"]
+tags = ["music"]
+
+[[kaomoji]]
+text = "( ^^)p_____|_o____q(^^ )"
+name = "games-01"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "(／o^)/ °⊥ ＼(^o＼)"
+name = "games-02"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "!(;ﾟoﾟ)o/￣￣￣￣￣￣￣~ >ﾟ))))彡"
+name = "games-03"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "ヽ(^o^)ρ┳┻┳°σ(^o^)ノ"
+name = "games-04"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "(／_^)／　　●　＼(^_＼)"
+name = "games-05"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "\"( (≡|≡))_／ ＼_((≡|≡) )\""
+name = "games-06"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "( ノ-_-)ノﾞ_□ VS □_ヾ(^-^ヽ)"
+name = "games-07"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "ヽ(；^ ^)ノﾞ ．．．...___〇"
+name = "games-08"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "(=O*_*)=O Q(*_*Q)"
+name = "games-09"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "Ю　○三　＼(￣^￣＼)"
+name = "games-10"
+keywords = ["games", "game", "play", "sport", "ball", "ping pong", "tennis", "fishing"]
+tags = ["games"]
+
+[[kaomoji]]
+text = "( ͡° ͜ʖ ͡°)"
+name = "lenny"
+keywords = ["lenny", "lenny face", "smug", "suggestive", "wink wink", "face", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ͡° ʖ̯ ͡°)"
+name = "faces-02"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ͠° ͟ʖ ͡°)"
+name = "faces-03"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ͡ᵔ ͜ʖ ͡ᵔ)"
+name = "faces-04"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( . •́ _ʖ •̀ .)"
+name = "faces-05"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ఠ ͟ʖ ఠ)"
+name = "faces-06"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ͡ಠ ʖ̯ ͡ಠ)"
+name = "faces-07"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ಠ ʖ̯ ಠ)"
+name = "faces-08"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ಠ ͜ʖ ಠ)"
+name = "faces-09"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ಥ ʖ̯ ಥ)"
+name = "faces-10"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ͡• ͜ʖ ͡• )"
+name = "faces-11"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ･ิ ͜ʖ ･ิ)"
+name = "faces-12"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "( ͡  ͜ʖ ͡  )"
+name = "faces-13"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "(≖ ͜ʖ≖)"
+name = "faces-14"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "(ʘ ʖ̯ ʘ)"
+name = "faces-15"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "(ʘ ͟ʖ ʘ)"
+name = "faces-16"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "(ʘ ͜ʖ ʘ)"
+name = "faces-17"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "(;´༎ຶٹ༎ຶ`)"
+name = "faces-18"
+keywords = ["face", "lenny", "smug", "sly", "meme"]
+tags = ["faces"]
+
+[[kaomoji]]
+text = "٩(ˊ〇ˋ*)و"
+name = "special-01"
+keywords = ["cheer", "fist pump", "victory", "yes", "lets go", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(￣^￣)ゞ"
+name = "salute"
+keywords = ["salute", "yes sir", "aye", "roger", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(╯°益°)╯彡┻━┻"
+name = "angry-table-flip"
+keywords = ["table flip", "flip", "rage", "rage quit", "angry", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(╮°-°)╮┳━━┳ ( ╯°□°)╯ ┻━━┻"
+name = "special-04"
+keywords = ["table flip", "flip", "rage", "rage quit", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "┬─┬ノ( º _ ºノ)"
+name = "unflip"
+keywords = ["unflip", "put table back", "calm", "fix", "table", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(oT-T)尸"
+name = "surrender"
+keywords = ["surrender", "white flag", "give up", "i give up", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "[̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]"
+name = "special-07"
+keywords = ["special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(ಠ_ಠ)"
+name = "disapproval"
+keywords = ["disapproval", "look of disapproval", "stare", "judging", "unimpressed", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "౦０o ｡ (‾́。‾́ )y~~"
+name = "special-09"
+keywords = ["special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(￣﹃￣)"
+name = "special-10"
+keywords = ["special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(x(x_(x_x(O_o)x_x)_x)x)"
+name = "special-11"
+keywords = ["crowd", "mosh pit", "chaos", "lost in crowd", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(　･ω･)☞"
+name = "special-12"
+keywords = ["point", "pointing", "you", "that one", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(⌐■_■)"
+name = "deal-with-it"
+keywords = ["sunglasses", "cool", "deal with it", "shades", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(◕‿◕✿)"
+name = "flower-girl"
+keywords = ["flower", "cute", "kawaii", "sweet", "innocent", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "(　￣.)o-　　【　TV　】"
+name = "special-15"
+keywords = ["special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "｀、ヽ｀ヽ｀、ヽ(ノ＞＜)ノ ｀、ヽ｀☂ヽ｀、ヽ"
+name = "special-16"
+keywords = ["special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "‿︵‿︵‿︵‿ヽ(°□° )ノ︵‿︵‿︵‿︵"
+name = "special-17"
+keywords = ["special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "( • )( • )ԅ(≖‿≖ԅ)"
+name = "special-18"
+keywords = ["special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "( ＾▽＾)っ✂╰⋃╯"
+name = "special-19"
+keywords = ["special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "〜〜(／￣▽)／　〜ф"
+name = "special-20"
+keywords = ["special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "ଘ(੭ˊᵕˋ)੭* ੈ✩‧₊˚"
+name = "special-21"
+keywords = ["fairy", "angel", "sparkle", "blessing", "magic", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "ଘ(੭ˊ꒳ˋ)੭✧"
+name = "special-22"
+keywords = ["fairy", "angel", "sparkle", "blessing", "magic", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "_(:3 」∠)_"
+name = "cat-loaf"
+keywords = ["lying down", "lazy", "lounging", "cat loaf", "chill", "special", "misc"]
+tags = ["special"]
+
+[[kaomoji]]
+text = "∠( ᐛ 」∠)_"
+name = "special-24"
+keywords = ["lying down", "lazy", "lounging", "chill", "special", "misc"]
+tags = ["special"]
