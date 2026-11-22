@@ -59,7 +59,7 @@ function cryptoCard(m) {
       <div class="support-qr" aria-hidden="true"></div>
       <div class="support-address">
         <code>${escapeHtml(m.value)}</code>
-        <button type="button" class="support-copy" data-copy="${m.key}" aria-label="Copy ${m.label} address">Copy</button>
+        <button type="button" class="support-copy" data-copy="${m.key}"><span data-copy-label>Copy</span><span class="visually-hidden"> ${m.label} address</span></button>
       </div>
     </article>`
 }
@@ -136,10 +136,12 @@ export function mountSupport(root, { methods, copy, qr, share, siteUrl }) {
     )
 
     const button = card.querySelector('[data-copy]')
+    // Only the visible word changes; the hidden method name keeps the button's name honest
+    const label = button.querySelector('[data-copy-label]')
     let timer
     button.addEventListener('click', async () => {
       const ok = await copy(m.value)
-      button.textContent = ok ? 'Copied ✓' : 'Copy failed'
+      label.textContent = ok ? 'Copied ✓' : 'Copy failed'
       button.classList.toggle('is-success', ok)
       if (ok) {
         say(`${m.label} address copied`, true)
@@ -150,7 +152,7 @@ export function mountSupport(root, { methods, copy, qr, share, siteUrl }) {
       }
       clearTimeout(timer)
       timer = setTimeout(() => {
-        button.textContent = 'Copy'
+        label.textContent = 'Copy'
         button.classList.remove('is-success')
       }, COPY_RESET_MS)
     })

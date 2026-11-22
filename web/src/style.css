@@ -1132,10 +1132,6 @@ body:has(#settings-panel:not([hidden])) #settings-btn,
   transform: scale(0.96);
 }
 
-.support-copy.is-success {
-  background: var(--grad);
-}
-
 .support-links {
   display: flex;
   flex-direction: column;
