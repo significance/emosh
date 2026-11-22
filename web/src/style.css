@@ -1115,6 +1115,7 @@ body:has(#settings-panel:not([hidden])) #settings-btn,
 
 .support-copy {
   flex: none;
+  -webkit-tap-highlight-color: transparent;
   min-width: var(--hit);
   min-height: var(--hit);
   padding: 0 var(--space-md);
@@ -1140,6 +1141,7 @@ body:has(#settings-panel:not([hidden])) #settings-btn,
 
 .support-link {
   display: grid;
+  -webkit-tap-highlight-color: transparent;
   grid-template-columns: 2rem 1fr auto;
   align-items: center;
   gap: var(--space-sm);
