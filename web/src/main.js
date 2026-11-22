@@ -1,21 +1,16 @@
 // Emosh Treats — app entry point.
 //
-// Boots the WASM treat generator and wires up the UI. Feature behavior is split
-// into clearly-marked anchor sections so each issue's runner edits its own block:
-//   issue 05 — generate/display/copy   (this file)
-//   issue 06 — settings + username     (adds src/settings.js, edits its anchor)
-//   issue 07 — donate modal            (adds src/donate.js, edits its anchor)
+// Boots the WASM treat generator and wires up the generate/copy flow. The top bar
+// (settings cog, donate heart) and the emoshion come from the shared shell.js.
 
 import init, { treat } from './wasm/emosh.js'
 import { copyText } from './clipboard.js'
 import { createCopyStatus } from './copy-status.js'
-import { pickEmoshion } from './emoshions.js'
+import { initShell } from './shell.js'
 
-// Pick this visit's emoshion first so the palette lands before the first paint.
+// Boot the shared shell first so the palette lands before the first paint.
 // `?emoshion=<name>` forces one (useful for screenshots and sharing a mood).
-const emoshion = pickEmoshion(new URLSearchParams(location.search).get('emoshion') ?? undefined)
-const emoshionTag = document.getElementById('emoshion-tag')
-if (emoshionTag) emoshionTag.textContent = `emosh is ${emoshion.feel} today`
+initShell()
 
 // Initialize the WASM module before anything calls `treat()`.
 await init()
@@ -76,15 +71,3 @@ async function generate() {
 }
 
 generateBtn.addEventListener('click', generate)
-
-// === issue 06: settings + username ===
-
-import { initSettings } from './settings.js'
-
-initSettings()
-
-// === issue 07: donate modal ===
-
-import { initDonate } from './donate.js'
-
-initDonate()
