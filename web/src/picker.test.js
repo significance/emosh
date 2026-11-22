@@ -668,6 +668,9 @@ describe('mountPicker — kaomoji list', () => {
       '☆*:.｡.o(≧▽≦)o.｡.:*☆ a very long face indeed',
     )
     expect(first.querySelector('.pick-name').textContent).toBe('joy-00')
+    // The visible text is the accessible name: no aria-label to drift from it
+    expect(first.hasAttribute('aria-label')).toBe(false)
+    expect(first.textContent).toBe('☆*:.｡.o(≧▽≦)o.｡.:*☆ a very long face indeed joy-00')
     expect(first.title).toBe('☆*:.｡.o(≧▽≦)o.｡.:*☆ a very long face indeed  joy-00')
     expect(ctx.root.classList.contains('picker--kaomoji')).toBe(true)
     expect(ctx.results.getAttribute('aria-label')).toBe('kaomoji results')

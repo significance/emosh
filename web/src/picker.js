@@ -173,7 +173,6 @@ export function mountPicker(root, options) {
     option.id = `pick-${mode}-${index}`
     option.setAttribute('role', 'option')
     option.setAttribute('aria-selected', 'false')
-    option.setAttribute('aria-label', `${item.text} ${item.name}`)
     option.tabIndex = -1
     option.dataset.index = String(index)
     if (mode === 'kaomoji') {
@@ -185,8 +184,9 @@ export function mountPicker(root, options) {
       const name = document.createElement('span')
       name.className = 'pick-name'
       name.textContent = item.name
-      option.append(face, name)
+      option.append(face, ' ', name)
     } else {
+      option.setAttribute('aria-label', `${item.text} ${item.name}`)
       option.title = item.name
       option.textContent = item.text
     }
