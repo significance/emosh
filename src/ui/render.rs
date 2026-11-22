@@ -52,11 +52,11 @@ fn render_prompt(frame: &mut Frame, app: &App, area: ratatui::layout::Rect) {
 fn render_emojis(frame: &mut Frame, app: &App, area: ratatui::layout::Rect) {
     let mut spans = vec![];
 
-    for (i, result) in app.results.iter().enumerate() {
+    for (i, result) in app.picker.items().iter().enumerate() {
         let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
 
         // Apply gray background to selected emoji (including padding for tighter highlight)
-        if i == app.selected_index {
+        if i == app.picker.selected_index() {
             // Include padding in the styled span for a tighter highlight box
             let emoji_with_padding = format!(" {emoji_with_tone} ");
             spans.push(Span::styled(

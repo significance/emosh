@@ -101,7 +101,7 @@ mod tests {
         let (mut app, _) = recording_app();
         type_text(&mut app, "grin");
         let buf = render_app(&app, 80, 5);
-        let n = app.results.len();
+        let n = app.picker.len();
         assert!(n > 1);
         // each emoji is 2 columns wide + 2 padding spaces
         let row = row_text(&buf, 2);
@@ -132,7 +132,7 @@ mod tests {
     fn test_number_key_selects_copies_and_quits() {
         let (mut app, copies) = recording_app();
         type_text(&mut app, "grin");
-        let second = app.results[1].emoji.char.clone();
+        let second = app.picker.items()[1].emoji.char.clone();
         press(&mut app, KeyCode::Char('2')).unwrap();
         assert_eq!(copies.borrow().as_slice(), [second]);
         assert!(app.should_quit);
@@ -172,9 +172,9 @@ mod tests {
         let (mut app, _) = recording_app();
         type_text(&mut app, "wave");
         press(&mut app, KeyCode::Right).unwrap();
-        assert_eq!(app.selected_index, 1);
+        assert_eq!(app.picker.selected_index(), 1);
         press(&mut app, KeyCode::Left).unwrap();
-        assert_eq!(app.selected_index, 0);
+        assert_eq!(app.picker.selected_index(), 0);
         press(&mut app, KeyCode::Up).unwrap();
         assert_eq!(app.skin_tone, 1);
         press(&mut app, KeyCode::Down).unwrap();
@@ -195,7 +195,7 @@ mod tests {
         type_text(&mut app, "grinx");
         press(&mut app, KeyCode::Backspace).unwrap();
         assert_eq!(app.query, "grin");
-        assert!(!app.results.is_empty());
+        assert!(!app.picker.is_empty());
     }
 
     #[test]

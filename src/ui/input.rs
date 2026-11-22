@@ -17,7 +17,7 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         }
 
         // Tab: Copy selected emoji and continue (only if we have results)
-        KeyCode::Tab if !app.results.is_empty() => {
+        KeyCode::Tab if !app.picker.is_empty() => {
             if let Some(result) = app.selected_emoji() {
                 let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
                 app.clipboard.copy(&emoji_with_tone)?;
@@ -26,7 +26,7 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         }
 
         // Enter: Copy selected emoji and exit (only if we have results)
-        KeyCode::Enter if !app.results.is_empty() => {
+        KeyCode::Enter if !app.picker.is_empty() => {
             if let Some(result) = app.selected_emoji() {
                 let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
                 app.clipboard.copy(&emoji_with_tone)?;
@@ -35,9 +35,9 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         }
 
         // Number keys: Quick select (1-9) - only if we have results
-        KeyCode::Char(c @ '1'..='9') if key.modifiers.is_empty() && !app.results.is_empty() => {
+        KeyCode::Char(c @ '1'..='9') if key.modifiers.is_empty() && !app.picker.is_empty() => {
             let number = c.to_digit(10).unwrap() as usize;
-            if number <= app.results.len() {
+            if number <= app.picker.len() {
                 app.select_by_number(number);
 
                 // Copy and exit
@@ -82,13 +82,8 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
 
 /// Update search results based on current query
 fn update_search_results(app: &mut App) {
-    app.results = search(&app.query, &EMOJIS, 7);
-
-    // Clamp selected_index to valid range instead of resetting to 0
-    // This provides better UX - the selection stays on the same emoji if possible
-    if app.selected_index >= app.results.len() {
-        app.selected_index = app.results.len().saturating_sub(1);
-    }
+    // The selection stays on the same position if possible (clamped by the picker)
+    app.picker.set_items(search(&app.query, &EMOJIS, 7));
 }
 
 #[cfg(test)]
