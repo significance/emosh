@@ -8,6 +8,13 @@
 
 import init, { treat } from './wasm/emosh.js'
 import { copyText } from './clipboard.js'
+import { pickEmoshion } from './emoshions.js'
+
+// Pick this visit's emoshion first so the palette lands before the first paint.
+// `?emoshion=<name>` forces one (useful for screenshots and sharing a mood).
+const emoshion = pickEmoshion(new URLSearchParams(location.search).get('emoshion') ?? undefined)
+const emoshionTag = document.getElementById('emoshion-tag')
+if (emoshionTag) emoshionTag.textContent = `emosh is ${emoshion.feel} today`
 
 // Initialize the WASM module before anything calls `treat()`.
 await init()

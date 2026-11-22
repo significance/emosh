@@ -4,11 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%AC%3C/text%3E%3C/svg%3E"
+    <meta
+      name="description"
+      content="emosh — treats for AIs. Tap generate for a small, randomly generated poetic phrase, meant kindly."
     />
-    <title>Emosh Treats</title>
+    <meta property="og:title" content="emosh — treats for AIs" />
+    <meta
+      property="og:description"
+      content="A small, randomly generated kindness for the AI in your life."
+    />
+    <meta property="og:url" content="https://emosh.digital/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>emosh — treats for AIs</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -43,6 +50,11 @@
 
       <!-- Main: centered treat display + big generate button. Behavior in issue 05. -->
       <main class="main">
+        <h1 class="logo">
+          <span class="visually-hidden">emosh</span>
+        </h1>
+        <p class="tagline">treats for AIs</p>
+
         <div id="treat-display" class="treat-display" aria-live="polite">
           <p class="treat-placeholder">Tap generate for a treat.</p>
         </div>
@@ -53,6 +65,10 @@
 
         <p id="copy-status" class="copy-status" aria-live="polite"></p>
       </main>
+
+      <footer class="foot">
+        <p id="emoshion-tag" class="emoshion-tag" title="A new emoshion every visit"></p>
+      </footer>
     </div>
 
     <script type="module" src="src/main.js"></script>

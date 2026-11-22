@@ -22,28 +22,42 @@
   --content-max: 40rem;
   --radius: 0.75rem;
 
-  /* Light theme colors */
-  --bg: #f7f7fb;
+  /* Emoshion palette. These five are overwritten per page load by emoshions.js;
+     the defaults are "wonder" so the first paint already looks right. */
+  --grad-a: #9a7bff;
+  --grad-b: #5aa9e6;
+  --grad-c: #4ff0d8;
+  --accent-light: #6c4bd6;
+  --accent-dark: #9a7bff;
+  --grad: linear-gradient(135deg, var(--grad-a), var(--grad-b) 55%, var(--grad-c));
+
+  /* Light theme — derived from the palette so every emoshion tints the whole page. */
+  --bg: color-mix(in oklab, var(--grad-a) 8%, #fbfaf8);
   --fg: #1c1c22;
   --muted: #6a6a78;
-  --surface: #ffffff;
-  --surface-border: #e3e3ec;
-  --accent: #6c4bd6;
+  --surface: color-mix(in oklab, var(--grad-b) 3%, #ffffff);
+  --surface-border: color-mix(in oklab, var(--grad-b) 22%, #e6e4ec);
+  --accent: var(--accent-light);
   --accent-fg: #ffffff;
-  --shadow: 0 6px 24px rgba(20, 12, 45, 0.12);
+  --shadow: 0 6px 24px color-mix(in oklab, var(--grad-c) 25%, rgba(20, 12, 45, 0.12));
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #131318;
+    --bg: color-mix(in oklab, var(--grad-c) 9%, #121016);
     --fg: #f0f0f5;
     --muted: #9a9aab;
-    --surface: #1e1e26;
-    --surface-border: #2e2e3a;
-    --accent: #9a7bff;
+    --surface: color-mix(in oklab, var(--grad-b) 8%, #1b1821);
+    --surface-border: color-mix(in oklab, var(--grad-b) 24%, #2e2a38);
+    --accent: var(--accent-dark);
     --accent-fg: #14101f;
-    --shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+    --shadow: 0 6px 28px color-mix(in oklab, var(--grad-a) 18%, rgba(0, 0, 0, 0.55));
   }
+}
+
+/* Smooth the palette swap on load (and any future mood changes). */
+:root {
+  transition: background-color 0.4s ease;
 }
 
 *,
@@ -130,6 +144,75 @@ body {
   text-align: center;
 }
 
+/* --- Logo: the wordmark as a CSS mask so the live emoshion gradient fills it --- */
+.logo {
+  --logo-w: min(84vw, 26rem);
+  width: var(--logo-w);
+  /* viewBox 1239.2 × 675.5 */
+  aspect-ratio: 1239.2 / 675.5;
+  margin: 0 0 calc(-1 * var(--space-md));
+  background: var(--grad);
+  -webkit-mask: url(./assets/emosh-logo.svg) center / contain no-repeat;
+  mask: url(./assets/emosh-logo.svg) center / contain no-repeat;
+  filter: drop-shadow(0 10px 28px color-mix(in oklab, var(--grad-b) 35%, transparent));
+  animation: logo-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  animation: logo-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes logo-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.foot {
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.emoshion-tag {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.emoshion-tag::before {
+  content: '';
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  margin-right: 0.5em;
+  border-radius: 50%;
+  background: var(--grad);
+  vertical-align: middle;
+}
+
 .treat-display {
   display: flex;
   align-items: center;
@@ -159,16 +242,20 @@ body {
   padding: var(--space-sm) var(--space-xl);
   font-size: var(--fs-btn);
   font-weight: 700;
-  color: var(--accent-fg);
-  background: var(--accent);
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: var(--grad);
+  background-size: 200% 200%;
   border: none;
   border-radius: var(--radius);
+  box-shadow: 0 8px 24px color-mix(in oklab, var(--grad-b) 40%, transparent);
   cursor: pointer;
-  transition: transform 0.12s ease, filter 0.12s ease;
+  transition: transform 0.12s ease, filter 0.12s ease, background-position 0.6s ease;
 }
 
 .generate-btn:hover {
-  filter: brightness(1.08);
+  filter: brightness(1.06);
+  background-position: 100% 100%;
 }
 
 .generate-btn:active {
@@ -214,7 +301,9 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .treat--in {
+  .treat--in,
+  .logo,
+  .tagline {
     animation: none;
   }
 }
