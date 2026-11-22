@@ -326,4 +326,58 @@ mod tests {
         let buf = render_app(&app, 60, 12);
         assert!(row_text(&buf, 0).ends_with("✓"));
     }
+
+    // --- kaomoji navigation ---
+
+    #[test]
+    fn test_kaomoji_up_down_move_selection_not_skin_tone() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "happy");
+        press(&mut app, KeyCode::Down).unwrap();
+        press(&mut app, KeyCode::Down).unwrap();
+        assert_eq!(app.picker.selected_index(), 2);
+        press(&mut app, KeyCode::Up).unwrap();
+        assert_eq!(app.picker.selected_index(), 1);
+        assert_eq!(app.skin_tone, 0);
+    }
+
+    #[test]
+    fn test_kaomoji_left_right_also_move_selection() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "happy");
+        press(&mut app, KeyCode::Right).unwrap();
+        assert_eq!(app.picker.selected_index(), 1);
+        press(&mut app, KeyCode::Left).unwrap();
+        assert_eq!(app.picker.selected_index(), 0);
+    }
+
+    #[test]
+    fn test_kaomoji_arrows_work_after_a_single_character() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "h");
+        press(&mut app, KeyCode::Down).unwrap();
+        assert_eq!(app.picker.selected_index(), 1);
+    }
+
+    #[test]
+    fn test_kaomoji_navigation_stops_at_the_ends() {
+        let (mut app, _) = recording_kaomoji_app();
+        type_text(&mut app, "happy");
+        press(&mut app, KeyCode::Up).unwrap();
+        assert_eq!(app.picker.selected_index(), 0);
+        for _ in 0..20 {
+            press(&mut app, KeyCode::Down).unwrap();
+        }
+        assert_eq!(app.picker.selected_index(), app.picker.len() - 1);
+    }
+
+    #[test]
+    fn test_kaomoji_enter_copies_the_navigated_selection() {
+        let (mut app, copies) = recording_kaomoji_app();
+        type_text(&mut app, "happy");
+        press(&mut app, KeyCode::Down).unwrap();
+        let expected = app.picker.selected().unwrap().emoji.char.clone();
+        press(&mut app, KeyCode::Enter).unwrap();
+        assert_eq!(copies.borrow().as_slice(), [expected]);
+    }
 }

@@ -1,5 +1,5 @@
 use crate::emoji::apply_skin_tone;
-use crate::ui::app::App;
+use crate::ui::app::{App, Mode};
 use anyhow::Result;
 use crossterm::event::{KeyCode, KeyEvent, KeyModifiers};
 
@@ -39,6 +39,14 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
                     app.quit();
                 }
             }
+        }
+
+        // Kaomoji mode: all four arrows move the selection (there is no skin tone)
+        KeyCode::Up | KeyCode::Left if app.mode == Mode::Kaomoji => {
+            app.select_previous();
+        }
+        KeyCode::Down | KeyCode::Right if app.mode == Mode::Kaomoji => {
+            app.select_next();
         }
 
         // Arrow keys: Only work when query length > 1
