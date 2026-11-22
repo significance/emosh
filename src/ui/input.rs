@@ -18,18 +18,14 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
 
         // Tab: Copy selected emoji and continue (only if we have results)
         KeyCode::Tab if !app.picker.is_empty() => {
-            if let Some(result) = app.selected_emoji() {
-                let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                app.clipboard.copy(&emoji_with_tone)?;
+            if copy_selected(app)? {
                 app.mark_copied();
             }
         }
 
         // Enter: Copy selected emoji and exit (only if we have results)
         KeyCode::Enter if !app.picker.is_empty() => {
-            if let Some(result) = app.selected_emoji() {
-                let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                app.clipboard.copy(&emoji_with_tone)?;
+            if copy_selected(app)? {
                 app.quit();
             }
         }
@@ -41,9 +37,7 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
                 app.select_by_number(number);
 
                 // Copy and exit
-                if let Some(result) = app.selected_emoji() {
-                    let emoji_with_tone = apply_skin_tone(&result.emoji, app.skin_tone);
-                    app.clipboard.copy(&emoji_with_tone)?;
+                if copy_selected(app)? {
                     app.quit();
                 }
             }
@@ -78,6 +72,17 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
     }
 
     Ok(())
+}
+
+/// Copy the selected result (with the current skin tone) to the clipboard.
+/// Returns whether anything was copied.
+fn copy_selected(app: &mut App) -> Result<bool> {
+    let Some(result) = app.selected_emoji() else {
+        return Ok(false);
+    };
+    let text = apply_skin_tone(&result.emoji, app.skin_tone);
+    app.clipboard.copy(&text)?;
+    Ok(true)
 }
 
 /// Update search results based on current query
