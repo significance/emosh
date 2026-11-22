@@ -6,6 +6,7 @@
 
 use crate::emoji::data::Emoji;
 use crate::emoji::search::SearchResult;
+use crate::kaomoji::KAOMOJIS;
 use std::collections::HashSet;
 use std::time::SystemTime;
 
@@ -422,6 +423,76 @@ pub fn generate_treats_memory_result() -> Vec<SearchResult> {
         },
         score: 10000,
     }]
+}
+
+// --- Kaomoji treat generation ---
+
+/// Tags of kaomoji that are friendly enough to decorate a treat.
+const TREAT_FACE_TAGS: &[&str] = &["joy", "love", "hugging", "magic", "greeting", "cat"];
+
+/// The faces kaomoji treats draw from.
+fn treat_faces() -> Vec<&'static str> {
+    KAOMOJIS
+        .iter()
+        .filter(|k| {
+            k.name == "sparkles" || k.tags.iter().any(|t| TREAT_FACE_TAGS.contains(&t.as_str()))
+        })
+        .map(|k| k.char.as_str())
+        .collect()
+}
+
+/// Generate a single kaomoji-decorated treat string
+fn generate_kaomoji_one(rng: &mut Rng) -> String {
+    let faces = treat_faces();
+    let face = faces[rng.range(faces.len())];
+    let adj = ADJECTIVES[rng.range(ADJECTIVES.len())];
+    let noun = NOUNS[rng.range(NOUNS.len())];
+
+    match rng.range(3) {
+        0 => format!("{face} {adj} {noun}"),
+        1 => format!("{adj} {noun} {face}"),
+        _ => {
+            let other = faces[rng.range(faces.len())];
+            format!("{face} {noun} {other}")
+        }
+    }
+}
+
+/// Generate kaomoji treat results (the `-k treats` query).
+///
+/// Same watermark and explanation behaviour as [`generate_treat_results`], but
+/// decorated with kaomoji faces instead of emoji and symbols.
+pub fn generate_kaomoji_treat_results(limit: usize, clean: bool, user: &str) -> Vec<SearchResult> {
+    let mut rng = Rng::new();
+    let mut seen = HashSet::new();
+    let mut results = Vec::with_capacity(limit);
+
+    for _ in 0..limit * 10 {
+        if results.len() >= limit {
+            break;
+        }
+        let treat = generate_kaomoji_one(&mut rng);
+        if seen.insert(treat.clone()) {
+            let display = if clean {
+                format!("{TREAT_WATERMARK}{treat}")
+            } else {
+                format!("{TREAT_WATERMARK}{treat} {}", treat_explanation(user))
+            };
+            results.push(SearchResult {
+                emoji: Emoji {
+                    char: display,
+                    name: "treat for claude".to_string(),
+                    keywords: vec!["treat".to_string()],
+                    tags: vec!["treat".to_string()],
+                    unicode: String::new(),
+                    supports_skin_tone: false,
+                },
+                score: 10000,
+            });
+        }
+    }
+
+    results
 }
 
 // --- Rustacean treat generation ---
@@ -887,6 +958,69 @@ mod tests {
         let results = search("treatz", &EMOJIS, 7);
         assert_eq!(results.len(), 1);
         assert_eq!(results[0].emoji.name, "treatz");
+    }
+
+    // --- Kaomoji treat tests ---
+
+    #[test]
+    fn test_treat_faces_pool_covers_tags_and_sparkles() {
+        use crate::kaomoji::KAOMOJIS;
+        let faces = treat_faces();
+        assert!(faces.len() > 100);
+        for tag in TREAT_FACE_TAGS {
+            assert!(KAOMOJIS
+                .iter()
+                .filter(|k| k.tags.iter().any(|t| t == tag))
+                .all(|k| faces.contains(&k.char.as_str())));
+        }
+        let sparkles = KAOMOJIS.iter().find(|k| k.name == "sparkles").unwrap();
+        assert!(faces.contains(&sparkles.char.as_str()));
+        assert!(
+            !faces.contains(&"(╯°□°)╯︵ ┻━┻"),
+            "angry faces are not treats"
+        );
+    }
+
+    #[test]
+    fn test_kaomoji_treats_are_unique_watermarked_and_decorated() {
+        let results = generate_kaomoji_treat_results(10, false, "sig");
+        assert_eq!(results.len(), 10);
+        let faces = treat_faces();
+        let unique: HashSet<_> = results.iter().map(|r| r.emoji.char.clone()).collect();
+        assert_eq!(unique.len(), 10);
+        for r in &results {
+            assert!(r.emoji.char.starts_with(TREAT_WATERMARK));
+            assert!(
+                faces.iter().any(|f| r.emoji.char.contains(f)),
+                "{}",
+                r.emoji.char
+            );
+            assert!(r.emoji.char.contains("a treat from sig"));
+        }
+    }
+
+    #[test]
+    fn test_kaomoji_treats_clean_omits_explanation() {
+        for r in generate_kaomoji_treat_results(5, true, "sig") {
+            assert!(r.emoji.char.starts_with(TREAT_WATERMARK));
+            assert!(!r.emoji.char.contains("a treat from"));
+        }
+    }
+
+    #[test]
+    fn test_kaomoji_treat_patterns_all_appear() {
+        let mut rng = Rng::from_seed(1);
+        let faces = treat_faces();
+        let (mut lead, mut trail, mut both) = (false, false, false);
+        for _ in 0..300 {
+            let treat = generate_kaomoji_one(&mut rng);
+            let starts = faces.iter().any(|f| treat.starts_with(f));
+            let ends = faces.iter().any(|f| treat.ends_with(f));
+            lead |= starts && !ends;
+            trail |= ends && !starts;
+            both |= starts && ends;
+        }
+        assert!(lead && trail && both);
     }
 
     // --- AI meta tests ---

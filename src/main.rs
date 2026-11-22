@@ -47,6 +47,8 @@ fn main() -> Result<()> {
                         &kaomoji::output::QueryOptions {
                             limit: cli.emoji_args.limit,
                             copy: should_copy,
+                            clean: cli.emoji_args.clean,
+                            user: &cli.emoji_args.user,
                         },
                         &mut copy_to_clipboard,
                         &mut io::stdout(),

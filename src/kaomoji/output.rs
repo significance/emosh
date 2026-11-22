@@ -2,7 +2,7 @@
 
 use super::{random_face, search};
 use crate::emoji::search::SearchResult;
-use crate::treats::Rng;
+use crate::treats::{generate_kaomoji_treat_results, Rng};
 use anyhow::Result;
 use std::io::Write;
 use unicode_width::UnicodeWidthStr;
@@ -35,18 +35,24 @@ fn copy_or_warn(copier: &mut dyn FnMut(&str) -> Result<()>, text: &str) {
 
 /// Options for a kaomoji CLI run.
 #[derive(Debug, Clone)]
-pub struct QueryOptions {
+pub struct QueryOptions<'a> {
     /// Maximum number of results to print
     pub limit: usize,
     /// Whether to copy the first result to the clipboard
     pub copy: bool,
+    /// Omit the explanation suffix on treats
+    pub clean: bool,
+    /// Name used in treat explanations
+    pub user: &'a str,
 }
 
-impl Default for QueryOptions {
+impl Default for QueryOptions<'_> {
     fn default() -> Self {
         Self {
             limit: 7,
             copy: true,
+            clean: false,
+            user: "the user",
         }
     }
 }
@@ -64,6 +70,18 @@ pub fn run_query(
 ) -> Result<()> {
     if query.trim().eq_ignore_ascii_case("random") {
         return run_random(Rng::new().next(), options.copy, copier, out);
+    }
+
+    if query.trim().eq_ignore_ascii_case("treats") {
+        let treat = generate_kaomoji_treat_results(1, options.clean, options.user)
+            .remove(0)
+            .emoji
+            .char;
+        if options.copy {
+            copy_or_warn(copier, &treat);
+        }
+        writeln!(out, "{treat}")?;
+        return Ok(());
     }
 
     let results = search(query, options.limit);
@@ -206,5 +224,47 @@ mod tests {
         assert_eq!(out.lines().count(), 1);
         assert_eq!(copied.len(), 1);
         assert_eq!(out, format!("{}\n", copied[0]));
+    }
+
+    fn run_with(query: &str, options: &QueryOptions) -> (String, Vec<String>) {
+        let mut copied = Vec::new();
+        let mut out = Vec::new();
+        run_query(
+            query,
+            options,
+            &mut |text| {
+                copied.push(text.to_string());
+                Ok(())
+            },
+            &mut out,
+        )
+        .unwrap();
+        (String::from_utf8(out).unwrap(), copied)
+    }
+
+    #[test]
+    fn test_run_query_treats_prints_and_copies_one_signed_treat() {
+        let options = QueryOptions {
+            user: "sig",
+            ..QueryOptions::default()
+        };
+        let (out, copied) = run_with("treats", &options);
+        assert_eq!(out.lines().count(), 1);
+        assert_eq!(out, format!("{}\n", copied[0]));
+        assert!(out.starts_with(crate::treats::TREAT_WATERMARK));
+        assert!(out.contains("a treat from sig"));
+    }
+
+    #[test]
+    fn test_run_query_treats_clean_has_no_explanation() {
+        let options = QueryOptions {
+            clean: true,
+            copy: false,
+            ..QueryOptions::default()
+        };
+        let (out, copied) = run_with(" Treats ", &options);
+        assert!(out.starts_with(crate::treats::TREAT_WATERMARK));
+        assert!(!out.contains("a treat from"));
+        assert!(copied.is_empty());
     }
 }
