@@ -344,9 +344,10 @@ fn treat_explanation(user: &str) -> String {
 ///
 /// `clean = true`  -> `{TREAT_WATERMARK}{treat}`
 /// `clean = false` -> `{TREAT_WATERMARK}{treat} (a treat from {user} …)`
-// Only the WASM binding calls this; in the default CLI build it is unused
-// outside of tests, so silence the dead-code lint there.
-#[cfg_attr(not(feature = "wasm"), allow(dead_code))]
+// Only the WASM binding (via the library crate) calls this. The CLI binary compiles
+// this module directly through `mod treats;`, where it is never referenced, so the
+// dead-code lint fires there regardless of which features are enabled.
+#[allow(dead_code)]
 pub fn generate_one_treat(seed: u64, clean: bool, user: &str) -> String {
     let mut rng = Rng::from_seed(seed);
     let treat = generate_one(&mut rng);
