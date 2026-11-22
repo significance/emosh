@@ -8,7 +8,6 @@ use crate::emoji::data::Emoji;
 use crate::emoji::search::SearchResult;
 use crate::kaomoji::KAOMOJIS;
 use std::collections::HashSet;
-use std::time::SystemTime;
 
 const ADJECTIVES: &[&str] = &[
     "warm",
@@ -239,12 +238,10 @@ impl Rng {
         }
     }
 
+    /// Seed from the clock natively, or from `Math.random()` in the browser, where
+    /// `SystemTime::now()` panics.
     pub(crate) fn new() -> Self {
-        let seed = SystemTime::now()
-            .duration_since(SystemTime::UNIX_EPOCH)
-            .unwrap_or_default()
-            .as_nanos() as u64;
-        Self::from_seed(seed)
+        Self::from_seed(entropy())
     }
 
     pub(crate) fn next(&mut self) -> u64 {
@@ -257,6 +254,27 @@ impl Rng {
     pub(crate) fn range(&mut self, max: usize) -> usize {
         (self.next() % max as u64) as usize
     }
+}
+
+/// A fresh 64-bit seed from the system clock.
+#[cfg(not(all(target_arch = "wasm32", feature = "wasm")))]
+fn entropy() -> u64 {
+    use std::time::SystemTime;
+    SystemTime::now()
+        .duration_since(SystemTime::UNIX_EPOCH)
+        .unwrap_or_default()
+        .as_nanos() as u64
+}
+
+/// A fresh 64-bit seed from the browser's `Math.random()`.
+#[cfg(all(target_arch = "wasm32", feature = "wasm"))]
+fn entropy() -> u64 {
+    #[wasm_bindgen::prelude::wasm_bindgen]
+    extern "C" {
+        #[wasm_bindgen(js_namespace = Math)]
+        fn random() -> f64;
+    }
+    random().to_bits()
 }
 
 /// Short AI-awareness phrases that can appear as treats themselves
