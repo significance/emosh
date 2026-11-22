@@ -151,11 +151,41 @@ body {
   /* viewBox 1239.2 × 675.5 */
   aspect-ratio: 1239.2 / 675.5;
   margin: 0 0 calc(-1 * var(--space-md));
-  background: var(--grad);
+  /* A variegated band of the emoshion, three logos wide and seamless end to end.
+     At rest the logo shows the first third (the usual a → b → c); the pearly sheen
+     lives further along and only passes through the letters during a sweep. */
+  --pearl: color-mix(in oklab, var(--grad-b) 30%, #fffaf5);
+  background: linear-gradient(
+      90deg,
+      var(--grad-a) 0%,
+      var(--grad-b) 15%,
+      var(--grad-c) 30%,
+      var(--grad-b) 42%,
+      var(--pearl) 56%,
+      var(--grad-c) 70%,
+      var(--grad-b) 85%,
+      var(--grad-a) 100%
+    )
+    0 0 / 300% 100% repeat-x;
   -webkit-mask: url(./assets/emosh-logo.svg) center / contain no-repeat;
   mask: url(./assets/emosh-logo.svg) center / contain no-repeat;
   filter: drop-shadow(0 10px 28px color-mix(in oklab, var(--grad-b) 35%, transparent));
-  animation: logo-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation:
+    logo-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both,
+    logo-flow 14s linear 1.2s infinite;
+}
+
+/* Only sometimes: a quick sweep one fill-width to the right, then a long rest.
+   Moving exactly one tile (-150% here, because the fill is 3× the box) loops seamlessly. */
+@keyframes logo-flow {
+  0% {
+    background-position-x: 0%;
+    animation-timing-function: cubic-bezier(0.45, 0, 0.25, 1);
+  }
+  18%,
+  100% {
+    background-position-x: -150%;
+  }
 }
 
 .tagline {

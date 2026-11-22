@@ -26,9 +26,12 @@ export async function expectNoHorizontalOverflow(page) {
 
 /** Fail on serious or critical accessibility violations. */
 export async function expectAccessible(page) {
-  // Let entrance animations finish: mid-fade text would read as low contrast
+  // Let entrance animations finish: mid-fade text would read as low contrast.
+  // Endless ambient ones (the logo shimmer) never finish, so they don't count.
   await page.waitForFunction(() =>
-    document.getAnimations().every((a) => a.playState !== 'running'),
+    document
+      .getAnimations()
+      .every((a) => a.playState !== 'running' || a.effect.getTiming().iterations === Infinity),
   )
   const { violations } = await new AxeBuilder({ page }).analyze()
   const bad = violations.filter((v) => v.impact === 'serious' || v.impact === 'critical')
