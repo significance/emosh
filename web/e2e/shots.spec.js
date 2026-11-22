@@ -13,6 +13,7 @@ const PAGES = [
   ['emoji', 'emoji/?q=happy'],
   ['kaomoji', 'kaomoji/?q=happy'],
   ['authors-note', 'authors-note/'],
+  ['support', 'support/'],
 ]
 const THEMES = ['light', 'dark']
 
@@ -42,7 +43,7 @@ test('every page at every size and theme @shots', async ({ browser, baseURL }) =
 
   const html = `<!doctype html><meta charset="utf-8"><style>
     body { margin: 0; padding: 24px; background: #222; font: 13px system-ui; color: #ddd }
-    .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; align-items: start }
+    .grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 16px; align-items: start }
     figure { margin: 0 } img { width: 100%; border-radius: 8px; display: block; background: #fff }
     figcaption { padding: 6px 2px }
   </style><div class="grid">${tiles

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Ways to support emosh: say thanks, star it, or share it with a friend." />
+    <meta property="og:title" content="emosh — support" />
+    <meta property="og:description" content="Ways to support emosh: say thanks, star it, or share it with a friend." />
+    <meta property="og:url" content="https://emosh.digital/support" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>emosh — support</title>
+    <link rel="stylesheet" href="../src/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="top-bar">
+        <button id="donate-btn" class="icon-btn" type="button" aria-label="Open donation options" aria-haspopup="dialog">
+          <span class="icon" aria-hidden="true">&#9829;</span>
+        </button>
+        <button id="settings-btn" class="icon-btn" type="button" aria-label="Open settings" aria-haspopup="dialog">
+          <span class="icon" aria-hidden="true">&#9881;</span>
+        </button>
+      </header>
+      <div id="donate-modal" class="overlay" hidden></div>
+      <div id="settings-panel" class="overlay" hidden></div>
+
+      <main class="main main--support">
+        <h1 class="logo logo--small">
+          <a class="logo-link" href="../"><span class="visually-hidden">emosh home</span></a>
+        </h1>
+        <p class="tagline">support emosh</p>
+        <div id="support" class="support"></div>
+      </main>
+
+      <footer class="foot">
+        <nav class="site-nav" aria-label="emosh pages">
+          <a href="../">emosh</a>
+          <a href="../emoji/">emoji picker</a>
+          <a href="../kaomoji/">kaomoji picker</a>
+          <a href="../authors-note/">author&rsquo;s note</a>
+          <a href="../support/" aria-current="page">support</a>
+        </nav>
+        <p id="emoshion-tag" class="emoshion-tag" title="A new emoshion every visit"></p>
+      </footer>
+    </div>
+
+    <script type="module" src="../src/support-entry.js"></script>
+  </body>
+</html>

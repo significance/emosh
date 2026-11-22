@@ -8,12 +8,13 @@ export default defineConfig({
     // but `await init()` in the entries is top-level await — needs a modern target.
     target: 'esnext',
     rollupOptions: {
-      // One HTML page per site path: / , /emoji/ , /kaomoji/ , /authors-note/
+      // One HTML page per site path: / , /emoji/ , /kaomoji/ , /authors-note/ , /support/
       input: {
         home: resolve(import.meta.dirname, 'index.html'),
         emoji: resolve(import.meta.dirname, 'emoji/index.html'),
         kaomoji: resolve(import.meta.dirname, 'kaomoji/index.html'),
         'authors-note': resolve(import.meta.dirname, 'authors-note/index.html'),
+        support: resolve(import.meta.dirname, 'support/index.html'),
       },
     },
   },

@@ -1196,3 +1196,212 @@ body:has(#donate-modal:not([hidden])) #donate-btn {
     transform: none;
   }
 }
+
+/* --- Support page --- */
+.main--support {
+  justify-content: flex-start;
+  gap: var(--space-md);
+  max-width: 40rem;
+  padding-top: 0;
+}
+
+.support {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.support-intro {
+  margin: 0;
+  font-size: clamp(1.05rem, 0.4vw + 1rem, 1.2rem);
+  line-height: 1.6;
+  text-wrap: balance;
+}
+
+.support-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.support-section h2 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.support-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+.support-crypto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-md);
+}
+
+/* A card with a hairline of the emoshion gradient round it */
+.support-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 0;
+  padding: var(--space-lg) var(--space-md);
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    var(--grad) border-box;
+  border: 2px solid transparent;
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.support-card__title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.support-card__symbol {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+/* QR codes need dark-on-light to scan, so they sit on white in both themes */
+.support-qr {
+  width: min(11rem, 100%);
+  aspect-ratio: 1;
+  padding: 0.5rem;
+  background: #ffffff;
+  border-radius: var(--radius);
+  color: #333;
+  font-size: 0.8rem;
+  display: grid;
+  place-items: center;
+}
+
+.support-qr svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.support-address {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.support-address code {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem var(--space-sm);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  text-align: left;
+  word-break: break-all;
+  background: color-mix(in oklab, var(--surface-border) 35%, transparent);
+  border-radius: var(--radius);
+  user-select: all;
+}
+
+.support-copy {
+  flex: none;
+  min-width: var(--hit);
+  min-height: var(--hit);
+  padding: 0 var(--space-md);
+  font: inherit;
+  font-weight: 600;
+  color: var(--accent-fg);
+  background: var(--accent);
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.support-copy:active {
+  transform: scale(0.96);
+}
+
+.support-copy.is-success {
+  background: var(--grad);
+}
+
+.support-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.support-link {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0 var(--space-md);
+  font: inherit;
+  font-size: 1.05rem;
+  text-align: left;
+  text-decoration: none;
+  color: var(--fg);
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(var(--surface-border), var(--surface-border)) border-box;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.support-link:hover {
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    var(--grad) border-box;
+  transform: translateY(-1px);
+}
+
+.support-link:active {
+  transform: scale(0.98);
+}
+
+.support-link__icon {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.support-link__ext {
+  color: var(--muted);
+}
+
+.support-copy:focus-visible,
+.support-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.support-status {
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .support-link,
+  .support-copy {
+    transition: none;
+  }
+
+  .support-link:hover {
+    transform: none;
+  }
+}
