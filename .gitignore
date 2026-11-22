@@ -27,9 +27,7 @@ Cargo.lock
 node_modules/
 emoj/
 
-# Temporary files
-extract_emojis.js
-
-# Private issue pack (local only, not committed)
-.issues/
+# Local-only material: working plan, issue pack, scratch scripts
+plan.md
+private/
 test-results/
