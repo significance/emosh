@@ -33,6 +33,24 @@ fn copy_or_warn(copier: &mut dyn FnMut(&str) -> Result<()>, text: &str) {
     }
 }
 
+/// Options for a kaomoji CLI run.
+#[derive(Debug, Clone)]
+pub struct QueryOptions {
+    /// Maximum number of results to print
+    pub limit: usize,
+    /// Whether to copy the first result to the clipboard
+    pub copy: bool,
+}
+
+impl Default for QueryOptions {
+    fn default() -> Self {
+        Self {
+            limit: 7,
+            copy: true,
+        }
+    }
+}
+
 /// Runs a kaomoji query, writing the result lines to `out` and copying the first
 /// face with `copier` unless `copy` is false.
 ///
@@ -40,23 +58,22 @@ fn copy_or_warn(copier: &mut dyn FnMut(&str) -> Result<()>, text: &str) {
 /// faces are still printed on headless systems.
 pub fn run_query(
     query: &str,
-    limit: usize,
-    copy: bool,
+    options: &QueryOptions,
     copier: &mut dyn FnMut(&str) -> Result<()>,
     out: &mut dyn Write,
 ) -> Result<()> {
     if query.trim().eq_ignore_ascii_case("random") {
-        return run_random(Rng::new().next(), copy, copier, out);
+        return run_random(Rng::new().next(), options.copy, copier, out);
     }
 
-    let results = search(query, limit);
+    let results = search(query, options.limit);
 
     if results.is_empty() {
         writeln!(out, "No kaomoji found for '{query}'")?;
         return Ok(());
     }
 
-    if copy {
+    if options.copy {
         copy_or_warn(copier, &results[0].emoji.char);
     }
 
@@ -92,8 +109,10 @@ mod tests {
         let mut out = Vec::new();
         run_query(
             query,
-            7,
-            copy,
+            &QueryOptions {
+                copy,
+                ..QueryOptions::default()
+            },
             &mut |text| {
                 copied.push(text.to_string());
                 Ok(())
@@ -147,8 +166,7 @@ mod tests {
         let mut out = Vec::new();
         let result = run_query(
             "shrug",
-            7,
-            true,
+            &QueryOptions::default(),
             &mut |_| anyhow::bail!("no clipboard"),
             &mut out,
         );

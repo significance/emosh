@@ -44,8 +44,10 @@ fn main() -> Result<()> {
                 if cli.emoji_args.kaomoji {
                     return kaomoji::output::run_query(
                         &query,
-                        cli.emoji_args.limit,
-                        should_copy,
+                        &kaomoji::output::QueryOptions {
+                            limit: cli.emoji_args.limit,
+                            copy: should_copy,
+                        },
                         &mut copy_to_clipboard,
                         &mut io::stdout(),
                     );
