@@ -214,10 +214,48 @@ mod tests {
     }
 
     #[test]
-    fn test_clipboard_failure_currently_propagates_as_error() {
+    fn test_clipboard_failure_keeps_the_app_alive_and_shows_a_notice() {
         let mut app = failing_app();
         type_text(&mut app, "grin");
-        assert!(press(&mut app, KeyCode::Enter).is_err());
+        press(&mut app, KeyCode::Enter).unwrap();
+        assert!(
+            !app.should_quit,
+            "a failed copy must not discard the search"
+        );
+        assert!(row_text(&render_app(&app, 80, 5), 0).contains("clipboard unavailable"));
+    }
+
+    #[test]
+    fn test_clipboard_failure_on_tab_and_number_key_is_not_fatal() {
+        let mut app = failing_app();
+        type_text(&mut app, "grin");
+        press(&mut app, KeyCode::Tab).unwrap();
+        assert!(
+            app.copy_feedback.is_none(),
+            "no success tick after a failure"
+        );
+        press(&mut app, KeyCode::Char('1')).unwrap();
+        assert!(!app.should_quit);
+    }
+
+    #[test]
+    fn test_typing_clears_the_clipboard_notice() {
+        let mut app = failing_app();
+        type_text(&mut app, "grin");
+        press(&mut app, KeyCode::Enter).unwrap();
+        type_text(&mut app, "x");
+        assert!(!row_text(&render_app(&app, 80, 5), 0).contains("clipboard"));
+    }
+
+    #[test]
+    fn test_successful_copy_clears_an_earlier_notice() {
+        let (mut app, _) = recording_app();
+        app.clipboard_error = Some("old".to_string());
+        type_text(&mut app, "grin");
+        // typing already cleared it; set again to prove a copy clears it too
+        app.clipboard_error = Some("old".to_string());
+        press(&mut app, KeyCode::Tab).unwrap();
+        assert!(app.clipboard_error.is_none());
     }
 
     // --- kaomoji mode ---

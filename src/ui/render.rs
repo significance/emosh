@@ -76,6 +76,13 @@ fn render_prompt(frame: &mut Frame, app: &App, area: Rect) {
         spans.push(Span::styled(" ✓", Style::default().fg(Color::Green)));
     }
 
+    if let Some(error) = &app.clipboard_error {
+        spans.push(Span::styled(
+            format!(" ✗ {error}"),
+            Style::default().fg(Color::Red),
+        ));
+    }
+
     let paragraph = Paragraph::new(Line::from(spans));
     frame.render_widget(paragraph, area);
 }

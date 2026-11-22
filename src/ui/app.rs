@@ -91,6 +91,8 @@ pub struct App {
     pub copy_feedback: Option<Instant>,
     /// Destination for copied text
     pub clipboard: ClipboardSink,
+    /// Notice shown when the last copy failed (cleared by typing or a successful copy)
+    pub clipboard_error: Option<String>,
 }
 
 impl App {
@@ -109,6 +111,7 @@ impl App {
             should_quit: false,
             copy_feedback: None,
             clipboard,
+            clipboard_error: None,
         }
     }
 

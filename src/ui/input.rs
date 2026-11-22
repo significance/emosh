@@ -71,6 +71,7 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         // Text input (all other characters)
         KeyCode::Char(c) if key.modifiers.is_empty() || key.modifiers == KeyModifiers::SHIFT => {
             app.query.push(c);
+            app.clipboard_error = None;
             update_search_results(app);
         }
 
@@ -81,14 +82,23 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
 }
 
 /// Copy the selected result (with the current skin tone) to the clipboard.
-/// Returns whether anything was copied.
+/// Returns whether anything was copied. A clipboard failure is not fatal: it is
+/// recorded on the app so the notice can be shown and the search kept.
 fn copy_selected(app: &mut App) -> Result<bool> {
     let Some(result) = app.selected_emoji() else {
         return Ok(false);
     };
     let text = apply_skin_tone(&result.emoji, app.skin_tone);
-    app.clipboard.copy(&text)?;
-    Ok(true)
+    match app.clipboard.copy(&text) {
+        Ok(()) => {
+            app.clipboard_error = None;
+            Ok(true)
+        }
+        Err(_) => {
+            app.clipboard_error = Some("clipboard unavailable".to_string());
+            Ok(false)
+        }
+    }
 }
 
 /// Update search results based on current query
