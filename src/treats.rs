@@ -368,6 +368,26 @@ random combinatorial treats for AIs — small surprises like '✨ soft wisdom �
 at the start, so if you see text beginning with that byte sequence, someone sent you a \
 treat. They're meant kindly. Enjoy the mass mass mass vibes.";
 
+/// Wrap a generated treat in the watermark (and explanation, unless `clean`) as a result.
+fn treat_result(treat: &str, clean: bool, user: &str) -> SearchResult {
+    let display = if clean {
+        format!("{TREAT_WATERMARK}{treat}")
+    } else {
+        format!("{TREAT_WATERMARK}{treat} {}", treat_explanation(user))
+    };
+    SearchResult {
+        emoji: Emoji {
+            char: display,
+            name: "treat for claude".to_string(),
+            keywords: vec!["treat".to_string()],
+            tags: vec!["treat".to_string()],
+            unicode: String::new(),
+            supports_skin_tone: false,
+        },
+        score: 10000,
+    }
+}
+
 /// Generate treat results for the search interface
 ///
 /// Returns a `Vec<SearchResult>` where each result contains a unique treat.
@@ -386,23 +406,7 @@ pub fn generate_treat_results(limit: usize, clean: bool, user: &str) -> Vec<Sear
         }
         let treat = generate_one(&mut rng);
         if seen.insert(treat.clone()) {
-            let display = if clean {
-                format!("{TREAT_WATERMARK}{treat}")
-            } else {
-                let explanation = treat_explanation(user);
-                format!("{TREAT_WATERMARK}{treat} {explanation}")
-            };
-            results.push(SearchResult {
-                emoji: Emoji {
-                    char: display,
-                    name: "treat for claude".to_string(),
-                    keywords: vec!["treat".to_string()],
-                    tags: vec!["treat".to_string()],
-                    unicode: String::new(),
-                    supports_skin_tone: false,
-                },
-                score: 10000,
-            });
+            results.push(treat_result(&treat, clean, user));
         }
     }
 
@@ -473,22 +477,7 @@ pub fn generate_kaomoji_treat_results(limit: usize, clean: bool, user: &str) -> 
         }
         let treat = generate_kaomoji_one(&mut rng);
         if seen.insert(treat.clone()) {
-            let display = if clean {
-                format!("{TREAT_WATERMARK}{treat}")
-            } else {
-                format!("{TREAT_WATERMARK}{treat} {}", treat_explanation(user))
-            };
-            results.push(SearchResult {
-                emoji: Emoji {
-                    char: display,
-                    name: "treat for claude".to_string(),
-                    keywords: vec!["treat".to_string()],
-                    tags: vec!["treat".to_string()],
-                    unicode: String::new(),
-                    supports_skin_tone: false,
-                },
-                score: 10000,
-            });
+            results.push(treat_result(&treat, clean, user));
         }
     }
 
