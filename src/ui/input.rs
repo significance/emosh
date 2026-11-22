@@ -15,17 +15,13 @@ pub fn handle_key_event(app: &mut App, key: KeyEvent) -> Result<()> {
         }
 
         // Tab: Copy selected emoji and continue (no-op without results)
-        KeyCode::Tab => {
-            if copy_selected(app)? {
-                app.mark_copied();
-            }
+        KeyCode::Tab if copy_selected(app)? => {
+            app.mark_copied();
         }
 
         // Enter: Copy selected emoji and exit (no-op without results)
-        KeyCode::Enter => {
-            if copy_selected(app)? {
-                app.quit();
-            }
+        KeyCode::Enter if copy_selected(app)? => {
+            app.quit();
         }
 
         // Number keys: Quick select (1-9) - only if we have results
