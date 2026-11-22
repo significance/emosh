@@ -29,3 +29,7 @@ emoj/
 
 # Temporary files
 extract_emojis.js
+
+# Private issue pack (local only, not committed)
+.issues/
+test-results/

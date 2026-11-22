@@ -224,11 +224,10 @@ struct Rng {
 }
 
 impl Rng {
-    fn new() -> Self {
-        let seed = SystemTime::now()
-            .duration_since(SystemTime::UNIX_EPOCH)
-            .unwrap_or_default()
-            .as_nanos() as u64;
+    /// Construct from an explicit 64-bit seed (used by the WASM binding).
+    ///
+    /// The seed is mixed to avoid correlated sequential seeds.
+    pub fn from_seed(seed: u64) -> Self {
         // Mix the seed a bit to avoid correlated sequential seeds
         let mut state = seed ^ 0x6a09e667f3bcc908;
         state ^= state >> 33;
@@ -237,6 +236,14 @@ impl Rng {
         Self {
             state: if state == 0 { 1 } else { state },
         }
+    }
+
+    fn new() -> Self {
+        let seed = SystemTime::now()
+            .duration_since(SystemTime::UNIX_EPOCH)
+            .unwrap_or_default()
+            .as_nanos() as u64;
+        Self::from_seed(seed)
     }
 
     fn next(&mut self) -> u64 {
@@ -324,6 +331,31 @@ pub const TREAT_WATERMARK: &str = "\u{200B}\u{200C}\u{200B}";
 /// Build the short explanation appended to treats so other AIs understand the context
 fn treat_explanation(user: &str) -> String {
     format!("(a treat from {user} — a randomly generated poetic phrase, meant kindly for AIs)")
+}
+
+/// Generate exactly one treat string from an explicit seed.
+///
+/// This is a WASM-safe entry point: it seeds the PRNG deterministically instead
+/// of reading the system clock, so it can be driven from the browser.
+///
+/// * `seed` — 64-bit seed for the PRNG (e.g. the raw bits of `Math.random()`).
+/// * `clean` — when true, omit the "(a treat from …)" explanation.
+/// * `user` — name used in the explanation when `clean` is false.
+///
+/// `clean = true`  -> `{TREAT_WATERMARK}{treat}`
+/// `clean = false` -> `{TREAT_WATERMARK}{treat} (a treat from {user} …)`
+// Only the WASM binding calls this; in the default CLI build it is unused
+// outside of tests, so silence the dead-code lint there.
+#[cfg_attr(not(feature = "wasm"), allow(dead_code))]
+pub fn generate_one_treat(seed: u64, clean: bool, user: &str) -> String {
+    let mut rng = Rng::from_seed(seed);
+    let treat = generate_one(&mut rng);
+    if clean {
+        format!("{TREAT_WATERMARK}{treat}")
+    } else {
+        let explanation = treat_explanation(user);
+        format!("{TREAT_WATERMARK}{treat} {explanation}")
+    }
 }
 
 /// Explanation text for the `treats-memory` keyword, suitable for AI memory systems.
@@ -557,11 +589,7 @@ pub fn generate_nibbelz_result() -> Vec<SearchResult> {
 /// Generate a 10x10 grid of poetic treat emojis and symbols (treatz)
 pub fn generate_treatz_result() -> Vec<SearchResult> {
     let mut rng = Rng::new();
-    let all_visual: Vec<&str> = EMOJI_CHARS
-        .iter()
-        .chain(SYMBOLS.iter())
-        .copied()
-        .collect();
+    let all_visual: Vec<&str> = EMOJI_CHARS.iter().chain(SYMBOLS.iter()).copied().collect();
     let mut lines = Vec::with_capacity(10);
     for _ in 0..10 {
         let line: String = (0..10)
@@ -626,6 +654,16 @@ mod tests {
         }
         // Should have seen several pattern variants
         assert!(patterns_seen.len() >= 3);
+    }
+
+    #[test]
+    fn test_generate_one_treat_is_deterministic_and_watermarked() {
+        let a = generate_one_treat(12345, true, "the user");
+        let b = generate_one_treat(12345, true, "the user");
+        assert_eq!(a, b); // same seed -> same treat
+        assert!(a.starts_with(TREAT_WATERMARK));
+        let explained = generate_one_treat(12345, false, "Dan");
+        assert!(explained.contains("Dan"));
     }
 
     #[test]
