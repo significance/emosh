@@ -2,7 +2,7 @@ name: Deploy Pages
 
 on:
   push:
-    branches: [master, feat/wasm-treats-web]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
