@@ -5,7 +5,9 @@ pub mod output;
 
 pub use data::KAOMOJIS;
 
+use crate::emoji::data::Emoji;
 use crate::emoji::search::{rank, SearchResult};
+use crate::treats::Rng;
 
 /// Searches the kaomoji database for faces matching `query`.
 ///
@@ -21,9 +23,32 @@ pub fn search(query: &str, limit: usize) -> Vec<SearchResult> {
     rank(query, &KAOMOJIS, limit)
 }
 
+/// Picks one uniformly random face, deterministically for a given `seed`.
+pub fn random_face(seed: u64) -> &'static Emoji {
+    let mut rng = Rng::from_seed(seed);
+    &KAOMOJIS[rng.range(KAOMOJIS.len())]
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_random_face_is_deterministic_per_seed() {
+        assert_eq!(random_face(42), random_face(42));
+    }
+
+    #[test]
+    fn test_random_face_varies_across_seeds_and_covers_database() {
+        let distinct: std::collections::HashSet<_> = (0..2000)
+            .map(|seed| random_face(seed).name.as_str())
+            .collect();
+        assert!(
+            distinct.len() > 400,
+            "only {} distinct faces",
+            distinct.len()
+        );
+    }
 
     fn top(query: &str) -> Vec<String> {
         search(query, 7).into_iter().map(|r| r.emoji.name).collect()

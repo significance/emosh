@@ -219,7 +219,7 @@ const RUSTACEAN_EMOJI_CHARS: &[&str] = &[
 ];
 
 /// Simple xorshift64 PRNG seeded from system time nanoseconds
-struct Rng {
+pub(crate) struct Rng {
     state: u64,
 }
 
@@ -238,7 +238,7 @@ impl Rng {
         }
     }
 
-    fn new() -> Self {
+    pub(crate) fn new() -> Self {
         let seed = SystemTime::now()
             .duration_since(SystemTime::UNIX_EPOCH)
             .unwrap_or_default()
@@ -246,14 +246,14 @@ impl Rng {
         Self::from_seed(seed)
     }
 
-    fn next(&mut self) -> u64 {
+    pub(crate) fn next(&mut self) -> u64 {
         self.state ^= self.state << 13;
         self.state ^= self.state >> 7;
         self.state ^= self.state << 17;
         self.state
     }
 
-    fn range(&mut self, max: usize) -> usize {
+    pub(crate) fn range(&mut self, max: usize) -> usize {
         (self.next() % max as u64) as usize
     }
 }

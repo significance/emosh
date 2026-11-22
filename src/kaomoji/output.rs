@@ -1,7 +1,8 @@
 //! Plain-text CLI output for kaomoji queries.
 
-use super::search;
+use super::{random_face, search};
 use crate::emoji::search::SearchResult;
+use crate::treats::Rng;
 use anyhow::Result;
 use std::io::Write;
 use unicode_width::UnicodeWidthStr;
@@ -25,6 +26,13 @@ pub fn format_results(results: &[SearchResult]) -> Vec<String> {
         .collect()
 }
 
+/// Copies `text`, downgrading a clipboard failure to a warning on stderr.
+fn copy_or_warn(copier: &mut dyn FnMut(&str) -> Result<()>, text: &str) {
+    if let Err(err) = copier(text) {
+        eprintln!("warning: could not copy to clipboard: {err:#}");
+    }
+}
+
 /// Runs a kaomoji query, writing the result lines to `out` and copying the first
 /// face with `copier` unless `copy` is false.
 ///
@@ -37,6 +45,10 @@ pub fn run_query(
     copier: &mut dyn FnMut(&str) -> Result<()>,
     out: &mut dyn Write,
 ) -> Result<()> {
+    if query.trim().eq_ignore_ascii_case("random") {
+        return run_random(Rng::new().next(), copy, copier, out);
+    }
+
     let results = search(query, limit);
 
     if results.is_empty() {
@@ -45,15 +57,28 @@ pub fn run_query(
     }
 
     if copy {
-        if let Err(err) = copier(&results[0].emoji.char) {
-            eprintln!("warning: could not copy to clipboard: {err:#}");
-        }
+        copy_or_warn(copier, &results[0].emoji.char);
     }
 
     for line in format_results(&results) {
         writeln!(out, "{line}")?;
     }
 
+    Ok(())
+}
+
+/// Prints one random face (no name, no explanation), copying it unless `copy` is false.
+pub fn run_random(
+    seed: u64,
+    copy: bool,
+    copier: &mut dyn FnMut(&str) -> Result<()>,
+    out: &mut dyn Write,
+) -> Result<()> {
+    let face = random_face(seed);
+    if copy {
+        copy_or_warn(copier, &face.char);
+    }
+    writeln!(out, "{}", face.char)?;
     Ok(())
 }
 
@@ -129,5 +154,39 @@ mod tests {
         );
         assert!(result.is_ok(), "clipboard failure must not abort");
         assert!(!out.is_empty());
+    }
+
+    #[test]
+    fn test_run_random_prints_only_the_face_and_copies_it() {
+        let mut copied = Vec::new();
+        let mut out = Vec::new();
+        run_random(
+            7,
+            true,
+            &mut |t| {
+                copied.push(t.to_string());
+                Ok(())
+            },
+            &mut out,
+        )
+        .unwrap();
+        let face = crate::kaomoji::random_face(7);
+        assert_eq!(String::from_utf8(out).unwrap(), format!("{}\n", face.char));
+        assert_eq!(copied, vec![face.char.clone()]);
+    }
+
+    #[test]
+    fn test_run_random_no_copy_skips_clipboard() {
+        let mut out = Vec::new();
+        run_random(7, false, &mut |_| panic!("must not copy"), &mut out).unwrap();
+        assert!(!out.is_empty());
+    }
+
+    #[test]
+    fn test_run_query_random_keyword_prints_a_single_bare_face() {
+        let (out, copied) = run("Random", true);
+        assert_eq!(out.lines().count(), 1);
+        assert_eq!(copied.len(), 1);
+        assert_eq!(out, format!("{}\n", copied[0]));
     }
 }
