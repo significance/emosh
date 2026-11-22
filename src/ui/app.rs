@@ -201,6 +201,21 @@ mod tests {
     }
 
     #[test]
+    fn test_clipboard_sink_debug_does_not_expose_the_closure() {
+        assert_eq!(
+            format!("{:?}", ClipboardSink::new(|_| Ok(()))),
+            "ClipboardSink"
+        );
+    }
+
+    #[test]
+    fn test_mode_prompt_and_placeholder_differ_per_mode() {
+        assert_eq!(Mode::Emoji.prompt_prefix(), "> ");
+        assert!(Mode::Kaomoji.prompt_prefix().starts_with("kaomoji"));
+        assert!(Mode::Kaomoji.placeholder().contains("kaomoji"));
+    }
+
+    #[test]
     fn test_app_initialization() {
         let config = Config { skin_tone: 3 };
         let app = App::new(&config);

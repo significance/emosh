@@ -87,9 +87,8 @@ mod tests {
 
     #[test]
     fn test_search_does_not_intercept_treat_keywords() {
-        assert!(search("treats", 7)
-            .iter()
-            .all(|r| !r.emoji.char.contains('\u{200B}')));
+        // The emoji search would answer "treats" with watermarked treats
+        assert!(search("treats", 7).is_empty());
     }
 
     #[test]

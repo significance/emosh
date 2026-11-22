@@ -286,4 +286,10 @@ mod tests {
         let results = search("  unicorn  ", &emojis, 10);
         assert!(!results.is_empty());
     }
+
+    #[test]
+    fn test_search_intercepts_nibblez_and_nibbelz() {
+        assert_eq!(search("nibblez", &[], 7)[0].emoji.name, "nibblez");
+        assert_eq!(search("nibbelz", &[], 7)[0].emoji.name, "nibbelz");
+    }
 }
