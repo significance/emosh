@@ -11,47 +11,13 @@
 
 import QRCode from 'qrcode'
 import { copyText } from './clipboard.js'
+import { configuredMethods } from './support.js'
 
 /** Focusable-element selector used for the focus trap. */
 const FOCUSABLE =
   'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
 const COPY_RESET_MS = 2200
-
-// Values read at build time. Vite inlines these literals into the bundle.
-const ENV = {
-  btc: import.meta.env.VITE_DONATE_BTC,
-  eth: import.meta.env.VITE_DONATE_ETH,
-  paypal: import.meta.env.VITE_DONATE_PAYPAL,
-  github: import.meta.env.VITE_DONATE_GITHUB,
-  kofi: import.meta.env.VITE_DONATE_KOFI,
-}
-
-/**
- * Decide whether an env value is a real, renderable donation value. Skips
- * unset/empty values and obvious placeholders (anything still carrying the
- * `YOUR_` sentinel from `.env.example`, e.g. `YOUR_BTC_ADDRESS`).
- */
-function isConfigured(value) {
-  if (typeof value !== 'string') return false
-  const trimmed = value.trim()
-  if (trimmed === '') return false
-  if (trimmed.includes('YOUR_')) return false
-  return true
-}
-
-/** Crypto methods: address + copy button + generated QR. */
-const CRYPTO_METHODS = [
-  { key: 'btc', label: 'Bitcoin', symbol: '₿', value: ENV.btc },
-  { key: 'eth', label: 'Ethereum', symbol: 'Ξ', value: ENV.eth },
-]
-
-/** Link methods: open the URL in a new tab. */
-const LINK_METHODS = [
-  { key: 'paypal', label: 'PayPal', icon: '💳', value: ENV.paypal },
-  { key: 'github', label: 'GitHub Sponsors', icon: '💖', value: ENV.github },
-  { key: 'kofi', label: 'Ko-fi', icon: '☕', value: ENV.kofi },
-]
 
 /**
  * Render a QR code for `text` into `container` as an inline SVG. Generated
@@ -81,8 +47,7 @@ export function initDonate() {
   const modal = document.getElementById('donate-modal')
   if (!btn || !modal) return
 
-  const crypto = CRYPTO_METHODS.filter((m) => isConfigured(m.value))
-  const links = LINK_METHODS.filter((m) => isConfigured(m.value))
+  const { crypto, links } = configuredMethods()
 
   // Nothing configured → hide the entry point entirely rather than open an
   // empty modal.
