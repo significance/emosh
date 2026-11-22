@@ -174,10 +174,22 @@ export function mountPicker(root, options) {
     option.setAttribute('role', 'option')
     option.setAttribute('aria-selected', 'false')
     option.setAttribute('aria-label', `${item.text} ${item.name}`)
-    option.title = item.name
     option.tabIndex = -1
     option.dataset.index = String(index)
-    option.textContent = item.text
+    if (mode === 'kaomoji') {
+      // Wide faces get a row: the face (ellipsised by CSS, never wrapped) and its name
+      option.title = `${item.text}  ${item.name}`
+      const face = document.createElement('span')
+      face.className = 'pick-face'
+      face.textContent = item.text
+      const name = document.createElement('span')
+      name.className = 'pick-name'
+      name.textContent = item.name
+      option.append(face, name)
+    } else {
+      option.title = item.name
+      option.textContent = item.text
+    }
     return option
   }
 
@@ -301,6 +313,14 @@ export function mountPicker(root, options) {
       runSearch()
     })
   }
+
+  // A long-press on touch fires `contextmenu`: show the whole face rather than the menu
+  list.addEventListener('contextmenu', (event) => {
+    const option = event.target.closest('[role="option"]')
+    if (!option) return
+    event.preventDefault()
+    setStatus(items[Number(option.dataset.index)].text, false)
+  })
 
   input.addEventListener('input', scheduleSearch)
 

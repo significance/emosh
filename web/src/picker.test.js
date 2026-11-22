@@ -643,3 +643,82 @@ describe('mountPicker — skin tone (emoji)', () => {
     expect(tone()).toBeNull()
   })
 })
+
+describe('mountPicker — kaomoji list', () => {
+  beforeEach(() => {
+    vi.useFakeTimers()
+    const search = vi.fn((query, limit) =>
+      Array.from({ length: Math.min(5, limit) }, (_, i) => ({
+        text: i === 0 ? '☆*:.｡.o(≧▽≦)o.｡.:*☆ a very long face indeed' : `(^_^)${i}`,
+        name: `joy-0${i}`,
+        keywords: ['happy'],
+        score: 10 - i,
+        supports_skin_tone: false,
+      })),
+    )
+    setup({ mode: 'kaomoji', search, columns: () => 99 })
+    type('happy')
+    vi.advanceTimersByTime(60)
+  })
+  afterEach(() => vi.useRealTimers())
+
+  it('lists each face with its name, full text in the tooltip', () => {
+    const first = options()[0]
+    expect(first.querySelector('.pick-face').textContent).toBe(
+      '☆*:.｡.o(≧▽≦)o.｡.:*☆ a very long face indeed',
+    )
+    expect(first.querySelector('.pick-name').textContent).toBe('joy-00')
+    expect(first.title).toBe('☆*:.｡.o(≧▽≦)o.｡.:*☆ a very long face indeed  joy-00')
+    expect(ctx.root.classList.contains('picker--kaomoji')).toBe(true)
+    expect(ctx.results.getAttribute('aria-label')).toBe('kaomoji results')
+  })
+
+  it('arrows move one row at a time whatever the width', () => {
+    key('Tab')
+    key('ArrowDown')
+    expect(indexOf(document.activeElement)).toBe(1)
+    key('ArrowRight')
+    expect(indexOf(document.activeElement)).toBe(2)
+    key('ArrowUp')
+    key('ArrowLeft')
+    expect(indexOf(document.activeElement)).toBe(0)
+    key('ArrowUp')
+    expect(document.activeElement).toBe(ctx.input)
+  })
+
+  it('copies the whole face, however it is truncated on screen', async () => {
+    options()[0].click()
+    await flush()
+    expect(ctx.copy).toHaveBeenCalledWith('☆*:.｡.o(≧▽≦)o.｡.:*☆ a very long face indeed')
+  })
+
+  it('a long-press (context menu) shows the full face instead of the browser menu', () => {
+    const event = new MouseEvent('contextmenu', { bubbles: true, cancelable: true })
+    options()[0].dispatchEvent(event)
+    expect(event.defaultPrevented).toBe(true)
+    expect(ctx.status.textContent).toBe('☆*:.｡.o(≧▽≦)o.｡.:*☆ a very long face indeed')
+  })
+
+  it('a context menu outside the results is left alone', () => {
+    const event = new MouseEvent('contextmenu', { bubbles: true, cancelable: true })
+    ctx.results.dispatchEvent(event)
+    expect(event.defaultPrevented).toBe(false)
+  })
+})
+
+describe('mountPicker — defaults', () => {
+  it('uses localStorage and the window width when not injected', () => {
+    vi.useFakeTimers()
+    localStorage.setItem('emosh.skin_tone', '2')
+    document.body.innerHTML = '<div id="root"></div>'
+    const search = fakeSearch()
+    mountPicker(document.getElementById('root'), { mode: 'emoji', search, copy: async () => true })
+    const input = document.querySelector('input[type="search"]')
+    input.value = 'wave'
+    input.dispatchEvent(new Event('input'))
+    vi.advanceTimersByTime(60)
+    expect(search).toHaveBeenCalledWith('wave', limitFor(window.innerWidth), 2)
+    localStorage.clear()
+    vi.useRealTimers()
+  })
+})
