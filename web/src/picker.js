@@ -31,6 +31,22 @@ export function limitFor(width) {
   return width < PHONE_MAX_WIDTH ? 12 : 24
 }
 
+const ARROWS = { ArrowLeft: true, ArrowRight: true, ArrowUp: true, ArrowDown: true }
+
+/**
+ * Count how many results share the first row, by layout position.
+ *
+ * @param {HTMLElement} list
+ * @returns {number}
+ */
+export function measureColumns(list) {
+  const options = [...list.children]
+  if (options.length === 0) return 1
+  const top = options[0].offsetTop
+  const firstRow = options.filter((option) => option.offsetTop === top).length
+  return Math.max(1, firstRow)
+}
+
 const LABELS = {
   emoji: { noun: 'emoji', hint: 'type a feeling… happy, skull, alpha' },
   kaomoji: { noun: 'kaomoji', hint: 'type a feeling… shrug, table flip, lenny' },
@@ -49,6 +65,7 @@ export function mountPicker(root, options) {
     viewportWidth = () => globalThis.innerWidth,
     debounceMs = 60,
     initialQuery = '',
+    columns = () => measureColumns(list),
     onRender = () => {},
   } = options
   const labels = LABELS[mode]
@@ -76,6 +93,8 @@ export function mountPicker(root, options) {
 
   /** @type {PickResult[]} */
   let items = []
+  /** Index of the highlighted result, or -1 for none. */
+  let highlight = -1
   let timer
 
   function runSearch() {
@@ -85,6 +104,8 @@ export function mountPicker(root, options) {
   }
 
   function render(query) {
+    highlight = -1
+    input.removeAttribute('aria-activedescendant')
     list.replaceChildren(...items.map(renderOption))
     hint.hidden = query !== ''
     empty.hidden = query === '' || items.length > 0
@@ -111,9 +132,94 @@ export function mountPicker(root, options) {
     return option
   }
 
-  input.addEventListener('input', () => {
+  function scheduleSearch() {
     clearTimeout(timer)
     timer = setTimeout(runSearch, debounceMs)
+  }
+
+  /** Highlight result `index` (clamped) and move focus to it. */
+  function highlightAt(index) {
+    const options = list.children
+    highlight = Math.max(0, Math.min(index, options.length - 1))
+    for (const [i, option] of [...options].entries()) {
+      const on = i === highlight
+      option.setAttribute('aria-selected', String(on))
+      option.tabIndex = on ? 0 : -1
+    }
+    const current = options[highlight]
+    input.setAttribute('aria-activedescendant', current.id)
+    current.focus()
+  }
+
+  /** Drop the highlight and put focus back in the search box. */
+  function backToInput() {
+    for (const option of list.children) {
+      option.setAttribute('aria-selected', 'false')
+      option.tabIndex = -1
+    }
+    highlight = -1
+    input.removeAttribute('aria-activedescendant')
+    input.focus()
+  }
+
+  function clearQuery() {
+    clearTimeout(timer)
+    input.value = ''
+    runSearch()
+    backToInput()
+  }
+
+  /** Arrow key → index delta: rows are `columns()` wide on the emoji grid. */
+  function arrowDelta(key) {
+    const row = mode === 'emoji' ? columns() : 1
+    return { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -row, ArrowDown: row }[key]
+  }
+
+  input.addEventListener('input', scheduleSearch)
+
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      event.preventDefault()
+      clearQuery()
+    } else if ((event.key === 'Tab' && !event.shiftKey) || event.key === 'ArrowDown') {
+      if (items.length === 0) return
+      event.preventDefault()
+      highlightAt(0)
+    }
+  })
+
+  list.addEventListener('keydown', (event) => {
+    const { key } = event
+    if (event.ctrlKey || event.metaKey || event.altKey) return
+
+    if (key === 'Tab') {
+      if (!event.shiftKey && highlight === items.length - 1) return
+      event.preventDefault()
+      if (event.shiftKey && highlight === 0) backToInput()
+      else highlightAt(highlight + (event.shiftKey ? -1 : 1))
+    } else if (key in ARROWS) {
+      event.preventDefault()
+      const target = highlight + arrowDelta(key)
+      if (key === 'ArrowUp' && target < 0) backToInput()
+      else highlightAt(target)
+    } else if (/^[1-9]$/.test(key)) {
+      event.preventDefault()
+      const number = Number(key)
+      if (number <= items.length) highlightAt(number - 1)
+    } else if (key === 'Escape') {
+      event.preventDefault()
+      clearQuery()
+    } else if (key === 'Backspace') {
+      event.preventDefault()
+      input.value = input.value.slice(0, -1)
+      backToInput()
+      scheduleSearch()
+    } else if (key.length === 1) {
+      event.preventDefault()
+      input.value += key
+      backToInput()
+      scheduleSearch()
+    }
   })
 
   if (initialQuery) {
