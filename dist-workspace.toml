@@ -26,3 +26,9 @@ install-updater = false
 # Publish jobs to run in CI
 # To add npm/homebrew later, see RELEASE.md
 publish-jobs = []
+
+# Pin the macOS runners: dist's defaults point at labels GitHub has retired or
+# deprecated (the v0.1.8 release stalled waiting for a macos-14 runner).
+[dist.github-custom-runners]
+aarch64-apple-darwin = "macos-15"
+x86_64-apple-darwin = "macos-15-intel"
