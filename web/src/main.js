@@ -3,9 +3,10 @@
 // Boots the WASM treat generator and wires up the generate/copy flow. The top bar
 // (settings cog, support heart) and the emoshion come from the shared shell.js.
 
-import init, { treat } from './wasm/emosh.js'
+import init, { treat, treat_kaomoji } from './wasm/emosh.js'
 import { copyText } from './clipboard.js'
 import { createCopyStatus } from './copy-status.js'
+import { initKaomojiEgg } from './kaomoji-egg.js'
 import { initShell } from './shell.js'
 
 // Boot the shared shell first so the palette lands before the first paint.
@@ -16,15 +17,26 @@ initShell()
 await init()
 
 /**
- * Generate a single treat string via the real Rust WASM binding.
+ * Generate a single treat string via the real Rust WASM binding (kaomoji-decorated
+ * when the easter egg is on).
  *
  * @param {string} user  Name used in the "(a treat from …)" explanation.
  * @param {boolean} clean  When true, omit the explanation (just watermark + phrase).
  * @returns {string} The generated treat (always prefixed with the zero-width watermark).
  */
 export function makeTreat(user, clean) {
-  return treat(Math.random(), clean, user)
+  const generate = egg.mode() === 'kaomoji' ? treat_kaomoji : treat
+  return generate(Math.random(), clean, user)
 }
+
+// Easter egg: the "o" in the wordmark flips the treats to kaomoji.
+const egg = initKaomojiEgg({
+  button: document.querySelector('.logo-o'),
+  logo: document.querySelector('.logo'),
+  tagline: document.querySelector('.tagline'),
+  placeholder: document.querySelector('.treat-placeholder'),
+  live: document.getElementById('egg-live'),
+})
 
 // === issue 05: generate/display/copy ===
 

@@ -42,9 +42,14 @@
 
       <!-- Main: centered treat display + big generate button. Behavior in issue 05. -->
       <main class="main">
-        <h1 class="logo">
-          <span class="visually-hidden">emosh</span>
-        </h1>
+        <div class="logo-wrap">
+          <h1 class="logo">
+            <span class="visually-hidden">emosh</span>
+          </h1>
+          <!-- Psst: the o is a button. -->
+          <button class="logo-o" type="button" aria-pressed="false" aria-label="Kaomoji treats"></button>
+        </div>
+        <p id="egg-live" class="visually-hidden" aria-live="polite"></p>
         <p class="tagline">treats for AIs</p>
 
         <div id="treat-display" class="treat-display" aria-live="polite">

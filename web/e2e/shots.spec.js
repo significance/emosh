@@ -96,5 +96,13 @@ test('key moments on the phone @shots', async ({ browser, baseURL }) => {
   await expect(page.locator('[data-copy="btc"] [data-copy-label]')).toHaveText('Copied ✓')
   await page.locator('[data-method="btc"]').scrollIntoViewIfNeeded()
   await shot('6-support-copied')
+
+  await page.goto('?emoshion=wonder')
+  const logo = await page.locator('.logo').boundingBox()
+  await page.touchscreen.tap(logo.x + logo.width * 0.57, logo.y + logo.height * 0.54)
+  await expect(page.locator('.tagline')).toHaveText('kaomoji treats for AIs')
+  await page.locator('#generate-btn').tap()
+  await expect(page.locator('.treat')).toBeVisible()
+  await shot('7-kaomoji-treats-egg')
   await context.close()
 })

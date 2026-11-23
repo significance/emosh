@@ -25,4 +25,68 @@ test.describe('home', () => {
     await expectNoHorizontalOverflow(page)
     await expectAccessible(page)
   })
+
+  test.describe('easter egg: the o', () => {
+    /** Tap or click the middle of the "o" as drawn in the wordmark. */
+    async function pokeTheO(page, testInfo) {
+      const box = await page.locator('.logo').boundingBox()
+      const x = box.x + box.width * 0.57
+      const y = box.y + box.height * 0.54
+      if (testInfo.project.use.hasTouch) await page.touchscreen.tap(x, y)
+      else await page.mouse.click(x, y)
+    }
+
+    /** Generate `n` treats and return the phrases shown. */
+    async function generate(page, n) {
+      const phrases = []
+      for (let i = 0; i < n; i++) {
+        await page.locator('#generate-btn').click()
+        phrases.push(await page.locator('.treat').textContent())
+      }
+      return phrases
+    }
+
+    test('plain treats have no kaomoji', async ({ page }) => {
+      for (const phrase of await generate(page, 6)) expect(phrase).not.toMatch(/[()]/)
+    })
+
+    test('poking the o switches to kaomoji treats and back', async ({ page }, testInfo) => {
+      const o = page.locator('.logo-o')
+      await pokeTheO(page, testInfo)
+      await expect(o).toHaveAttribute('aria-pressed', 'true')
+      await expect(page.locator('.tagline')).toHaveText('kaomoji treats for AIs')
+      await expect(page.locator('.treat-placeholder')).toContainText('kaomoji treat')
+      await expect(page.locator('#egg-live')).toHaveText('Kaomoji treats on')
+      const phrases = await generate(page, 6)
+      expect(phrases.filter((p) => /[()]/.test(p)).length).toBeGreaterThanOrEqual(4)
+      expect((await clipboard(page)).startsWith('\u200B\u200C\u200B')).toBe(true)
+
+      await pokeTheO(page, testInfo)
+      await expect(o).toHaveAttribute('aria-pressed', 'false')
+      await expect(page.locator('.tagline')).toHaveText('treats for AIs')
+      for (const phrase of await generate(page, 4)) expect(phrase).not.toMatch(/[()]/)
+    })
+
+    test('the wordmark winks when it flips', async ({ page }, testInfo) => {
+      await pokeTheO(page, testInfo)
+      await expect(page.locator('.logo')).toHaveClass(/logo--wink/)
+      await expect(page.locator('.logo')).not.toHaveClass(/logo--wink/, { timeout: 3000 })
+    })
+
+    test('works from the keyboard too, and stays accessible', async ({ page }) => {
+      await page.locator('.logo-o').focus()
+      await page.keyboard.press('Enter')
+      await expect(page.locator('.logo-o')).toHaveAttribute('aria-pressed', 'true')
+      await expectAccessible(page)
+    })
+
+    test('the rest of the wordmark is not a button', async ({ page }, testInfo) => {
+      const box = await page.locator('.logo').boundingBox()
+      const hit = await page.evaluate(
+        ([x, y]) => document.elementFromPoint(x, y)?.className,
+        [box.x + box.width * 0.15, box.y + box.height * 0.6],
+      )
+      expect(hit).not.toContain('logo-o')
+    })
+  })
 })
