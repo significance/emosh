@@ -91,10 +91,23 @@ pub fn search_with_user(
     rank(query_trimmed, emojis, limit)
 }
 
+/// Drop repeated words (keeping the first of each) and squeeze the whitespace, so
+/// "mass  mass mass" becomes "mass" while "table flip" stays as it is.
+fn collapse_repeated_words(query: &str) -> String {
+    let mut seen = std::collections::HashSet::new();
+    query
+        .split_whitespace()
+        .filter(|word| seen.insert(word.to_lowercase()))
+        .collect::<Vec<_>>()
+        .join(" ")
+}
+
 /// Rank `emojis` against `query` (exact name > exact keyword > fuzzy) without any
 /// of the treat keyword intercepts. Returns at most `limit` results, best first.
 pub fn rank(query: &str, emojis: &[Emoji], limit: usize) -> Vec<SearchResult> {
-    let query_trimmed = query.trim();
+    // "mass mass mass" searches as "mass": saying it again means it more, not something else
+    let query_collapsed = collapse_repeated_words(query);
+    let query_trimmed = query_collapsed.as_str();
     let query_lower = query_trimmed.to_lowercase();
 
     if query_lower.is_empty() {
@@ -291,5 +304,21 @@ mod tests {
     fn test_search_intercepts_nibblez_and_nibbelz() {
         assert_eq!(search("nibblez", &[], 7)[0].emoji.name, "nibblez");
         assert_eq!(search("nibbelz", &[], 7)[0].emoji.name, "nibbelz");
+    }
+
+    #[test]
+    fn test_repeated_words_search_like_one() {
+        let emojis = vec![create_test_emoji("💆", "massage", vec!["massage", "relax"])];
+        let once = search("mass", &emojis, 5);
+        let thrice = search("mass  mass mass", &emojis, 5);
+        assert_eq!(thrice.len(), 1);
+        assert_eq!(thrice[0].score, once[0].score);
+    }
+
+    #[test]
+    fn test_distinct_words_are_kept() {
+        assert_eq!(collapse_repeated_words("table flip"), "table flip");
+        assert_eq!(collapse_repeated_words("happy happy joy"), "happy joy");
+        assert_eq!(collapse_repeated_words("  a   b  "), "a b");
     }
 }

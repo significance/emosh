@@ -192,3 +192,11 @@ fn test_fuzzy_search_fallback() {
     let has_unicorn = results.iter().any(|r| r.emoji.char == "🦄");
     assert!(has_unicorn, "Should fuzzy match unicorn for 'unic'");
 }
+
+#[test]
+fn test_readme_mass_jokes_work() {
+    // README: `emosh mass` — 💆 when one mass isn't enough
+    assert_eq!(search("mass", &EMOJIS, 7)[0].emoji.char, "💆");
+    // README quickstart: `emosh mass mass mass` — 💆 copied to clipboard
+    assert_eq!(search("mass mass mass", &EMOJIS, 7)[0].emoji.char, "💆");
+}
