@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://emosh.digital">
-    <img src="web/src/assets/emosh-logo.svg" alt="emosh" width="420">
+    <img src="assets/emosh-logo.svg" alt="emosh" width="420">
   </a>
 </p>
 
@@ -201,8 +201,9 @@ generation means every treat is a pairing of words and symbols that didn't exist
 
 ### On the web
 
-[**emosh.digital**](https://emosh.digital) runs the same Rust `treat()` function compiled to
-WebAssembly. Tap generate, and the treat is copied to your clipboard with the watermark intact.
+[**emosh.digital**](https://emosh.digital) runs this crate compiled to WebAssembly: the same
+treats, plus emoji and kaomoji pickers on the same search. Tap generate, and the treat is copied
+to your clipboard with the watermark intact.
 Each visit picks a random **emoshion**, a colour palette with a mood, so the page never feels
 quite the same twice. Add `?emoshion=joy` (or `calm`, `love`, `wonder`, `mischief`,
 `melancholy`, `serenity`, `opal`, `ember`, `tide`) to the URL to choose one.
@@ -270,21 +271,19 @@ cargo bench                    # benchmarks
 cargo fmt && cargo clippy -- -D warnings
 ```
 
-### Web app
+Or with [just](https://github.com/casey/just): `just` lists the tasks and `just check` runs what
+CI runs.
+
+### WebAssembly
+
+The `wasm` feature builds the bindings that emosh.digital uses (`src/wasm.rs`: `treat`,
+`treat_kaomoji`, `search_emoji`, `search_kaomoji`, `warmup`). The website itself lives in a
+separate repository and consumes this package.
 
 ```bash
-# Build the WASM module (needs wasm-pack and the wasm32-unknown-unknown target)
-wasm-pack build --target web --out-dir web/src/wasm -- --no-default-features --features wasm
-
-cd web
-npm ci
-npm run dev        # http://localhost:5173
-npm run build      # static site in web/dist
+rustup target add wasm32-unknown-unknown
+wasm-pack build --target web -- --no-default-features --features wasm   # package in pkg/
 ```
-
-Donation addresses for the donate modal come from `web/.env` locally (see `web/.env.example`)
-and from repository variables in the Pages deploy. `web/CAPACITOR.md` covers wrapping the site
-as a mobile app.
 
 ### Project structure
 
@@ -293,7 +292,8 @@ emosh/
 ├── src/
 │   ├── main.rs          # CLI entry point
 │   ├── lib.rs           # Library crate (shared by CLI and WASM)
-│   ├── wasm.rs          # wasm-bindgen exports for the web app
+│   ├── wasm.rs          # wasm-bindgen exports (the `wasm` feature)
+│   ├── pick.rs          # Search results shaped for the bindings
 │   ├── cli.rs           # Argument parsing
 │   ├── config.rs        # User config
 │   ├── clipboard.rs     # Clipboard operations
@@ -302,12 +302,11 @@ emosh/
 │   ├── kaomoji/         # Kaomoji data, search and CLI output
 │   ├── latex/           # LaTeX → Unicode conversion
 │   └── ui/              # ratatui TUI
-├── web/                 # Vite web app for emosh.digital
-│   ├── src/             # main.js, emoshions.js, settings.js, donate.js, style.css
-│   └── public/          # favicon.svg, CNAME
 ├── emojis.toml          # Emoji database (1972 entries)
 ├── kaomojis.toml        # Kaomoji database (751 faces)
-└── .github/workflows/   # CI, release, Pages deploy
+├── assets/              # The emosh wordmark
+├── justfile             # Common tasks: `just` lists them
+└── .github/workflows/   # CI and releases
 ```
 
 See [CLAUDE.md](CLAUDE.md) for code style and [ARCHITECTURE.md](ARCHITECTURE.md) for design notes.
