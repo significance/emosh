@@ -16,6 +16,13 @@ pub fn treat(seed: f64, clean: bool, user: &str) -> String {
     crate::treats::generate_one_treat(seed.to_bits(), clean, user)
 }
 
+/// Generate one treat decorated with kaomoji instead of emoji (the home page's
+/// easter egg). Arguments as for [`treat`].
+#[wasm_bindgen]
+pub fn treat_kaomoji(seed: f64, clean: bool, user: &str) -> String {
+    crate::treats::generate_one_kaomoji_treat(seed.to_bits(), clean, user)
+}
+
 /// Search emoji. Returns an array of
 /// `{ text, name, keywords, score, supports_skin_tone }`, best first, with
 /// `skin_tone` (0–5) already applied to `text` where supported.

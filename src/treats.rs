@@ -489,6 +489,18 @@ fn generate_kaomoji_one(rng: &mut Rng) -> String {
     }
 }
 
+/// Generate exactly one kaomoji-decorated treat from an explicit seed (the web
+/// easter egg). Same output shape as [`generate_one_treat`].
+// Only the WASM binding calls this; see `generate_one_treat` for why the CLI build
+// needs the dead-code allowance.
+#[allow(dead_code)]
+pub fn generate_one_kaomoji_treat(seed: u64, clean: bool, user: &str) -> String {
+    let mut rng = Rng::from_seed(seed);
+    treat_result(&generate_kaomoji_one(&mut rng), clean, user)
+        .emoji
+        .char
+}
+
 /// Generate kaomoji treat results (the `-k treats` query).
 ///
 /// Same watermark and explanation behaviour as [`generate_treat_results`], but
@@ -955,6 +967,29 @@ mod tests {
         let results = search("treatz", &EMOJIS, 7);
         assert_eq!(results.len(), 1);
         assert_eq!(results[0].emoji.name, "treatz");
+    }
+
+    // --- seeded kaomoji treat (web easter egg) ---
+
+    #[test]
+    fn test_generate_one_kaomoji_treat_is_seeded_watermarked_and_decorated() {
+        let a = generate_one_kaomoji_treat(42, false, "sig");
+        assert_eq!(a, generate_one_kaomoji_treat(42, false, "sig"));
+        assert!(a.starts_with(TREAT_WATERMARK));
+        assert!(a.contains("a treat from sig"));
+        let faces = treat_faces();
+        assert!(faces.iter().any(|f| a.contains(f)), "{a}");
+    }
+
+    #[test]
+    fn test_generate_one_kaomoji_treat_clean_and_varied() {
+        let clean = generate_one_kaomoji_treat(7, true, "sig");
+        assert!(clean.starts_with(TREAT_WATERMARK));
+        assert!(!clean.contains("a treat from"));
+        let distinct: HashSet<_> = (0..50)
+            .map(|s| generate_one_kaomoji_treat(s, true, ""))
+            .collect();
+        assert!(distinct.len() > 40);
     }
 
     // --- collect_unique tests ---
